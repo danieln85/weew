@@ -9,7 +9,7 @@
     <meta name="description" content="Weed Well">
     <meta name="keywords" content="Weed Well">
     <meta name="author" content="Weed Well">
-    <link rel="icon" href="{{ asset('images/favicon/4.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/favicon/favicon.png') }}" type="image/x-icon">
     <title>On-demand last-mile delivery</title>
 
     <!-- Google font -->
