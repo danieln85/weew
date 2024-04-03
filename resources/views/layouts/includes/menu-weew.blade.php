@@ -229,23 +229,28 @@
                                                 <ul class="cart-list">
                                                     <li>
                                                         <div class="drop-cart">
-                                                            <div class="drop-contain drop-contain">
+                                                            <div class="drop-contain">
 
                                                                 <img src="{{ asset('images/avatar/avatar.png') }}" height="50px">
                                                                 <h6 class="mt-1"><img href=""> <strong> {{ Auth::user()->name }}</strong></h6><br>
 
-                                                                <a href="{{route('home')}}">
+                                                                <a href="{{route('user-dashboard')}}#pills-dashboard">
                                                                     <h5 class="pb-2">Dashboard</h5>
                                                                 </a>
-                                                                <a href="{{route('home')}}">
+                                                                <a href="{{route('profile.show')}}">
                                                                     <h5 class="pb-2">Profile</h5>
                                                                 </a>
-                                                                <a href="{{route('login')}}">
+                                                                <a href="{{route('user-dashboard')}}#pills-order">
                                                                     <h5 class="pb-2">Orders</h5>
                                                                 </a>
-                                                                <a href="{{route('login')}}">
+                                                                <a href="{{route('user-dashboard')}}#pills-address">
                                                                     <h5 class="pb-2">Address</h5>
                                                                 </a>
+                                                                <a href="{{route('user-dashboard')}}#pills-wishlist">
+                                                                    <h5 class="pb-2">Wishlist</h5>
+                                                                </a>
+
+                                                                
                                                                 <form method="POST" action="{{ route('logout') }}">
                                                                     @csrf
                                                                     <button type="submit" class="btn-reset">
@@ -263,7 +268,7 @@
                                                 <ul class="cart-list">
                                                     <li>
                                                         <div class="drop-cart">
-                                                            <div class="drop-contain drop-contain">
+                                                            <div class="drop-contain2">
                                                                 <a href="{{route('login')}}">
                                                                     <h5 class="pb-2">Login</h5>
                                                                 </a>
@@ -345,7 +350,7 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link {{ request()->is('contactanos') ? 'active' : '' }}" href="{{ route('home') }}"><strong>Contact Us</strong></a>
+                                            <a class="nav-link {{ request()->is('contactanos') ? 'active' : '' }}" href="{{ route('contact-us') }}"><strong>Contact Us</strong></a>
                                         </li>
 
                                         <li class="nav-item">
@@ -407,7 +412,7 @@
             </li>
 
             <li>
-                <a href="{{ route('home') }}" class="">
+                <a href="{{route('user-dashboard')}}#pills-wishlist" class="">
                     <i class="fa-regular fa-heart white-icon"></i>
                     <span>My Wish</span>
                 </a>

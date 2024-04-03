@@ -72,15 +72,21 @@
                                 <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button"><i data-feather="heart"></i>
                                     Wishlist</button>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab"><i data-feather="credit-card"></i> Saved Card</button>
-                            </li>
+                            </li> --}}
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-address-tab" data-bs-toggle="pill" data-bs-target="#pills-address" type="button" role="tab"><i data-feather="map-pin"></i>Address</button>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"><i data-feather="user"></i>
                                     Profile</button>
+                            </li> --}}
+                            <li class="nav-item" role="presentation">
+                                <a href="{{ route('profile.show') }}" class="nav-link"></i>
+                                  <i data-feather="user"></i>
+                                        Profile  
+                                </a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-download-tab" data-bs-toggle="pill" data-bs-target="#pills-download" type="button" role="tab"><i data-feather="download"></i>Download</button>
@@ -94,8 +100,22 @@
                 </div>
 
                 <div class="col-xxl-9 col-lg-8">
-                    <button class="btn left-dashboard-show btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Show
-                        Menu</button>
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ route('user-dashboard') }}#pills-dashboard">
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Dashboard</button>
+                        </a>
+                        <a href="{{ route('user-dashboard') }}#pills-order">
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Orders</button>
+                        </a>
+                        <a href="{{ route('user-dashboard') }}#pills-address">
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Address</button>
+                        </a>
+                        <a href="{{ route('user-dashboard') }}#pills-wishlist">
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Wishlist</button>
+                        </a>
+                    </div>
+                    
+                     
                     <div class="dashboard-right-sidebar">
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel">
@@ -1189,7 +1209,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="pills-card" role="tabpanel">
+                            {{-- <div class="tab-pane fade" id="pills-card" role="tabpanel">
                                 <div class="dashboard-card">
                                     <div class="title title-flex">
                                         <div>
@@ -1335,7 +1355,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="tab-pane fade" id="pills-profile" role="tabpanel">
                                 <div class="dashboard-profile">
