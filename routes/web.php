@@ -5,14 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ContactUsController;
-
+use App\Http\Controllers\ProductsController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/nosotros', [AboutUsController::class, 'index'])->name('about-us');
 Route::get('/contactanos', [ContactUsController::class, 'index'])->name('contact-us');
 Route::get('/tienda', [ShopController::class, 'index'])->name('shop');
-Route::get('/detalles-producto', [ProductsController::class, 'index'])->name('products');
+Route::get('/detalles-producto', [ProductsController::class, 'productDetails'])->name('product-details');
 
 
 
