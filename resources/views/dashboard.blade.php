@@ -1650,6 +1650,7 @@
         </div>
     </section>
     <!-- User Dashboard Section End -->
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Función para activar el panel correspondiente al hash
