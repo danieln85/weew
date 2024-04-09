@@ -616,43 +616,7 @@
 
 <!-- theme setting js -->
 <script src="{{ asset('js/theme-setting.js') }}"></script>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Función para activar el panel correspondiente al hash
-        function activatePanel(hash) {
-            // Oculta todos los paneles
-            document.querySelectorAll('.tab-pane').forEach(function(pane) {
-                pane.classList.remove('show', 'active');
-            });
-            // Muestra el panel correspondiente al hash
-            let tabPane = document.querySelector(hash);
-            if (tabPane) {
-                tabPane.classList.add('show', 'active');
-            }
-        }
-    
-        // Monitorea el cambio en la URL
-        window.addEventListener('hashchange', function() {
-            // Obtiene el nuevo hash de la URL
-            let newHash = window.location.hash;
-            // Activa el panel correspondiente al nuevo hash
-            activatePanel(newHash);
-        });
-    
-        // Activa el panel correspondiente al hash actual cuando se carga la página
-        let currentHash = window.location.hash;
-        if (!currentHash) {
-            // Si no hay ningún hash, activa el panel por defecto (#pills-dashboard)
-            activatePanel('#pills-dashboard');
-        } else {
-            // Si hay un hash, activa el panel correspondiente
-            activatePanel(currentHash);
-        }
-    });
-    </script>
-    
+ 
     
     
     
