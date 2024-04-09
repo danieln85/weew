@@ -635,7 +635,7 @@
     transition-duration: 1s;
     } 
  </style>
- <a href="https://api.whatsapp.com/send?phone=(+57)3143423322&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank"><img class="btn-whatsapp" src="{{ asset('images/icons/whatsapp.png') }}" width="54" height="54" alt="Whatsapp" target="_blank"></a>   
+ <a href="https://api.whatsapp.com/send?phone=(+57)3143423322&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank"><img class="btn-whatsapp" src="{{ asset('images/whatsapp.png') }}" width="54" height="54" alt="Whatsapp" target="_blank"></a>   
     
     
     
