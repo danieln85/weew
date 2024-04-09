@@ -1,0 +1,31 @@
+# <IfModule mod_rewrite.c>
+#     # Activa el m贸dulo de reescritura
+#     RewriteEngine On
+#     # Redirecciona si alguien intenta acceder directamente a los directorios
+#     RewriteCond %{REQUEST_FILENAME} -d [OR]
+#     RewriteCond %{REQUEST_FILENAME} -f
+#     RewriteRule ^ - [L]
+#     # Redirecciona todas las solicitudes que no sean archivos reales a index.php
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteRule ^ index.php [L]
+    
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+# Previene la visualizaci贸n de directorios
+Options -Indexes
+# Establece la codificaci贸n de caracteres predeterminada a UTF-8
+# AddDefaultCharset UTF-8
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/xampp/htdocs/weew"
+PassengerBaseURI "/"
+PassengerNodejs "/xampp/htdocs/weew/18/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
