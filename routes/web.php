@@ -17,8 +17,6 @@ Route::get('/detalles-producto', [ProductsController::class, 'productDetails'])-
 
 
 
-
-
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
 })->name('terms');
@@ -32,7 +30,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/tablero-de-usuario', function () {
-        return view('user-dashboard');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
     })->name('user-dashboard');
 });

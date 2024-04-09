@@ -373,12 +373,20 @@
                                 <img src="{{ asset('images/icon/music.png') }}" class="img-fluid blur-up lazyload" alt="">
                                 <span><strong>(+57) 314 421 3772</strong></span>
                             </div>
+
+
+
+                            @if (auth()->check())
                             <a href="javascript:void(0)" class="btn theme-bg-color ms-3 fire-button" data-bs-toggle="modal" data-bs-target="#deal-box">
                                 <div class="fire">
                                     <img src="{{ asset('images/icon/hot-sale.png') }}" class="img-fluid" alt="">
                                 </div>
                                 <span>Hot Deals</span>
                             </a>
+                            @endif
+
+
+
                         </div>
                     </div>
                 </div>
@@ -413,7 +421,7 @@
 
             <li>
                 <a href="{{route('user-dashboard')}}#pills-wishlist" class="">
-                    <i class="fa-regular fa-heart white-icon"></i>
+                    <i class="icli fa-regular fa-heart white-icon"></i>
                     <span>My Wish</span>
                 </a>
             </li>
