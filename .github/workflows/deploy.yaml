@@ -26,7 +26,7 @@ jobs:
           FTP_HOST: ${{ secrets.FTPWEEW_HOST }}
           FTP_USERNAME: ${{ secrets.FTPWEEW_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTPWEEW_PASSWORD }}
-          FTP_DESTINATION: weew/
+          FTP_DESTINATION: weew
         run: php artisan config:cache
 
       - name: Deploy to shared hosting
@@ -35,6 +35,6 @@ jobs:
           server: ${{ secrets.FTPWEEW_HOST }}
           username: ${{ secrets.FTPWEEW_USERNAME }}
           password: ${{ secrets.FTPWEEW_PASSWORD }}
-          server-dir: weew/
+          server-dir: weew
           
           exclude: "public/build/**, vendor/**" # Excluir la carpeta build y la carpeta vendor
