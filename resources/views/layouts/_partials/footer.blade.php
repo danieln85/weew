@@ -617,7 +617,25 @@
 <!-- theme setting js -->
 <script src="{{ asset('js/theme-setting.js') }}"></script>
  
-    
+<style>
+    img.btn-whatsapp {
+    display: block !important;
+    position: fixed;
+    z-index: 9999999;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+    border-radius:60px !important;
+    }
+    img.btn-whatsapp:hover{
+    border-radius:60px !important;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(7,94,84,1); 
+    -moz-box-shadow: 0px 0px 15px 0px rgba(7,94,84,1);
+    box-shadow: 0px 0px 15px 0px rgba(7,94,84,1);
+    transition-duration: 1s;
+    } 
+ </style>
+ <a href="https://api.whatsapp.com/send?phone=(+57)3143423322&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank"><img class="btn-whatsapp" src="{{ asset('images/icons/whatsapp.png') }}" width="54" height="54" alt="Whatsapp" target="_blank"></a>   
     
     
     
