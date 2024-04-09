@@ -35,6 +35,6 @@ jobs:
           server: ${{ secrets.FTPWEEW_HOST }}
           username: ${{ secrets.FTPWEEW_USERNAME }}
           password: ${{ secrets.FTPWEEW_PASSWORD }}
-          server-dir: ${{ secrets.FTPWEEW_DESTINATION }}
+          server-dir: /weew/
           
           exclude: "public/build/**, vendor/**" # Excluir la carpeta build y la carpeta vendor
