@@ -70,7 +70,7 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button"><i data-feather="heart"></i>
-                                    Favoritos</button>
+                                  Mis Favoritos</button>
                             </li>
                             {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab"><i data-feather="credit-card"></i> Saved Card</button>
@@ -102,24 +102,20 @@
                 <div class="col-xxl-9 col-lg-8">
                     <div class="d-flex justify-content-around">
                         <a href="{{ route('user-dashboard') }}#pills-dashboard">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Información general</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Información</button>
                         </a>
                         <a href="{{ route('user-dashboard') }}#pills-order">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Mis compras</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Compras</button>
                         </a>
-                    </div>
-                    
-
-                    <div class="d-flex justify-content-around">
                         <a href="{{ route('user-dashboard') }}#pills-address">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Datos de facturación</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Facturación</button>
                         </a>
                         <a href="{{ route('user-dashboard') }}#pills-wishlist">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Mis Favoritos</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Favoritos</button>
                         </a>
                     </div>
 
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-center">
                         <a href="{{ route('user-dashboard') }}#pills-security">
                             <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Privacidad</button>
                         </a>

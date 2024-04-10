@@ -398,38 +398,47 @@
     <!-- mobile fix menu start -->
     <div class="mobile-menu d-md-none d-block mobile-cart">
         <ul>
-            <li class="active">
+            {{-- <li class="active"> --}}
+            <li>
                 <a href="{{ route('home') }}">
                     <i class="icli fa-solid fa-house white-icon"></i>
-                    <span>Home</span>
+                    <span>Inicio</span>
                 </a>
             </li>
 
-            <li class="mobile-category">
+            {{-- <li class="mobile-category">
                 <a href="javascript:void(0)">
                     <i class="icli fa-solid fa-list white-icon"></i>
                     <span>Category</span>
+                </a>
+            </li> --}}
+
+            <li>
+                <a href="{{ route('home') }}" class="search-box">
+                    
+                    <i class="icli fa-brands fa-blogger-b"></i>
+                    <span>Blog</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{ route('home') }}" class="search-box">
                     <i class="icli fa-solid fa-magnifying-glass"></i>
-                    <span>Search</span>
+                    <span>Buscar</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{route('user-dashboard')}}#pills-wishlist" class="">
                     <i class="icli fa-regular fa-heart white-icon"></i>
-                    <span>My Wish</span>
+                    <span>Favoritos</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{ route('home') }}">
                     <i class="icli fly-cate fa-solid fa-cart-shopping white-icon"></i>
-                    <span>Cart</span>
+                    <span>Carrito</span>
                 </a>
             </li>
         </ul>

@@ -14,7 +14,7 @@
                                 <h1 class="fw-bold w-100">100% Fresh</h1>
                                 <h3 class="text-content fw-light">Accesories</h3>
                                 <p class="d-sm-block d-none">Free shipping on all your order. we deliver you enjoy</p>
-                                <button onclick="location.href = '{{  route('home') }}';" class="btn mt-sm-4 btn-2 theme-bg-color text-white mend-auto btn-2-animation">Comprar ahora</button>
+                                <button onclick="location.href = '{{  route('home') }}';" class="btn mt-sm-4 btn-2 theme-bg-color text-white mend-auto btn-2-animation">Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                             <div>
                                 <h4 class="fw-bold">Fresh & 100% Organic</h4>
                                 <h5 class="text-center">Best products</h5>
-                                <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2" onclick="location.href = '{{  route('home') }}';">Comprar ahora</button>
+                                <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2" onclick="location.href = '{{  route('home') }}';">Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
     <!-- Home Section End -->
 
     <!-- Category Section Start -->
-    <section class="category-section-2 mt-2 mb-2">
+    {{-- <section class="category-section-2 mt-2 mb-2">
         <div class="container-fluid-lg">
             <div class="title">
                 <h2 class="mb-2 text-unchanged">¿Qué trae el Kit WEEW?</h2>
@@ -183,14 +183,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Category Section End -->
 
     <!-- Value Section Start -->
-    <section class="mt-5">
+    <section class="">
         <div class="container-fluid-lg">
             <div class="title">
-                <h2 class="mb-2">Nuestros productos</h2>
+                <h2 class="mb-2">Kits Canábicos</h2>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -203,7 +203,7 @@
                                     <h6>Best product</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar ahora</button>
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +216,7 @@
                                     <h6>New accesories</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar ahora</button>
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +229,7 @@
                                     <h6>Offers</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar ahora</button>
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
                                 </div>
                             </div>
                         </div>
@@ -252,8 +252,8 @@
                     <img src="{{ asset('images/grocery/banner/8.png') }}" class="bg-img blur-up lazyload" alt="">
                     <div class="banner-detail banner-p-sm p-center-right position-relative banner-minus-position banner-detail-deliver">
                         <div>
-                            <h3 class="fw-bold banner-contain">Safe Delivery to the door</h3>
-                            <h4 class="mb-sm-3 mb-2 delivery-contain">Make money on your terms. Anytime and anyhow.
+                            <h3 class="fw-bold banner-contain">No te preocupes por el envío</h3>
+                            <h4 class="mb-sm-3 mb-2 delivery-contain">En WEEW queremos que tengas una experiencia</br>completa, sin sopresas o sobrecargos.
                             </h4>
                             <ul class="banner-list">
                                 <li>
@@ -263,7 +263,7 @@
                                         </div>
 
                                         <div class="check-contain">
-                                            <h5>Get live order tracking</h5>
+                                            <h5>Te obsequiamos 60% OFF</h5>
                                         </div>
                                     </div>
                                 </li>
@@ -275,12 +275,12 @@
                                         </div>
 
                                         <div class="check-contain">
-                                            <h5>Get latest feature updates</h5>
+                                            <h5>Aplica según tu ciudad</h5>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
-                            <button class="btn theme-bg-color text-white mt-sm-4 mt-3 fw-bold" onclick="location.href = '{{  route('home') }}';">Read More</button>
+                            <button class="btn theme-bg-color text-white mt-sm-4 mt-3 fw-bold" onclick="location.href = '{{  route('home') }}';">Contáctanos</button>
                         </div>
                     </div>
                 </div>
@@ -621,21 +621,20 @@
             <div class="row">
                 <div class="col-12">
                     <div class="newsletter-box hover-effect">
-                        <img src="{{ asset('images/veg-3/shape/background.png') }}" class="img-fluid bg-img" alt="">
+                        <img src="{{ asset('images/veg-3/shape/weew-suscribirse.png') }}" class="img-fluid bg-img" alt="">
 
                         <div class="row">
                             <div class="col-xxl-8 col-xl-7">
                                 <div class="newsletter-detail p-center-left text-white">
                                     <div>
-                                        <h2>Subscribe to the newsletter</h2>
-                                        <h4>Join our subscribers list to get the latest news, updates and special offers
-                                            delivered directly in your inbox.</h4>
+                                        <h2>Suscribete a nuestro informativo</h2>
+                                        <h4>Recibirás cupones de descuento, noticias sobre nuevos productos, fechas de nuestros eventos, últimos blogs e información de relevancia de la comunidad Canábica.</h4>
                                         <form class="row g-2">
                                             <div class="col-sm-10 col-12">
                                                 <div class="newsletter-form">
-                                                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                    <input type="email" class="form-control" id="email" placeholder="Escribe tu email">
                                                     <button type="submit" class="btn bg-white theme-color btn-md fw-500
-                                                        submit-button">Subscribe</button>
+                                                        submit-button">Suscribirme</button>
                                                 </div>
                                             </div>
                                         </form>
