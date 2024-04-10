@@ -300,11 +300,11 @@
                 <div class="col-12">
                     <div class="main-nav">
                         <div class="header-nav-left">
-                            <button class="dropdown-category dropdown-category-2">
+                            {{-- <button class="dropdown-category dropdown-category-2">
                                 
                                 <!-- Agrega un espacio entre el icono y el texto -->
                                 <span class="category-name"><strong>All Categories</strong></span>
-                            </button>
+                            </button> --}}
                             
 
                             <div class="category-dropdown">
@@ -359,7 +359,7 @@
 
                                         <li class="nav-item new-nav-item">
                                             <label class="new-dropdown">New</label>
-                                            <a class="nav-link {{ request()->is('tienda') ? 'active' : '' }}" href="{{ route('home') }}"><strong>Shop</strong></a>
+                                            <a class="nav-link {{ request()->is('tienda') ? 'active' : '' }}" href="{{ route('contact-us') }}#nuestros-productos"><strong>Shop</strong></a>
                                         </li>
 
                                         

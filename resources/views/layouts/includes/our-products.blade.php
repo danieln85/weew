@@ -1,5 +1,5 @@
 <!-- Product Section Start -->
-    <section class="product-section mt-3">
+    <section class="product-section mt-3" id="nuestros-productos">
         <div class="container-fluid-lg">
             <div class="title title-flex-2">
                 <h2>Productos</h2>
@@ -75,7 +75,7 @@
                                                 </div>
                                                 <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
                                                 <div class="qty-right-plus" data-type="plus" data-field="">
-                                                    <i class="fa-solid fa-cart-plus"></i>
+                                                    <i class="fa-solid fa-plus"></i>
                                                 </div>
                                             </div>
                                         </div>

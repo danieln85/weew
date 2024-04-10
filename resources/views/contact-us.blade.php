@@ -12,7 +12,7 @@
                         <nav>
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item">
-                                    <a href="index.html">
+                                    <a href="{{ route('home') }}">
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-xl-12">
                                 <div class="contact-title">
-                                    <h3>Get In Touch</h3>
+                                    <h3>Ponte en contacto</h3>
                                 </div>
 
                                 <div class="contact-detail">
@@ -51,11 +51,11 @@
                                                     <i class="fa-solid fa-phone"></i>
                                                 </div>
                                                 <div class="contact-detail-title">
-                                                    <h4>Phone</h4>
+                                                    <h4>Celular</h4>
                                                 </div>
 
                                                 <div class="contact-detail-contain">
-                                                    <p>(+1) 618 190 496</p>
+                                                    <p><a href="mailto:info@weew.com.co">(+57) 316 458 5454</a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -70,12 +70,12 @@
                                                 </div>
 
                                                 <div class="contact-detail-contain">
-                                                    <p>geweto9420@chokxus.com</p>
+                                                    <p><a href="mailto:info@weew.com.co">info@weew.com.co</a></p>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="col-xxl-6 col-lg-12 col-sm-6">
+                                        {{-- <div class="col-xxl-6 col-lg-12 col-sm-6">
                                             <div class="contact-detail-box">
                                                 <div class="contact-icon">
                                                     <i class="fa-solid fa-location-dot"></i>
@@ -88,9 +88,9 @@
                                                     <p>Cruce Casa de Postas 29</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
-                                        <div class="col-xxl-6 col-lg-12 col-sm-6">
+                                        {{-- <div class="col-xxl-6 col-lg-12 col-sm-6">
                                             <div class="contact-detail-box">
                                                 <div class="contact-icon">
                                                     <i class="fa-solid fa-building"></i>
@@ -103,7 +103,7 @@
                                                     <p>Visitación de la Encina 22</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -111,17 +111,18 @@
                     </div>
                 </div>
 
+             <form action="" method="POST">   
                 <div class="col-lg-6">
                     <div class="title d-xxl-none d-block">
                         <h2>Contact Us</h2>
                     </div>
                     <div class="right-sidebar-box">
                         <div class="row">
-                            <div class="col-xxl-6 col-lg-12 col-sm-6">
+                            <div class="col-12">
                                 <div class="mb-md-4 mb-3 custom-form">
-                                    <label for="exampleFormControlInput" class="form-label">First Name</label>
+                                    <label for="exampleFormControlInput" class="form-label">Nombre</label>
                                     <div class="custom-input">
-                                        <input type="text" class="form-control" id="exampleFormControlInput" placeholder="Enter First Name">
+                                        <input type="text" class="form-control" id="exampleFormControlInput" name="name" placeholder="Nombre">
                                         <i class="fa-solid fa-user"></i>
                                     </div>
                                 </div>
@@ -129,19 +130,9 @@
 
                             <div class="col-xxl-6 col-lg-12 col-sm-6">
                                 <div class="mb-md-4 mb-3 custom-form">
-                                    <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                                    <label for="exampleFormControlInput2" class="form-label">Email</label>
                                     <div class="custom-input">
-                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Last Name">
-                                        <i class="fa-solid fa-user"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-6 col-lg-12 col-sm-6">
-                                <div class="mb-md-4 mb-3 custom-form">
-                                    <label for="exampleFormControlInput2" class="form-label">Email Address</label>
-                                    <div class="custom-input">
-                                        <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="Enter Email Address">
+                                        <input type="email" class="form-control" id="exampleFormControlInput2" name="email" placeholder="Email">
                                         <i class="fa-solid fa-envelope"></i>
                                     </div>
                                 </div>
@@ -149,9 +140,9 @@
 
                             <div class="col-xxl-6 col-lg-12 col-sm-6">
                                 <div class="mb-md-4 mb-3 custom-form">
-                                    <label for="exampleFormControlInput3" class="form-label">Phone Number</label>
+                                    <label for="exampleFormControlInput3" class="form-label">Celular</label>
                                     <div class="custom-input">
-                                        <input type="tel" class="form-control" id="exampleFormControlInput3" placeholder="Enter Your Phone Number" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
+                                        <input type="tel" class="form-control" id="exampleFormControlInput3" name="message" placeholder="Celular" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
                                             this.value.slice(0, this.maxLength);">
                                         <i class="fa-solid fa-mobile-screen-button"></i>
                                     </div>
@@ -160,17 +151,18 @@
 
                             <div class="col-12">
                                 <div class="mb-md-4 mb-3 custom-form">
-                                    <label for="exampleFormControlTextarea" class="form-label">Message</label>
+                                    <label for="exampleFormControlTextarea" class="form-label">Mensaje</label>
                                     <div class="custom-textarea">
-                                        <textarea class="form-control" id="exampleFormControlTextarea" placeholder="Enter Your Message" rows="6"></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea" placeholder="Escribe tu mensaje" rows="6"></textarea>
                                         <i class="fa-solid fa-message"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-animation btn-md fw-bold ms-auto">Send Message</button>
+                        <button class="btn btn-animation btn-md fw-bold ms-auto">Enviar mensaje</button>
                     </div>
                 </div>
+            </form> 
             </div>
         </div>
     </section>

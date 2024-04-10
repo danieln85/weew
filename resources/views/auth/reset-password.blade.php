@@ -2,6 +2,7 @@
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
+            <img src="{{ asset('images/logo/weew-logo.png') }}" alt="Logo de mi empresa" style="max-width: 200px;">
         </x-slot>
 
         <x-validation-errors class="mb-4" />
