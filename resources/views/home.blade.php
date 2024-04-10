@@ -14,8 +14,7 @@
                                 <h1 class="fw-bold w-100">100% Fresh</h1>
                                 <h3 class="text-content fw-light">Accesories</h3>
                                 <p class="d-sm-block d-none">Free shipping on all your order. we deliver you enjoy</p>
-                                <button onclick="location.href = '{{  route('home') }}';" class="btn mt-sm-4 btn-2 theme-bg-color text-white mend-auto btn-2-animation">Shop
-                                    Now</button>
+                                <button onclick="location.href = '{{  route('home') }}';" class="btn mt-sm-4 btn-2 theme-bg-color text-white mend-auto btn-2-animation">Comprar ahora</button>
                             </div>
                         </div>
                     </div>
@@ -30,7 +29,7 @@
                             <div>
                                 <h4 class="fw-bold">Fresh & 100% Organic</h4>
                                 <h5 class="text-center">Best products</h5>
-                                <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2" onclick="location.href = '{{  route('home') }}';">Shop Now</button>
+                                <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2" onclick="location.href = '{{  route('home') }}';">Comprar ahora</button>
                             </div>
                         </div>
                     </div>
@@ -73,10 +72,10 @@
     <!-- Home Section End -->
 
     <!-- Category Section Start -->
-    <section class="category-section-2">
+    <section class="category-section-2 mt-2 mb-2">
         <div class="container-fluid-lg">
             <div class="title">
-                <h2>Shop By Categories</h2>
+                <h2 class="mb-2 text-unchanged">¿Qué trae el Kit WEEW?</h2>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -188,10 +187,10 @@
     <!-- Category Section End -->
 
     <!-- Value Section Start -->
-    <section>
+    <section class="mt-5">
         <div class="container-fluid-lg">
             <div class="title">
-                <h2>Best Value</h2>
+                <h2 class="mb-2">Nuestros productos</h2>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -204,7 +203,7 @@
                                     <h6>Best product</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">View Offer</button>
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar ahora</button>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +216,7 @@
                                     <h6>New accesories</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">View Offer</button>
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar ahora</button>
                                 </div>
                             </div>
                         </div>
@@ -230,24 +229,11 @@
                                     <h6>Offers</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">View Offer</button>
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar ahora</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
-                            <div class="offer-banner hover-effect">
-                                <img src="{{ asset('images/veg-3/value/1.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
-                                <div class="banner-detail">
-                                    <h5 class="theme-color">Buy more, Save more</h5>
-                                    <h6>Accesories</h6>
-                                </div>
-                                <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">View
-                                        Offer</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -258,7 +244,7 @@
     @include('layouts.includes.our-products')
 
 <!-- Banner Section Start -->
-<section class="banner-section">
+<section class="banner-section mt-1 mb-3">
     <div class="container-fluid-lg">
         <div class="row gy-lg-0 gy-3">
             <div class="col-lg-8">
@@ -312,8 +298,8 @@
 </section>
 <!-- Banner Section End -->
     
-        <!-- Deal Section Start -->
-        <section class="deal-section">
+<!-- Deal Section Start -->
+        {{-- <section class="deal-section">
             <div class="container-fluid-lg">
                 <div class="title">
                     <h2>Deal Of The Day</h2>
@@ -551,14 +537,14 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Deal Section End -->
+        </section> --}}
+    <!-- Deal Section End -->
 
     <!-- Blog Section Start -->
-    <section class="blog-section">
+    <section class="blog-section mt-3">
         <div class="container-fluid-lg">
             <div class="title">
-                <h2>Blog</h2>
+                <h2 class="mt-1">Blog</h2>
             </div>
 
             <div class="slider-3 arrow-slider">

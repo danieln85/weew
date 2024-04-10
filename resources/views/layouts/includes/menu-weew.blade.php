@@ -156,7 +156,7 @@
                                         </li>
 
                                         <li class="right-side d-none d-md-inline">
-                                            <a href="{{ route('home')}}" class="header-icon search-box search-icon">
+                                            <a href="{{ route('user-dashboard')}}#pills-wishlist" class="header-icon search-box search-icon">
                                                 <small class="badge-number">2</small>
                                                 <i class="fa-regular fa-heart"></i>
                                             </a>
@@ -235,19 +235,19 @@
                                                                 <h6 class="mt-1"><img href=""> <strong> {{ Auth::user()->name }}</strong></h6><br>
 
                                                                 <a href="{{route('user-dashboard')}}#pills-dashboard">
-                                                                    <h5 class="pb-2">Dashboard</h5>
+                                                                    <h5 class="pb-2">Información</h5>
                                                                 </a>
                                                                 <a href="{{route('profile.show')}}">
-                                                                    <h5 class="pb-2">Profile</h5>
+                                                                    <h5 class="pb-2">Perfil</h5>
                                                                 </a>
                                                                 <a href="{{route('user-dashboard')}}#pills-order">
-                                                                    <h5 class="pb-2">Orders</h5>
+                                                                    <h5 class="pb-2">Compras</h5>
                                                                 </a>
                                                                 <a href="{{route('user-dashboard')}}#pills-address">
-                                                                    <h5 class="pb-2">Address</h5>
+                                                                    <h5 class="pb-2">Facturación</h5>
                                                                 </a>
                                                                 <a href="{{route('user-dashboard')}}#pills-wishlist">
-                                                                    <h5 class="pb-2">Wishlist</h5>
+                                                                    <h5 class="pb-2">Favoritos</h5>
                                                                 </a>
 
                                                                 

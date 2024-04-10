@@ -75,5 +75,8 @@
     outline: inherit;
 }
 
+.text-unchanged {
+    text-transform: none!important;
+}
  
 /* # sourceMappingURL=style.css.map */

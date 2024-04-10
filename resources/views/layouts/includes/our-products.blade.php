@@ -1,5 +1,5 @@
 <!-- Product Section Start -->
-    <section class="product-section">
+    {{-- <section class="product-section">
         <div class="container-fluid-lg">
             <div class="title title-flex-2">
                 <h2>Our Products</h2>
@@ -2617,5 +2617,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 <!-- Product Section End -->
