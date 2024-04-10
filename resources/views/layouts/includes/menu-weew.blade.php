@@ -371,7 +371,7 @@
                         <div class="right-nav">
                             <div class="nav-number">
                                 <img src="{{ asset('images/icon/music.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                <span><strong>(+57) 314 421 3772</strong></span>
+                                <span><strong><a href="tel:+573164585454">(+57) 316 458 5454</a></strong></span>
                             </div>
 
 

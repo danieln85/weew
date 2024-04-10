@@ -317,6 +317,46 @@
                                     </div>
 
                                     <div class="order-contain">
+                                        
+
+                                        <div class="order-box dashboard-bg-box">
+                                            <div class="order-container">
+                                                <div class="order-icon">
+                                                    <i data-feather="box"></i>
+                                                </div>
+
+                                                <div class="order-detail">
+                                                    <h4>Entrega <span class="success-bg">Exitosa</span></h4>
+                                                    <h6 class="text-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h6>
+                                                </div>
+                                            </div>
+
+                                            <div class="product-order-detail">
+                                                <a href="product-left-thumbnail.html" class="order-image">
+                                                    <img src="../assets/images/vegetable/product/1.png" class="blur-up lazyload" alt="">
+                                                </a>
+
+                                                <div class="order-wrap">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h3>No Compra: 5456554545</h3>
+                                                    </a>
+                                                    <p class="text-content"><strong>Fecha de la compra: 2024/05/20</strong></p>
+                                                    <ul class="product-size">
+                                                        <li>
+                                                            <div class="size-box">
+                                                                <h4 class="text-content"><strong>Total de la compra:&nbsp;</strong> </h4>
+                                                                <h4> $180.000</h4>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <h5 class="text-content"><strong>Dirección de envío: Cra. 21A # 105 - 29 Conjunto Torres de Asturias, Torre 5 Apto 301, Barrio Provenza </strong></h5>
+                                                        </li>    
+                                                    </ul>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="order-box dashboard-bg-box">
                                             <div class="order-container">
                                                 <div class="order-icon">
@@ -325,10 +365,9 @@
 
                                                 <div class="order-detail">
                                                     <h4>Entrega <span>Pendiente</span></h4>
-                                                    <h6 class="text-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quisquam natus repellat at soluta amet.</h6>
+                                                    <h6 class="text-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h6>
                                                 </div>
                                             </div>
-
                                             <div class="product-order-detail">
                                                 <a href="product-left-thumbnail.html" class="order-image">
                                                     <img src="../assets/images/vegetable/product/1.png" class="blur-up lazyload" alt="">
@@ -362,224 +401,33 @@
                                                 </div>
 
                                                 <div class="order-detail">
-                                                    <h4>Delivered <span class="success-bg">Success</span></h4>
-                                                    <h6 class="text-content">Cheese on toast cheesy grin cheesy grin
-                                                        cottage cheese caerphilly everyone loves cottage cheese the big
-                                                        cheese.</h6>
+                                                    <h4>Entrega <span class="success-bg">Exitosa</span></h4>
+                                                    <h6 class="text-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
                                                 </div>
                                             </div>
 
                                             <div class="product-order-detail">
                                                 <a href="product-left-thumbnail.html" class="order-image">
-                                                    <img src="../assets/images/vegetable/product/2.png" alt="" class="blur-up lazyload">
+                                                    <img src="../assets/images/vegetable/product/1.png" class="blur-up lazyload" alt="">
                                                 </a>
 
                                                 <div class="order-wrap">
                                                     <a href="product-left-thumbnail.html">
-                                                        <h3>Cold Brew Coffee Instant Coffee 50 g</h3>
+                                                        <h3>No Compra: 5456554545</h3>
                                                     </a>
-                                                    <p class="text-content">Pecorino paneer port-salut when the cheese
-                                                        comes out everybody's happy red leicester mascarpone blue
-                                                        castello cauliflower cheese.</p>
+                                                    <p class="text-content"><strong>Fecha de la compra: 2024/05/20</strong></p>
                                                     <ul class="product-size">
                                                         <li>
                                                             <div class="size-box">
-                                                                <h6 class="text-content">Price : </h6>
-                                                                <h5>$20.68</h5>
+                                                                <h6 class="text-content"><strong>Total de la compra:</strong> </h6>
+                                                                <h5>180.000</h5>
                                                             </div>
                                                         </li>
-
                                                         <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Rate : </h6>
-                                                                <div class="product-rating ms-2">
-                                                                    <ul class="rating">
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star"></i>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Sold By : </h6>
-                                                                <h5>Fresho</h5>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Quantity : </h6>
-                                                                <h5>250 G</h5>
-                                                            </div>
-                                                        </li>
+                                                            <h5 class="text-content"><strong>Dirección de envío: Cra. 21A # 105 - 29 Conjunto Torres de Asturias, Torre 5 Apto 301, Barrio Provenza </strong></h5>
+                                                        </li>    
                                                     </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="order-box dashboard-bg-box">
-                                            <div class="order-container">
-                                                <div class="order-icon">
-                                                    <i data-feather="box"></i>
-                                                </div>
-
-                                                <div class="order-detail">
-                                                    <h4>Delivere <span>Pending</span></h4>
-                                                    <h6 class="text-content">Cheesy grin boursin cheesy grin cheesecake
-                                                        blue castello cream cheese lancashire melted cheese.</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="product-order-detail">
-                                                <a href="product-left-thumbnail.html" class="order-image">
-                                                    <img src="../assets/images/vegetable/product/3.png" alt="" class="blur-up lazyload">
-                                                </a>
-
-                                                <div class="order-wrap">
-                                                    <a href="product-left-thumbnail.html">
-                                                        <h3>Peanut Butter Bite Premium Butter Cookies 600 g</h3>
-                                                    </a>
-                                                    <p class="text-content">Cow bavarian bergkase mascarpone paneer
-                                                        squirty cheese fromage frais cheese slices when the cheese comes
-                                                        out everybody's happy.</p>
-                                                    <ul class="product-size">
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Price : </h6>
-                                                                <h5>$20.68</h5>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Rate : </h6>
-                                                                <div class="product-rating ms-2">
-                                                                    <ul class="rating">
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star"></i>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Sold By : </h6>
-                                                                <h5>Fresho</h5>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Quantity : </h6>
-                                                                <h5>250 G</h5>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="order-box dashboard-bg-box">
-                                            <div class="order-container">
-                                                <div class="order-icon">
-                                                    <i data-feather="box"></i>
-                                                </div>
-
-                                                <div class="order-detail">
-                                                    <h4>Delivered <span class="success-bg">Success</span></h4>
-                                                    <h6 class="text-content">Caerphilly port-salut parmesan pecorino
-                                                        croque monsieur dolcelatte melted cheese cheese and wine.</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="product-order-detail">
-                                                <a href="product-left-thumbnail.html" class="order-image">
-                                                    <img src="../assets/images/vegetable/product/4.png" class="blur-up lazyload" alt="">
-                                                </a>
-
-                                                <div class="order-wrap">
-                                                    <a href="product-left-thumbnail.html">
-                                                        <h3>SnackAmor Combo Pack of Jowar Stick and Jowar Chips</h3>
-                                                    </a>
-                                                    <p class="text-content">The big cheese cream cheese pepper jack
-                                                        cheese slices danish fontina everyone loves cheese on toast
-                                                        bavarian bergkase.</p>
-                                                    <ul class="product-size">
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Price : </h6>
-                                                                <h5>$20.68</h5>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Rate : </h6>
-                                                                <div class="product-rating ms-2">
-                                                                    <ul class="rating">
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star" class="fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i data-feather="star"></i>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Sold By : </h6>
-                                                                <h5>Fresho</h5>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="size-box">
-                                                                <h6 class="text-content">Quantity : </h6>
-                                                                <h5>250 G</h5>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -1650,7 +1498,7 @@
         </div>
     </section>
     <!-- User Dashboard Section End -->
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Función para activar el panel correspondiente al hash
