@@ -124,7 +124,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput" class="form-label">Nombre</label>
                                     <div class="custom-input">
-                                        <input type="text" class="form-control" id="exampleFormControlInput" name="name" placeholder="Nombre">
+                                        <input type="text" class="form-control" id="exampleFormControlInput" name="name" placeholder="Nombre" required>
                                         <i class="fa-solid fa-user"></i>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput2" class="form-label">Email</label>
                                     <div class="custom-input">
-                                        <input type="email" class="form-control" id="exampleFormControlInput2" name="email" placeholder="Email">
+                                        <input type="email" class="form-control" id="exampleFormControlInput2" name="email" placeholder="Email" required>
                                         <i class="fa-solid fa-envelope"></i>
                                     </div>
                                 </div>
@@ -144,8 +144,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput3" class="form-label">Celular</label>
                                     <div class="custom-input">
-                                        <input type="tel" class="form-control" id="exampleFormControlInput3" name="mobile" placeholder="Celular" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
-                                            this.value.slice(0, this.maxLength);">
+                                        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Celular" pattern="[0-9]{10}" required>
                                         <i class="fa-solid fa-mobile-screen-button"></i>
                                     </div>
                                 </div>
@@ -155,7 +154,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlTextarea" class="form-label">Mensaje</label>
                                     <div class="custom-textarea">
-                                        <textarea class="form-control" id="exampleFormControlTextarea" name="message" placeholder="Escribe tu mensaje" rows="6"></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea" name="message" placeholder="Escribe tu mensaje" rows="6" required></textarea>
                                         <i class="fa-solid fa-message"></i>
                                     </div>
                                 </div>
@@ -180,5 +179,17 @@
         </div>
     </section>
     <!-- Map Section End -->
+
+    <script>
+        document.getElementById('mobile').addEventListener('input', function (e) {
+    // Remover cualquier carácter no numérico del valor del campo
+    this.value = this.value.replace(/\D/g, '');
+    
+    // Limitar la longitud del campo a 10 dígitos
+    if (this.value.length > 10) {
+        this.value = this.value.slice(0, 10);
+    }
+});
+        </script>
 
     @include('layouts._partials.footer')    
