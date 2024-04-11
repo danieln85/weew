@@ -11,8 +11,8 @@ class ContactController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    { 
+        // return view('contact-us');
     }
 
     /**
@@ -20,7 +20,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact-us');
     }
 
     /**
@@ -28,7 +28,8 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Contact::create($request->all());
+        return redirect()->route('contact-us');
     }
 
     /**

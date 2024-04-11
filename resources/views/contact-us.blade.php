@@ -111,8 +111,10 @@
                     </div>
                 </div>
 
-             <form action="" method="POST">   
+              
                 <div class="col-lg-6">
+                    <form action="{{ route('contact.store') }}" method="POST">
+                        @csrf
                     <div class="title d-xxl-none d-block">
                         <h2>Contact Us</h2>
                     </div>
@@ -142,7 +144,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput3" class="form-label">Celular</label>
                                     <div class="custom-input">
-                                        <input type="tel" class="form-control" id="exampleFormControlInput3" name="message" placeholder="Celular" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
+                                        <input type="tel" class="form-control" id="exampleFormControlInput3" name="mobile" placeholder="Celular" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
                                             this.value.slice(0, this.maxLength);">
                                         <i class="fa-solid fa-mobile-screen-button"></i>
                                     </div>
@@ -153,7 +155,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlTextarea" class="form-label">Mensaje</label>
                                     <div class="custom-textarea">
-                                        <textarea class="form-control" id="exampleFormControlTextarea" placeholder="Escribe tu mensaje" rows="6"></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea" name="message" placeholder="Escribe tu mensaje" rows="6"></textarea>
                                         <i class="fa-solid fa-message"></i>
                                     </div>
                                 </div>
@@ -161,8 +163,9 @@
                         </div>
                         <button class="btn btn-animation btn-md fw-bold ms-auto">Enviar mensaje</button>
                     </div>
+                </form>
                 </div>
-            </form> 
+            
             </div>
         </div>
     </section>
