@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class ContactController extends Controller
 {
@@ -26,7 +27,7 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         Contact::create($request->all());
         return redirect()->route('contact-us');
