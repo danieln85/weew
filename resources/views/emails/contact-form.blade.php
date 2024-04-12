@@ -20,6 +20,12 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .card {
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
         h1 {
             color: #333;
             text-align: center;
@@ -43,17 +49,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Our Newsletter</h1>
-        <p>Thank you for submitting the contact form. Below are the details:</p>
-        <ul>
-            <li><strong>Name:</strong> {{ $contact->name }}</li>
-            <li><strong>Email:</strong> {{ $contact->email }}</li>
-            <li><strong>Mobile:</strong> {{ $contact->mobile }}</li>
-            <li><strong>Message:</strong> {{ $contact->message }}</li>
-        </ul>
-        <p>Stay tuned for exciting updates and offers!</p>
-        <p>Visit our website to learn more:</p>
-        <a href="http://www.example.com" class="button">Visit Website</a>
+        <div class="card">
+            <h1>Welcome to Our Newsletter</h1>
+            <p>Thank you for submitting the contact form. Below are the details:</p>
+            <ul>
+                <li><strong>Name:</strong> {{ $contact->name }}</li>
+                <li><strong>Email:</strong> {{ $contact->email }}</li>
+                <li><strong>Mobile:</strong> {{ $contact->mobile }}</li>
+                <li><strong>Message:</strong> {{ $contact->message }}</li>
+            </ul>
+            <p>Stay tuned for exciting updates and offers!</p>
+            <p>Visit our website to learn more:</p>
+            <a href="http://www.example.com" class="button">Visit Website</a>
+        </div>
     </div>
 </body>
 </html>
+
