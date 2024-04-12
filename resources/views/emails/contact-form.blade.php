@@ -43,7 +43,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome {{ $name }} to Our Newsletter</h1>
+        <h1>Welcome to Our Newsletter</h1>
         <p>Thank you for submitting the contact form. Below are the details:</p>
         <ul>
             <li><strong>Name:</strong> {{ $name }}</li>
