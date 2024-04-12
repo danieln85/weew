@@ -46,10 +46,10 @@
         <h1>Welcome to Our Newsletter</h1>
         <p>Thank you for submitting the contact form. Below are the details:</p>
         <ul>
-            <li><strong>Name:</strong> {{ $name }}</li>
-            <li><strong>Email:</strong> {{ $email }}</li>
-            <li><strong>Mobile:</strong> {{ $mobile }}</li>
-            <li><strong>Message:</strong> {{ $message }}</li>
+            <li><strong>Name:</strong> {{ $contact->name }}</li>
+            <li><strong>Email:</strong> {{ $contact->email }}</li>
+            <li><strong>Mobile:</strong> {{ $contact->mobile }}</li>
+            <li><strong>Message:</strong> {{ $contact->message }}</li>
         </ul>
         <p>Stay tuned for exciting updates and offers!</p>
         <p>Visit our website to learn more:</p>
