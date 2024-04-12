@@ -37,7 +37,7 @@ class NewsletterController extends Controller
         $newsletter = Newsletter::create($request->all()); // Corregido
         // Envía el correo electrónico al administrador
         // Mail::to('danieln85@gmail.com')->send(new NewsletterFormMail($contact));
-        session()->flash('success', '¡El formulario se envió exitosamente! Te responderemos a la brevedad.');
+        session()->flash('success', '¡Te suscribiste exitosamente a nuestro informativo!');
 
         return redirect()->route('home');
     }
