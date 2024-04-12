@@ -18,15 +18,15 @@ class ContactController extends Controller
      */
     public function index()
     { 
-        // return view('contact-us');
+        
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View // Corregido el tipo de retorno
+    public function create()
     {
-        return view('contact-us');
+        
     }
 
     /**
