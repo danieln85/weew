@@ -35,7 +35,7 @@ class ContactController extends Controller
     {
         Contact::create($request->all());
         session()->flash('success', '¡El formulario se envió exitosamente! Te responderemos a la brevedad.');
-        return redirect('/contactanos#error-messages');
+        return redirect('https://www.weew.com.co/contactanos#error-messages');
     }
 
     /**
