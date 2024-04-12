@@ -25,6 +25,7 @@
             border-radius: 5px;
             background-color: #f9f9f9;
             border: 1px solid #ddd;
+            text-align: center; /* Centrar contenido */
         }
         h1 {
             color: #333;
@@ -49,7 +50,9 @@
         }
         .logo {
             display: inline-block;
-            margin-right: 10px;
+            margin-bottom: 10px; /* Agregar espacio entre el logo y el contenido */
+            width: 100px; /* Ajustar el tamaño del logo */
+            height: auto; /* Hacer que la altura del logo se ajuste automáticamente */
         }
     </style>
 </head>
@@ -65,8 +68,8 @@
                 <h4><strong>Mobile:</strong> {{ $contact->mobile }}</h4>
                 <h4><strong>Message:</strong> {{ $contact->message }}</h4>
             
-            <p>¡Estén atentos a interesantes actualizaciones y ofertas!</p>
-            <p>Visita our Sitio Web para más información:</p>
+            
+            <p>Visitar www.weew.com.co:</p>
             <a href="http://www.example.com" class="button">Visit Website</a>
         </div>
     </div>
