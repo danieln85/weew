@@ -21,7 +21,7 @@ class ContactController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         $contacts = Contact::latest()->paginate(3);
         return view('contact-us', compact('contacts'));
@@ -34,7 +34,11 @@ class ContactController extends Controller
     public function store(ContactFormRequest $request): RedirectResponse
     {
         Contact::create($request->all());
+        // Envía el correo electrónico al administrador
+        Mail::to('weedwell.web@gmail.com')->send(new ContactFormMail($contact));
+
         session()->flash('success', '¡El formulario se envió exitosamente! Te responderemos a la brevedad.');
+
         return redirect()->route('contact-us');
     }
 
