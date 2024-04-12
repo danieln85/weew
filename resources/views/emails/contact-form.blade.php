@@ -41,28 +41,34 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s; /* Agregar transición para cambio de color */
         }
         .button:hover {
             background-color: #0056b3;
+            color: #fff; /* Mantener el color de letra blanco al pasar el mouse */
+        }
+        .logo {
+            display: inline-block;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card">
-            <h1>Welcome to Our Newsletter</h1>
-            <p>Thank you for submitting the contact form. Below are the details:</p>
-            <ul>
-                <li><strong>Name:</strong> {{ $contact->name }}</li>
-                <li><strong>Email:</strong> {{ $contact->email }}</li>
-                <li><strong>Mobile:</strong> {{ $contact->mobile }}</li>
-                <li><strong>Message:</strong> {{ $contact->message }}</li>
-            </ul>
-            <p>Stay tuned for exciting updates and offers!</p>
-            <p>Visit our website to learn more:</p>
+            <img src="https://www.weew.com.co/images/logo/weew-logo.png" alt="Logo" class="logo"> <!-- Ajusta la ruta de la imagen -->
+            <h1>¡Un usuario acaba de diligenciar el formulario de contacto!</h1>
+            <h3>Los siguientes son sus datos</h3>
+            
+                <h4><strong>Name:</strong> {{ $contact->name }}</h4>
+                <h4><strong>Email:</strong> {{ $contact->email }}</h4>
+                <h4><strong>Mobile:</strong> {{ $contact->mobile }}</h4>
+                <h4><strong>Message:</strong> {{ $contact->message }}</h4>
+            
+            <p>¡Estén atentos a interesantes actualizaciones y ofertas!</p>
+            <p>Visita our Sitio Web para más información:</p>
             <a href="http://www.example.com" class="button">Visit Website</a>
         </div>
     </div>
 </body>
 </html>
-
