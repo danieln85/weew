@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\ContactFormRequest;
 
 class ContactController extends Controller
 {
@@ -27,9 +28,10 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(ContactFormRequest $request): RedirectResponse
     {
         Contact::create($request->all());
+        session()->flash('success', '¡El formulario se envió exitosamente!');
         return redirect()->route('contact-us');
     }
 

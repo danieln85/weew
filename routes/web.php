@@ -12,7 +12,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/nosotros', [AboutUsController::class, 'index'])->name('about-us');
 Route::resource('contact', ContactController::class);
 Route::get('/contactanos', [ContactController::class, 'create'])->name('contact-us');
-
+Route::post('store', [ContactController::class, 'store'])->name('store');
 // Route::get('/tienda', [ShopController::class, 'index'])->name('shop');
 Route::get('/detalles-producto', [ProductsController::class, 'productDetails'])->name('product-details');
 

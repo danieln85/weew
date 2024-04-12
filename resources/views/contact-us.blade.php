@@ -113,6 +113,21 @@
 
               
                 <div class="col-lg-6">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong>Por favor diligencia correctamente el formulario.</strong><br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li></br>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <form action="{{ route('contact.store') }}" method="POST">
                         @csrf
                     <div class="title d-xxl-none d-block">
@@ -124,7 +139,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput" class="form-label">Nombre</label>
                                     <div class="custom-input">
-                                        <input type="text" class="form-control" id="exampleFormControlInput" name="name" placeholder="Nombre" required>
+                                        <input type="text" class="form-control" id="exampleFormControlInput" name="name" placeholder="Nombre" value="{{ old('name')}}" >
                                         <i class="fa-solid fa-user"></i>
                                     </div>
                                 </div>
@@ -134,7 +149,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput2" class="form-label">Email</label>
                                     <div class="custom-input">
-                                        <input type="email" class="form-control" id="exampleFormControlInput2" name="email" placeholder="Email" required>
+                                        <input type="email" class="form-control" id="exampleFormControlInput2" name="email" placeholder="Email" value="{{ old('email')}}" >
                                         <i class="fa-solid fa-envelope"></i>
                                     </div>
                                 </div>
@@ -144,7 +159,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput3" class="form-label">Celular</label>
                                     <div class="custom-input">
-                                        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Celular" pattern="[0-9]{10}" required>
+                                        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Celular" pattern="[0-9]{10}" value="{{ old('mobile')}}" >
                                         <i class="fa-solid fa-mobile-screen-button"></i>
                                     </div>
                                 </div>
@@ -154,7 +169,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlTextarea" class="form-label">Mensaje</label>
                                     <div class="custom-textarea">
-                                        <textarea class="form-control" id="exampleFormControlTextarea" name="message" placeholder="Escribe tu mensaje" rows="6" required></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea" name="message" placeholder="Escribe tu mensaje" rows="6" >{{ old('message') }}</textarea>
                                         <i class="fa-solid fa-message"></i>
                                     </div>
                                 </div>
