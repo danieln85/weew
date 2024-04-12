@@ -27,7 +27,7 @@ class ContactFormRequest extends FormRequest
             'email' => [
                 'required',
                 'email',
-                Rule::regex('/^.+@.+\..+$/') // Agrega una expresión regular para verificar la presencia de la extensión ".com"
+                'regex:/^.+@.+\..+$/' // Utiliza la regla regex directamente en la cadena de reglas de validación
             ],
             'mobile' => 'required|digits:10',
             'message' => 'required'
