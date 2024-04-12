@@ -36,7 +36,7 @@ class NewsletterController extends Controller
     {
         $newsletter = Newsletter::create($request->all()); // Corregido
         
-        Mail::to('danieln85@gmail.com')->send(new NewsletterFormMail($newsletter));
+        Mail::to('weedwell.web@gmail.com')->send(new NewsletterFormMail($newsletter));
         session()->flash('success', '¡Te suscribiste exitosamente a nuestro informativo!');
 
         return redirect()->route('home');

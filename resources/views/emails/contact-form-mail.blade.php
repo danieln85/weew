@@ -63,10 +63,10 @@
             <h1>¡Un usuario diligenció el formulario de contacto!</h1>
             <h3>Los siguientes son sus datos</h3>
             
-                <h4><strong>Nombre:</strong> {{ $contact->name }}</h4>
-                <h4><strong>Email:</strong> {{ $contact->email }}</h4>
-                <h4><strong>Celular:</strong> {{ $contact->mobile }}</h4>
-                <h4><strong>Mensaje:</strong> {{ $contact->message }}</h4>
+                <h2><strong>Nombre:</strong> {{ $contact->name }}</h2>
+                <h2><strong>Email:</strong> {{ $contact->email }}</h2>
+                <h2><strong>Celular:</strong> {{ $contact->mobile }}</h2>
+                <h2><strong>Mensaje:</strong> {{ $contact->message }}</h2>
             
             
             <p>Visitar tu sitio web www.weew.com.co:</p>

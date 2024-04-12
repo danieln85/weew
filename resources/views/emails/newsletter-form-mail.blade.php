@@ -63,7 +63,7 @@
             <h1>¡Un usuario se suscribió al informativo WEEW!</h1>
             <h3>Este es su email</h3>
             
-                <h4><strong>Email:</strong> {{ $newsletter->email }}</h4>
+                <h2><strong>Email:</strong> {{ $newsletter->email }}</h2>
             
             <p>Visitar tu sitio web www.weew.com.co:</p>
             <a href="http://www.weew.com.co" class="button" style="color:white!important">Visitar</a>
