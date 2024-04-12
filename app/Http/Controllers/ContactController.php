@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\ContactFormRequest;
 
+
 class ContactController extends Controller
 {
     /**
@@ -22,7 +23,9 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('contact-us');
+        $contacts = Contact::latest()->paginate(3);
+        return view('contact-us', compact('contacts'));
+
     }
 
     /**
@@ -31,8 +34,9 @@ class ContactController extends Controller
     public function store(ContactFormRequest $request): RedirectResponse
     {
         Contact::create($request->all());
-        session()->flash('success', '¡El formulario se envió exitosamente!');
-        return redirect()->route('contact-us');
+        session()->flash('success', '¡El formulario se envió exitosamente! Te responderemos a la brevedad.');
+        // dd(redirect()->route('contact-us') . '#error-messages');
+        // return redirect()->route('contact-us') . '#error-messages';
     }
 
     /**

@@ -55,7 +55,7 @@
                                                 </div>
 
                                                 <div class="contact-detail-contain">
-                                                    <p><a href="mailto:info@weew.com.co">(+57) 316 458 5454</a></p>
+                                                    <p><a href="tel:+573164585454">(+57) 316 458 5454</a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -113,6 +113,8 @@
 
               
                 <div class="col-lg-6">
+                    <a id="error-messages"></a> 
+                    <a id="success-message"></a>          
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <strong>Por favor diligencia correctamente el formulario.</strong><br><br>
