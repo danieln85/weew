@@ -171,7 +171,7 @@
                                 <div class="mb-md-4 mb-3 custom-form">
                                     <label for="exampleFormControlInput2" class="form-label">Email</label>
                                     <div class="custom-input">
-                                        <input type="email" class="form-control" id="exampleFormControlInput2" name="text" placeholder="email" value="{{ old('email')}}" >
+                                        <input type="email" class="form-control" id="exampleFormControlInput2" name="email" placeholder="email" value="{{ old('email')}}" required >
                                         <i class="fa-solid fa-envelope"></i>
                                     </div>
                                 </div>
