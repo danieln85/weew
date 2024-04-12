@@ -43,8 +43,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome {{ $name }}to Our Newsletter</h1>
-        <p>Thank you for subscribing to our newsletter. Stay tuned for exciting updates and offers!</p>
+        <h1>Welcome {{ $name }} to Our Newsletter</h1>
+        <p>Thank you for submitting the contact form. Below are the details:</p>
+        <ul>
+            <li><strong>Name:</strong> {{ $name }}</li>
+            <li><strong>Email:</strong> {{ $email }}</li>
+            <li><strong>Mobile:</strong> {{ $mobile }}</li>
+            <li><strong>Message:</strong> {{ $message }}</li>
+        </ul>
+        <p>Stay tuned for exciting updates and offers!</p>
         <p>Visit our website to learn more:</p>
         <a href="http://www.example.com" class="button">Visit Website</a>
     </div>

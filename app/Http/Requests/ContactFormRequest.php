@@ -23,7 +23,11 @@ class ContactFormRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3',
-            'email' => 'required|email',
+            'email' => [
+                'required',
+                'email',
+                Rule::regex('/^.+@.+\..+$/') // Agrega una expresión regular para verificar la presencia de la extensión ".com"
+            ],
             'mobile' => 'required|digits:10',
             'message' => 'required'
         ];
