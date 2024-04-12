@@ -35,8 +35,8 @@ class ContactController extends Controller
     {
         Contact::create($request->all());
         session()->flash('success', '¡El formulario se envió exitosamente! Te responderemos a la brevedad.');
-        // dd(redirect()->route('contact-us') . '#error-messages');
-        // return redirect()->route('contact-us') . '#error-messages';
+        dd(redirect()->route('contact-us') . '#error-messages');
+        return redirect()->route('contact-us') . '#error-messages';
     }
 
     /**
