@@ -63,14 +63,14 @@
             <h1>¡Un usuario acaba de diligenciar el formulario de contacto!</h1>
             <h3>Los siguientes son sus datos</h3>
             
-                <h4><strong>Name:</strong> {{ $contact->name }}</h4>
+                <h4><strong>Nombre:</strong> {{ $contact->name }}</h4>
                 <h4><strong>Email:</strong> {{ $contact->email }}</h4>
-                <h4><strong>Mobile:</strong> {{ $contact->mobile }}</h4>
-                <h4><strong>Message:</strong> {{ $contact->message }}</h4>
+                <h4><strong>Celular:</strong> {{ $contact->mobile }}</h4>
+                <h4><strong>Mensaje:</strong> {{ $contact->message }}</h4>
             
             
-            <p>Visitar www.weew.com.co:</p>
-            <a href="http://www.example.com" class="button">Visit Website</a>
+            <p>Visitar tu sitio web www.weew.com.co:</p>
+            <a href="http://www.example.com" class="button" style="color:white!important">Visitar</a>
         </div>
     </div>
 </body>
