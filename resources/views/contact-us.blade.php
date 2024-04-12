@@ -2,6 +2,7 @@
 @include('layouts.includes.menu-weew')
 
 
+
     <!-- Breadcrumb Section Start -->
     <section class="breadcrumb-section pt-0">
         <div class="container-fluid-lg">
@@ -113,9 +114,22 @@
 
               
                 <div class="col-lg-6">
-                    <a id="error-messages"></a> 
-                    <a id="success-message"></a>          
+                    
+                    <a id="diligencia-correctamente"></a> 
+                    <div id="redirect" data-url="{{ route('contact-us') }}"></div>
+
+                    <a id="envio-exitoso"></a>
+                    <div id="redirect" data-url="{{ route('contact-us') }}"></div>
+          
                     @if ($errors->any())
+
+                    <script>
+                        window.onload = function() {
+                            var redirectUrl = document.getElementById('redirect').getAttribute('data-url');
+                            window.location.href = redirectUrl + '#diligencia-correctamente';
+                        }
+                    </script>
+                    
                         <div class="alert alert-danger">
                             <strong>Por favor diligencia correctamente el formulario.</strong><br><br>
                             <ul>
@@ -126,6 +140,12 @@
                         </div>
                     @endif
                     @if (session('success'))
+                    <script>
+                        window.onload = function() {
+                            var redirectUrl = document.getElementById('redirect').getAttribute('data-url');
+                            window.location.href = redirectUrl + '#envio-exitoso';
+                        }
+                    </script>
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
