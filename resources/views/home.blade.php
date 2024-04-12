@@ -624,20 +624,58 @@
                         <img src="{{ asset('images/veg-3/shape/weew-suscribirse.png') }}" class="img-fluid bg-img" alt="">
 
                         <div class="row">
+                            <a id="diligencia-correctamente"></a> 
+                            <div id="redirect" data-url="{{ route('home') }}"></div>
+        
+                            <a id="envio-exitoso"></a>
+                            <div id="redirect" data-url="{{ route('home') }}"></div>
+                  
+                            @if ($errors->any())
+        
+                            <script>
+                                window.onload = function() {
+                                    var redirectUrl = document.getElementById('redirect').getAttribute('data-url');
+                                    window.location.href = redirectUrl + '#diligencia-correctamente';
+                                }
+                            </script>
+                            
+                                <div class="alert alert-danger">
+                                    <strong>Por favor escribe un email valido.</strong><br><br>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li></br>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @if (session('success'))
+                            <script>
+                                window.onload = function() {
+                                    var redirectUrl = document.getElementById('redirect').getAttribute('data-url');
+                                    window.location.href = redirectUrl + '#envio-exitoso';
+                                }
+                            </script>
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                             <div class="col-xxl-8 col-xl-7">
                                 <div class="newsletter-detail p-center-left text-white">
                                     <div>
                                         <h2>Suscribete a nuestro informativo</h2>
                                         <h4>Recibirás cupones de descuento, noticias sobre nuevos productos, fechas de nuestros eventos, últimos blogs e información de relevancia de la comunidad Canábica.</h4>
-                                        <form class="row g-2">
+                                        <form action="{{ route('newsletter.store') }}" method="POST" class="row g-2">
+                                            @csrf
+                                        
                                             <div class="col-sm-10 col-12">
                                                 <div class="newsletter-form">
-                                                    <input type="email" class="form-control" id="email" placeholder="Escribe tu email">
+                                                    <input type="email" class="form-control text-white on-focus" id="email" name="email" placeholder="Escribe tu email" value="{{ old('email')}}" required >
                                                     <button type="submit" class="btn bg-white theme-color btn-md fw-500
                                                         submit-button">Suscribirme</button>
                                                 </div>
                                             </div>
                                         </form>
+                                        
                                     </div>
                                 </div>
                             </div>

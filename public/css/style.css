@@ -78,5 +78,9 @@
 .text-unchanged {
     text-transform: none!important;
 }
- 
+
+.on-focus:focus {
+    color: #fff;
+}
+
 /* # sourceMappingURL=style.css.map */

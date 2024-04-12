@@ -8,22 +8,20 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Newsletter;
 
-use App\Models\Contact;
-
-class ContactFormMail extends Mailable
+class NewsletterFormMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $contact;
+    public $newsletter;
+
     /**
      * Create a new message instance.
-     *
-     * @param string $name
      */
-    public function __construct(Contact $contact)
+    public function __construct(Newsletter $newsletter)
     {
-        $this->contact = $contact;
+        $this->newsletter = $newsletter;
     }
 
     /**
@@ -34,7 +32,7 @@ class ContactFormMail extends Mailable
     public function build()
     {
         return $this
-            ->subject('Un usuario diligenció el Formulario de contacto!')
+            ->subject('Un usuario se suscribió al informativo!')
             ->from(config('mail.from.address'), config('mail.from.name'))
             ->view('emails.contact-form');
     }

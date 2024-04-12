@@ -2,51 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
+use App\Models\Newsletter;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
-use Illuminate\Http\Request;
-use App\Http\Requests\ContactFormRequest;
-
+use App\Http\Requests\NewsletterFormRequest;
 use Illuminate\Support\Facades\Mail; // Agrega esta línea
-use App\Mail\ContactFormMail; // Agrega esta línea
+use App\Mail\NewsletterFormMail; // Agrega esta línea
 
-class ContactController extends Controller
+
+
+class NewsletterController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    { 
-        // return view('contact-us');
+    {
+        //
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View // Corregido el tipo de retorno
+    public function create()
     {
-        return view('contact-us');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ContactFormRequest $request): RedirectResponse
+    public function store(NewsletterFormRequest $request): RedirectResponse
     {
-        $contact = Contact::create($request->all()); // Corregido
+        $newsletter = Newsletter::create($request->all()); // Corregido
         // Envía el correo electrónico al administrador
-        Mail::to('weedwell.web@gmail.com')->send(new ContactFormMail($contact));
-
+        // Mail::to('danieln85@gmail.com')->send(new NewsletterFormMail($contact));
         session()->flash('success', '¡El formulario se envió exitosamente! Te responderemos a la brevedad.');
 
-        return redirect()->route('contact-us');
+        return redirect()->route('home');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Contact $contact)
+    public function show(Newsletter $newsletter)
     {
         //
     }
@@ -54,7 +53,7 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Contact $contact)
+    public function edit(Newsletter $newsletter)
     {
         //
     }
@@ -62,7 +61,7 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, Newsletter $newsletter)
     {
         //
     }
@@ -70,7 +69,7 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Contact $contact)
+    public function destroy(Newsletter $newsletter)
     {
         //
     }
