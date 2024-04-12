@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
-use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail; // Agrega esta línea
+use App\Mail\ContactFormMail; // Agrega esta línea
+use Illuminate\View\View;
+use Illuminate\Http\Request;
 use App\Http\Requests\ContactFormRequest;
-
 
 class ContactController extends Controller
 {
@@ -21,11 +23,10 @@ class ContactController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create(): View // Corregido el tipo de retorno
     {
         $contacts = Contact::latest()->paginate(3);
         return view('contact-us', compact('contacts'));
-
     }
 
     /**
@@ -33,7 +34,7 @@ class ContactController extends Controller
      */
     public function store(ContactFormRequest $request): RedirectResponse
     {
-        Contact::create($request->all());
+        $contact = Contact::create($request->all()); // Corregido
         // Envía el correo electrónico al administrador
         Mail::to('weedwell.web@gmail.com')->send(new ContactFormMail($contact));
 
