@@ -65,7 +65,7 @@
             
                 <h2><strong>Email:</strong> {{ $newsletter->email }}</h2>
             
-            <p>Visitar tu sitio web www.weew.com.co:</p>
+            <p>Visitar tu sitio web www.weew.com.co</p>
             <a href="http://www.weew.com.co" class="button" style="color:white!important">Visitar</a>
         </div>
     </div>
