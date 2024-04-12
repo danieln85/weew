@@ -60,7 +60,7 @@
     <div class="container">
         <div class="card">
             <img src="https://www.weew.com.co/images/logo/weew-logo.png" alt="Logo" class="logo"> <!-- Ajusta la ruta de la imagen -->
-            <h1>¡Un usuario acaba de diligenciar el formulario de contacto!</h1>
+            <h1>¡Un usuario diligenció el formulario de contacto!</h1>
             <h3>Los siguientes son sus datos</h3>
             
                 <h4><strong>Nombre:</strong> {{ $contact->name }}</h4>

@@ -35,8 +35,8 @@ class NewsletterController extends Controller
     public function store(NewsletterFormRequest $request): RedirectResponse
     {
         $newsletter = Newsletter::create($request->all()); // Corregido
-        // Envía el correo electrónico al administrador
-        // Mail::to('danieln85@gmail.com')->send(new NewsletterFormMail($contact));
+        
+        Mail::to('danieln85@gmail.com')->send(new NewsletterFormMail($newsletter));
         session()->flash('success', '¡Te suscribiste exitosamente a nuestro informativo!');
 
         return redirect()->route('home');
