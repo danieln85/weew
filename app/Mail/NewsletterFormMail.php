@@ -34,6 +34,6 @@ class NewsletterFormMail extends Mailable
         return $this
             ->subject('Un usuario se suscribió al informativo!')
             ->from(config('mail.from.address'), config('mail.from.name'))
-            ->view('emails.contact-form');
+            ->view('emails.newsletter-form-mail');
     }
 }
