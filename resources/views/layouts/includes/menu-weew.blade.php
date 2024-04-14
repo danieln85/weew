@@ -359,7 +359,7 @@
 
                                         <li class="nav-item new-nav-item">
                                             <label class="new-dropdown">New</label>
-                                            <a class="nav-link {{ request()->is('tienda') ? 'active' : '' }}" href="{{ route('contact-us') }}#nuestros-productos"><strong>Shop</strong></a>
+                                            <a class="nav-link {{ request()->is('tienda') ? 'active' : '' }}" href="{{ route('home') }}#nuestros-productos"><strong>Shop</strong></a>
                                         </li>
 
                                         

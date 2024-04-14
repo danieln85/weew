@@ -551,14 +551,14 @@
                 <div>
                     <div class="blog-box ratio_50">
                         <div class="blog-box-image">
-                            <a href="{{  route('home') }}">
-                                <img src="{{ asset('images/veg-3/blog/1.png') }}" class="img-fluid bg-img') }}" alt="">
+                            <a href="blog-detail.html">
+                                <img src="{{ asset('images/veg-3/blog/1.png') }}" class="img-fluid bg-img" alt="">
                             </a>
                         </div>
 
                         <div class="blog-detail">
-                            <label>Conversion rate optimization</label>
-                            <a href="{{  route('home') }}">
+                            <label>Blog Weew</label>
+                            <a href="blog-detail.html">
                                 <h2>Responsible use of cannabis</h2>
                             </a>
                             <div class="blog-list">
@@ -572,14 +572,14 @@
                 <div>
                     <div class="blog-box ratio_50">
                         <div class="blog-box-image">
-                            <a href="{{  route('home') }}">
-                                <img src="{{ asset('images/veg-3/blog/2.png') }}" class="img-fluid bg-img') }}" alt="">
+                            <a href="blog-detail.html">
+                                <img src="{{ asset('images/veg-3/blog/2.png') }}" class="img-fluid bg-img" alt="">
                             </a>
                         </div>
 
                         <div class="blog-detail">
-                            <label>Email Marketing</label>
-                            <a href="{{  route('home') }}">
+                            <label>Blog Weew</label>
+                            <a href="blog-detail.html">
                                 <h2>Responsible use of cannabis</h2>
                             </a>
                             <div class="blog-list">
@@ -593,14 +593,14 @@
                 <div>
                     <div class="blog-box ratio_50">
                         <div class="blog-box-image">
-                            <a href="{{  route('home') }}">
-                                <img src="{{ asset('images/veg-3/blog/3.png') }}" class="img-fluid bg-img') }}" alt="">
+                            <a href="blog-detail.html">
+                                <img src="{{ asset('images/veg-3/blog/3.png') }}" class="img-fluid bg-img" alt="">
                             </a>
                         </div>
 
                         <div class="blog-detail">
-                            <label>Conversion rate optimization</label>
-                            <a href="{{  route('home') }}">
+                            <label>Blog Weew</label>
+                            <a href="blog-detail.html">
                                 <h2>Responsible use of cannabis</h2>
                             </a>
                             <div class="blog-list">
