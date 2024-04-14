@@ -83,5 +83,17 @@
     color: #fff;
 }
 
+.btn-primary-custom {
+    background-color: var(--theme-color) !important; 
+    border-color: #87CEEB; 
+    color: #fff; 
+ }
+
+
+.btn-primary-custom:hover {
+    background-color: #0784df!important;
+    color: #fff; 
+    border-color: #6BB7CB;
+}
 
 /* # sourceMappingURL=style.css.map */

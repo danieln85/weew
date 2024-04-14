@@ -18,6 +18,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role')->default('user');
+            $table->string('address')->nullable();
+            $table->unsignedInteger('postal_code')->nullable();
+            $table->string('address_details')->nullable();
+            $table->unsignedBigInteger('id_number')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

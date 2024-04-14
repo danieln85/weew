@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Pagination\Paginator;
 
 class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-       
+        return view('blog');
     }
 
     /**
@@ -21,15 +23,18 @@ class BlogController extends Controller
      */
     public function create(): View
     {
-        return view('blog');
+        $blogs =  Blog::latest()->paginate(5);
+        return view('blog-create', compact('blogs'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $blog = Blog::create($request->all());
+        session()->flash('success', '¡El Post se creó exitosamente!');
+        return redirect()->route('blog-create');
     }
 
     /**
@@ -43,24 +48,28 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Blog $blog)
+    public function edit(Blog $blog): View
     {
-        //
+        return view('blog-edit', ['blog' => $blog]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Blog $blog): RedirectResponse
     {
-        //
+        $blog->update($request->all());
+        session()->flash('success', '¡El Post se actualizó exitosamente!');
+        return redirect()->route('blog-create');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy(Blog $blog): RedirectResponse
     {
-        //
+        $blog->delete();
+        session()->flash('success', '¡El Post se eliminó exitosamente!');
+        return redirect()->route('blog-create');
     }
 }
