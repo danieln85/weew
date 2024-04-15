@@ -39,7 +39,7 @@ class BlogController extends Controller
     {
         $fileName = time().'.'.$request->image_450x300->extension();
 
-        $request->image_450x300->storeAs('public/images/blog', $fileName);
+        $request->image_450x300->move(public_path('images/blog-post'), $fileName);
 
         $blog = new Blog;
         $blog->title = $request->title;
@@ -71,28 +71,34 @@ class BlogController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Blog $blog): RedirectResponse
-{
-    // Verificar si se proporcionó una nueva imagen
-    if ($request->hasFile('image_450x300')) {
-        // Eliminar la imagen anterior si existe
-        Storage::delete('public/images/blog/'.$blog->image_450x300);
-
-        // Guardar la nueva imagen
-        $fileName = time().'.'.$request->image_450x300->extension();
-        $request->image_450x300->storeAs('public/images/blog', $fileName);
-
-        // Actualizar el nombre de la imagen en la base de datos
-        $blog->image_450x300 = $fileName;
+    {
+        // Verificar si se proporcionó una nueva imagen
+        if ($request->hasFile('image_450x300')) {
+            // Eliminar la imagen anterior si existe
+            if ($blog->image_450x300) {
+                $imagePath = public_path('images/blog-post/'.$blog->image_450x300);
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
+                }
+            }
+    
+            // Mover la nueva imagen al directorio publico
+            $fileName = time().'.'.$request->image_450x300->extension();
+            $request->image_450x300->move(public_path('images/blog-post'), $fileName);
+    
+            // Actualizar el nombre de la imagen en la base de datos
+            $blog->image_450x300 = $fileName;
+        }
+    
+        // Actualizar los otros campos del blog
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+        $blog->save();
+    
+        session()->flash('success', '¡El Post se actualizó exitosamente!');
+        return redirect()->route('blog-create');
     }
-
-    // Actualizar los otros campos del blog
-    $blog->title = $request->title;
-    $blog->description = $request->description;
-    $blog->save();
-
-    session()->flash('success', '¡El Post se actualizó exitosamente!');
-    return redirect()->route('blog-create');
-}
+    
 
 
     /**
