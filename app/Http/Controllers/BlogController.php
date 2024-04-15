@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -32,7 +33,16 @@ class BlogController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $blog = Blog::create($request->all());
+        $fileName = time().'.'.$request->image_450x300->extension();
+
+        $request->image_450x300->storeAs('public/images', $fileName);
+
+        $blog = new Blog;
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+        $blog->image_450x300 = $fileName;
+        $blog->save();
+
         session()->flash('success', '¡El Post se creó exitosamente!');
         return redirect()->route('blog-create');
     }
@@ -57,11 +67,29 @@ class BlogController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Blog $blog): RedirectResponse
-    {
-        $blog->update($request->all());
-        session()->flash('success', '¡El Post se actualizó exitosamente!');
-        return redirect()->route('blog-create');
+{
+    // Verificar si se proporcionó una nueva imagen
+    if ($request->hasFile('image_450x300')) {
+        // Eliminar la imagen anterior si existe
+        Storage::delete('public/images/'.$blog->image_450x300);
+
+        // Guardar la nueva imagen
+        $fileName = time().'.'.$request->image_450x300->extension();
+        $request->image_450x300->storeAs('public/images', $fileName);
+
+        // Actualizar el nombre de la imagen en la base de datos
+        $blog->image_450x300 = $fileName;
     }
+
+    // Actualizar los otros campos del blog
+    $blog->title = $request->title;
+    $blog->description = $request->description;
+    $blog->save();
+
+    session()->flash('success', '¡El Post se actualizó exitosamente!');
+    return redirect()->route('blog-create');
+}
+
 
     /**
      * Remove the specified resource from storage.

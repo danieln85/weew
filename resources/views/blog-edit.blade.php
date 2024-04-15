@@ -2,12 +2,14 @@
 @include('layouts.includes.menu-weew')
 
 <div class="container mt-4 mb-5">
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
+
     <div class="row justify-content-center">
+        <div class="container mb-4"><a href="{{route('blog-create')}}"><i class="fa-solid fa-arrow-left"></i> Regresar</a></div>
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
         <div class="col-md-8">
             <form action="{{ route('blog.update', $blog) }}" method="POST" enctype="multipart/form-data" class="mt-4">
                 @csrf
@@ -30,7 +32,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Imagen Actual:</label>
-                    <img src="{{ asset($blog->image_450x300) }}" alt="Imagen Actual" class="img-fluid">
+                    <img src="{{ asset('storage/images/'.$blog->image_450x300) }}" alt="Imagen Actual" width="60px" class="img-fluid">
                 </div>
 
                 <button type="submit" class="btn btn-primary-custom btn-block">Actualizar</button>
