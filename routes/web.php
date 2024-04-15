@@ -21,9 +21,10 @@ Route::post('store', [ContactController::class, 'store'])->name('store');
 Route::resource('newsletter', newsletterController::class);
 Route::post('store', [newsletterController::class, 'store'])->name('store');
 
+Route::get('blog/detalles-post', [BlogController::class, 'blogDetails'])->name('blog-details');
 Route::resource('blog', BlogController::class);
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/crear-blog', [BlogController::class, 'create'])->name('blog-create');
+Route::get('blog/crear-blog', [BlogController::class, 'create'])->name('blog-create');
 Route::post('store', [BlogController::class, 'store'])->name('store');
 
 

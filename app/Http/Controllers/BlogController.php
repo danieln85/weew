@@ -19,6 +19,10 @@ class BlogController extends Controller
         return view('blog');
     }
 
+    public function blogDetails(): View
+    {
+        return view('blog-details');
+    }
     /**
      * Show the form for creating a new resource.
      */
