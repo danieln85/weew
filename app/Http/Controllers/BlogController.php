@@ -35,7 +35,7 @@ class BlogController extends Controller
     {
         $fileName = time().'.'.$request->image_450x300->extension();
 
-        $request->image_450x300->storeAs('public/images', $fileName);
+        $request->image_450x300->storeAs('public/images/blog', $fileName);
 
         $blog = new Blog;
         $blog->title = $request->title;
@@ -71,11 +71,11 @@ class BlogController extends Controller
     // Verificar si se proporcionó una nueva imagen
     if ($request->hasFile('image_450x300')) {
         // Eliminar la imagen anterior si existe
-        Storage::delete('public/images/'.$blog->image_450x300);
+        Storage::delete('public/images/blog/'.$blog->image_450x300);
 
         // Guardar la nueva imagen
         $fileName = time().'.'.$request->image_450x300->extension();
-        $request->image_450x300->storeAs('public/images', $fileName);
+        $request->image_450x300->storeAs('public/images/blog', $fileName);
 
         // Actualizar el nombre de la imagen en la base de datos
         $blog->image_450x300 = $fileName;

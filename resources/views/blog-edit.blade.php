@@ -32,7 +32,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Imagen Actual:</label>
-                    <img src="{{ asset('storage/images/'.$blog->image_450x300) }}" alt="Imagen Actual" width="60px" class="img-fluid">
+                    <img src="{{ asset('storage/images/blog/'.$blog->image_450x300) }}" alt="Imagen Actual" width="60px" class="img-fluid">
                 </div>
 
                 <button type="submit" class="btn btn-primary-custom btn-block">Actualizar</button>
