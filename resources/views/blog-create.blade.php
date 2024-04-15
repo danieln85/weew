@@ -49,7 +49,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($blogs as $blog)
+                        @forelse ($blogs as $blog)
                         <tr>
                             <td>{{ $blog->created_at->format('Y-m-d') }}</td>
                             <td>{{ \Illuminate\Support\Str::limit($blog->title, 15) }}</td>
@@ -72,12 +72,15 @@
                                     </form>
                                 </div>
                             </td>
-                            
-                            
                         </tr>
-                        @endforeach
+                        @empty
+                        <tr>
+                            <td colspan="4">Todavía no has creado ningún registro</td>
+                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
+                
                 
             {{$blogs->links()}}
             </div>
