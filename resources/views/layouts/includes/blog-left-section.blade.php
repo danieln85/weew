@@ -15,59 +15,25 @@
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                     <div class="accordion-body pt-0">
+                       
                         <div class="recent-post-box">
+                            @foreach ($recent_posts as $recent_post)
                             <div class="recent-box">
                                 <a href="blog-detail.html" class="recent-image">
-                                    <img src="{{ asset('images/weew-blog1.png') }}" class="img-fluid blur-up lazyload" alt="">
+                                    <img src="{{ asset('images/blog-post/'.$recent_post->image_450x300) }}" class="img-fluid blur-up lazyload" alt="">
                                 </a>
 
                                 <div class="recent-detail">
                                     <a href="blog-detail.html">
-                                        <h5 class="recent-name">¿Cómo Realizar Un Consumo Responsable Del Canabis?</h5>
+                                        <h5 class="recent-name">{{ $recent_post->title }}</h5>
                                     </a>
-                                    <h6>2024-04-07 <i data-feather="thumbs-up"></i></h6>
+                                    <h6>{{ $recent_post->created_at->format('Y-m-d') }} <i data-feather="thumbs-up"></i></h6>
                                 </div>
                             </div>
-
-                            <div class="recent-box">
-                                <a href="blog-detail.html" class="recent-image">
-                                    <img src="{{ asset('images/weew-blog2.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-
-                                <div class="recent-detail">
-                                    <a href="blog-detail.html">
-                                        <h5 class="recent-name">Tips A La Hora De Comprar Un Kit Canabico</h5>
-                                    </a>
-                                    <h6>2024-03-28 <i data-feather="thumbs-up"></i></h6>
-                                </div>
-                            </div>
-
-                            <div class="recent-box">
-                                <a href="blog-detail.html" class="recent-image">
-                                    <img src="{{ asset('images/weew-blog3.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-
-                                <div class="recent-detail">
-                                    <a href="blog-detail.html">
-                                        <h5 class="recent-name">Ten Cuidado Con La Calidad Del Producto Eliges</h5>
-                                    </a>
-                                    <h6>2024-03-05 <i data-feather="thumbs-up"></i></h6>
-                                </div>
-                            </div>
-
-                            <div class="recent-box">
-                                <a href="blog-detail.html" class="recent-image">
-                                    <img src="{{ asset('images/weew-blog1.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-
-                                <div class="recent-detail">
-                                    <a href="blog-detail.html">
-                                        <h5 class="recent-name">¿Cómo Realizar Un Consumo Responsable Del Canabis?</h5>
-                                    </a>
-                                    <h6>2024-02-13 <i data-feather="thumbs-up"></i></h6>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
+               
+                      
                     </div>
                 </div>
             </div>
