@@ -27,7 +27,7 @@ class BlogController extends Controller
         $blogs = Blog::find($id);
         
         if (!$blogs) {
-            return Redirect::route('home');
+            return redirect()->route('home');
         }
         
         // Obtén el ID del blog anterior
