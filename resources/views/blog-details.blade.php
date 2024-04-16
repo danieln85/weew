@@ -32,27 +32,27 @@
             <div class="row g-sm-4 g-3">
 
                 <div class="col-xxl-9 col-xl-8 col-lg-7 ratio_50">
-                    <div class="blog-detail-image rounded-3 mb-4">
-                        <img src="{{ asset('images/inner-page/blog/1.jpg') }}" class="bg-img blur-up lazyload" alt="">
+                    <div class="blog-detail-image rounded-3 mb-5">
+                        <img src="{{ asset('images/blog-post/'.$blogs->image_450x300) }}" class="bg-img blur-up lazyload" alt="">
                         <div class="blog-image-contain">
                             <ul class="contain-list">
-                                <li>backpack</li>
-                                <li>life style</li>
-                                <li>organic</li>
+                                <li>Canabis</li>
+                                <li>Amistad</li>
+                                <li>Vida</li>
                             </ul>
-                            <h2>Agriculture Conference Harvest 2022 in Paris</h2>
+                            <h2>{{ $blogs->title }}</h2>
                             <ul class="contain-comment-list">
                                 <li>
                                     <div class="user-list">
                                         <i data-feather="user"></i>
-                                        <span>Caroline</span>
+                                        <span>{{ $blogs->editor }}</span>
                                     </div>
                                 </li>
 
                                 <li>
                                     <div class="user-list">
                                         <i data-feather="calendar"></i>
-                                        <span>April 19, 2022</span>
+                                        <span>{{ $blogs->created_at->format('Y-m-d') }}</span>
                                     </div>
                                 </li>
 
@@ -67,36 +67,31 @@
                         </div>
                     </div>
 
-                    <div class="blog-detail-contain">
-                        <p>Shotgun approach message the initiative so can I just chime in
-                            on that one. Make sure to include in your wheelhouse bells and whistles, and touch base
-                            slow-walk our commitment nor what's the status on the deliverables for eow?. Create spaces
-                            to explore what next commitment to the cause , or UI, for get buy-in but draw a line in
-                            the sand, and pig in a python we've got kpis for that. Message the initiative value prop,
-                            please use "solutionise" instead of solution ideas! i am dead inside. Quick sync
-                            4-blocker. Driving the initiative forward flesh that out.</p>
+                    <div class="blog-detail-contain mt-5">
+                        <p class="mb-5">{!! nl2br($blogs->description) !!}</p>
 
-                        <p>Let's unpack that later everyone thinks the soup tastes better after they pissed in it
-                            pivot, re-inventing the wheel, and it's not hard guys. Market-facing pushback back of the
-                            net, for pro-sumer software let's see if we can dovetail these two projects but turn the
-                            crank for they have downloaded gmail and seems to be working for now. This is not the hill i
-                            want to die on you better eat a reality sandwich before you walk back in that boardroom land
-                            the plane yet exposing new ways to evolve our design language design thinking nor poop, so
-                            can you put it into a banner that is not alarming, but eye catching and not too giant. That
-                            is a good problem to have dog and pony show we're ahead of the curve on that one.</p>
+                        <!-- Enlaces de paginación para otros blogs -->
+                    <div class="container mt-2 mb-5">
+                        <div class="row">
+                            <div class="col text-center">
+                                @if ($prevBlog)
+                                    <a href="{{ route('blog-details', ['id' => $prevBlog->id]) }}" class="mr-3 display-6">Anterior</a>
+                                @endif
+                                
+                                @if ($prevBlog && $nextBlog)
+                                    <span class="text-muted display-6">|</span>
+                                @endif
+                                
+                                @if ($nextBlog)
+                                    <a href="{{ route('blog-details', ['id' => $nextBlog->id]) }}" class="ml-3 display-6">Siguiente</a>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
 
-                        <p> Waste of resources can you run this by clearance? hot johnny coming through driving the
-                            initiative forward our competitors are jumping the shark. Unlock meaningful moments of
-                            relaxation. Copy and paste from stack overflow a tentative event rundown is attached for
-                            your reference, including other happenings on the day you are most welcome to join us
-                            beforehand for a light lunch we would also like to invite you to other activities on the
-                            day, including the interim and closing panel discussions on the intersection of businesses
-                            and social innovation, and on building a stronger social innovation eco-system respectively
-                            what are the expectations,on-brand but completely fresh we can't hear you.</p>
-
-                        <div class="blog-details-quote">
-                            <h3>Adipisicing elit Qui ipsam natus aspernatur quaerat impedit eveniet ipsum dolor</h3>
-                            <h5>- Denny Dose</h5>
+                        <div class="blog-details-quote mt-4">
+                            <h3>El consumo responsable del cannabis implica entender sus efectos, respetar los límites personales y sociales, y tomar decisiones informadas que promuevan la salud y el bienestar.</h3>
+                            <h5>por Chat GPT</h5>
                         </div>
 
                         {{-- <p>Agile currying favour pulling teeth collaboration through advanced technology. Everyone
@@ -120,8 +115,13 @@
                             assassin core competencies run it up the flagpole, ping the boss and circle back but zoom
                             meeting at 2:30 today.
                         </p> --}}
-                        
+
                     </div>
+
+                    
+                    
+                    
+
 
                     {{-- <div class="comment-box overflow-hidden">
                         <div class="leave-title">

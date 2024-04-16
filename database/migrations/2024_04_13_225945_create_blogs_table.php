@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->string('title'); // Campo para el título del blog
-            $table->text('description'); // Campo para la descripción del blog
-            $table->string('image_450x300')->nullable(); // Campo para la imagen del blog (450x300), permitiendo valores nulos
+            $table->string('title');
+            $table->text('description');
+            $table->string('image_450x300')->nullable();
+            $table->string('editor', 25)->nullable();
             $table->timestamps();
         });
     }

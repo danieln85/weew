@@ -15,24 +15,29 @@
                 @csrf
                 @method('PUT')
 
-                <div class="mb-3">
+                <div class="mb-4">
                     <label for="title" class="form-label">Título:</label>
                     <input type="text" id="title" name="title" class="form-control"  value="{{ $blog->title }}">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-4">
                     <label for="description" class="form-label">Descripción:</label>
                     <textarea id="description" name="description" class="form-control" rows="6">{{ $blog->description }}</textarea>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-4">
                     <label for="image" class="form-label">Imagen:</label>
                     <input type="file" id="image" name="image_450x300" class="form-control">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-4">
                     <label class="form-label">Imagen Actual:</label>
-                    <img src="{{ asset('images/blog-post/'.$blog->image_450x300) }}" alt="Imagen Actual" width="60px" class="img-fluid">
+                    <img src="{{ asset('images/blog-post/'.$blog->image_450x300) }}" alt="Imagen Actual" width="100px" class="img-fluid">
+                </div>
+
+                <div class="mb-3">
+                    <label for="editor" class="form-label">Editor:</label>
+                    <input type="text" id="editor" name="editor" class="form-control"  value="{{ $blog->editor }}">
                 </div>
 
                 <button type="submit" class="btn btn-primary-custom btn-block">Actualizar</button>

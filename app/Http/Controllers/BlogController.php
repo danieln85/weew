@@ -19,10 +19,24 @@ class BlogController extends Controller
         return view('blog');
     }
 
-    public function blogDetails(): View
+    
+    public function blogDetails($id = 1)
     {
-        return view('blog-details');
+        $blogs = Blog::find($id);
+        
+        if (!$blogs) {
+            return Redirect::route('home');
+        }
+        
+        // Obtén el ID del blog anterior
+        $prevBlog = Blog::where('id', '<', $id)->orderBy('id', 'desc')->first();
+        
+        // Obtén el ID del siguiente blog
+        $nextBlog = Blog::where('id', '>', $id)->orderBy('id', 'asc')->first();
+        
+        return view('blog-details', compact('blogs', 'prevBlog', 'nextBlog'));
     }
+    
     /**
      * Show the form for creating a new resource.
      */
@@ -45,6 +59,7 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->description = $request->description;
         $blog->image_450x300 = $fileName;
+        $blog->editor = $request->editor;
         $blog->save();
 
         session()->flash('success', '¡El Post se creó exitosamente!');
@@ -93,6 +108,8 @@ class BlogController extends Controller
         // Actualizar los otros campos del blog
         $blog->title = $request->title;
         $blog->description = $request->description;
+        $blog->editor = $request->editor;
+
         $blog->save();
     
         session()->flash('success', '¡El Post se actualizó exitosamente!');
