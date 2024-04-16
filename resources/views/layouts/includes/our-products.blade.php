@@ -30,8 +30,63 @@
                 <div class="tab-pane fade show active" id="all" role="tabpanel">
                     <div class="row g-8">
 
+                        <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay="0.05s">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist notifi-wishlist">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </button>
+                                    </div>
 
-                        <div class="col-xxl-3 col-lg-3 col-md-4 col-6 wow fadeInUp" data-wow-delay="0.05s">
+                                    <a href="{{  route('home') }}">
+                                        <img src="{{ asset('images/veg-3/cate1/2.png') }}" class="img-fluid" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <a href="{{  route('home') }}">
+                                        <h5 class="name"><strong>Cannabis Pipe</strong></h5>
+                                    </a>
+                                    <h5 class="price theme-color">$70.000<del>$98.000</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="fa-solid fa-cart-plus white-icon"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay="0.05s">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
@@ -88,7 +143,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-xxl-3 col-lg-3 col-md-4 col-6 wow fadeInUp">
+                        <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">

@@ -161,16 +161,16 @@
                             <li>
                                 <div class="offer-product">
                                     <a href="shop-left-sidebar.html" class="offer-image">
-                                        <img src="../assets/images/vegetable/product/23.png" class="blur-up lazyload" alt="">
+                                        <img src="{{ asset('images/veg-3/cate1/2.png') }}" class="blur-up lazyload" alt="">
                                     </a>
 
                                     <div class="offer-detail">
                                         <div>
                                             <a href="shop-left-sidebar.html">
-                                                <h6 class="name">Meatigo Premium Goat Curry</h6>
+                                                <h6 class="name">Cannabis Pipe</h6>
                                             </a>
                                             <span>450 G</span>
-                                            <h6 class="price theme-color">$ 70.00</h6>
+                                            <h6 class="price theme-color">$ 70.000</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -179,16 +179,16 @@
                             <li>
                                 <div class="offer-product">
                                     <a href="shop-left-sidebar.html" class="offer-image">
-                                        <img src="../assets/images/vegetable/product/24.png" class="blur-up lazyload" alt="">
+                                        <img src="{{ asset('images/veg-3/cate1/3.png') }}" class="blur-up lazyload" alt="">
                                     </a>
 
                                     <div class="offer-detail">
                                         <div>
                                             <a href="shop-left-sidebar.html">
-                                                <h6 class="name">Dates Medjoul Premium Imported</h6>
+                                                <h6 class="name">Cannabis Pipe</h6>
                                             </a>
                                             <span>450 G</span>
-                                            <h6 class="price theme-color">$ 40.00</h6>
+                                            <h6 class="price theme-color">$ 40.000</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -197,16 +197,16 @@
                             <li class="mb-0">
                                 <div class="offer-product">
                                     <a href="shop-left-sidebar.html" class="offer-image">
-                                        <img src="../assets/images/vegetable/product/26.png" class="blur-up lazyload" alt="">
+                                        <img src="{{ asset('images/veg-3/cate1/1.png') }}" class="blur-up lazyload" alt="">
                                     </a>
 
                                     <div class="offer-detail">
                                         <div>
                                             <a href="shop-left-sidebar.html">
-                                                <h6 class="name">Apple Red Premium Imported</h6>
+                                                <h6 class="name">Cannabis Pipe</h6>
                                             </a>
                                             <span>1 KG</span>
-                                            <h6 class="price theme-color">$ 80.00</h6>
+                                            <h6 class="price theme-color">$ 80.000</h6>
                                         </div>
                                     </div>
                                 </div>
