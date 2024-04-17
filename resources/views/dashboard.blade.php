@@ -38,18 +38,18 @@
                         </div>
                         <div class="profile-box">
                             <div class="cover-image">
-                                <img src="../assets/images/inner-page/cover-img.jpg" class="img-fluid blur-up lazyload" alt="">
+                                <img src="{{ asset('images/inner-page/cover-img.jpg') }}" class="img-fluid blur-up lazyload" alt="">
                             </div>
 
                             <div class="profile-contain">
                                 <div class="profile-image">
                                     <div class="position-relative">
-                                        <img src="../assets/images/inner-page/user/1.jpg" class="blur-up lazyload update_img" alt="">
-                                        <div class="cover-icon">
+                                        <img src="{{ asset('images/icon/user-icon.jpg') }}" class="blur-up lazyload update_img" alt="">
+                                        {{-- <div class="cover-icon">
                                             <i class="fa-solid fa-pen">
                                                 <input type="file" onchange="readURL(this,0)">
                                             </i>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
 
@@ -76,7 +76,7 @@
                                 <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab"><i data-feather="credit-card"></i> Saved Card</button>
                             </li> --}}
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-address-tab" data-bs-toggle="pill" data-bs-target="#pills-address" type="button" role="tab"><i data-feather="map-pin"></i>Datos de facturación</button>
+                                <button class="nav-link" id="pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#pills-facturacion" type="button" role="tab"><i data-feather="map-pin"></i>Datos de facturación</button>
                             </li>
                             {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"><i data-feather="user"></i>
@@ -128,7 +128,7 @@
                         <a href="{{ route('user-dashboard') }}#pills-order">
                             <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Compras</button>
                         </a>
-                        <a href="{{ route('user-dashboard') }}#pills-address">
+                        <a href="{{ route('user-dashboard') }}#pills-facturacion">
                             <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Facturación</button>
                         </a>
                         <a href="{{ route('user-dashboard') }}#pills-wishlist">
@@ -175,73 +175,74 @@
                                     </div>
 
                                     <div class="dashboard-user-name">
-                                        <h6 class="text-content">Hello, <b class="text-title">{{ Auth::user()->name }}</b></h6>
-                                        <p class="text-content">From your My Account Dashboard you have the ability to
-                                            view a snapshot of your recent account activity and update your account
-                                            information. Select a link below to view or edit information.</p>
+                                        <h6 class="text-content">Hola, <b class="text-title">{{ Auth::user()->name }}</b></h6>
+                                        <p class="text-content">Desde la opción de información general puedes ver tus actividad más reciente, configurar los datos de facturación y tu ubicación, acceder a tu historial de compras, ver tus productos favorito, revisar las políticas de privacidad y además modificar tu correo y contraseña.</p>
                                     </div>
 
                                     <div class="total-box">
                                         <div class="row g-sm-4 g-3">
                                             <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                                 <div class="total-contain">
-                                                    <img src="../assets/images/svg/order.svg" class="img-1 blur-up lazyload" alt="">
-                                                    <img src="../assets/images/svg/order.svg" class="blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/svg/pending.svg') }}" class="img-1 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/svg/pending.svg') }}" class="blur-up lazyload" alt="">
                                                     <div class="total-detail">
-                                                        <h5>Total Order</h5>
-                                                        <h3>3658</h3>
+                                                        <h5>Compras recibidas</h5>
+                                                        <h3>1</h3>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                                 <div class="total-contain">
-                                                    <img src="../assets/images/svg/pending.svg" class="img-1 blur-up lazyload" alt="">
-                                                    <img src="../assets/images/svg/pending.svg" class="blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/svg/order.svg') }}" class="img-1 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/svg/order.svg') }}" class="blur-up lazyload" alt="">
                                                     <div class="total-detail">
-                                                        <h5>Total Pending Order</h5>
-                                                        <h3>254</h3>
+                                                        <h5>Pedidos pendientes</h5>
+                                                        <h3>0</h3>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                                 <div class="total-contain">
-                                                    <img src="../assets/images/svg/wishlist.svg" class="img-1 blur-up lazyload" alt="">
-                                                    <img src="../assets/images/svg/wishlist.svg" class="blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/svg/wishlist.svg') }}" class="img-1 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/svg/wishlist.svg') }}" class="blur-up lazyload" alt="">
                                                     <div class="total-detail">
-                                                        <h5>Total Wishlist</h5>
-                                                        <h3>32158</h3>
+                                                        <h5>Compra confirmada</h5>
+                                                        <h3>1</h3>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="dashboard-title">
+                                    {{-- <div class="dashboard-title">
                                         <h3>Account Information</h3>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="row g-4">
                                         <div class="col-xxl-6">
                                             <div class="dashboard-content-title">
-                                                <h4>Contact Information <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a>
+                                                <h4>Perfil de usuario<a href="{{ route('profile.show') }}">Editar</a>
                                                 </h4>
                                             </div>
                                             <div class="dashboard-detail">
                                                 <h6 class="text-content">{{ Auth::user()->name }}</h6>
                                                 <h6 class="text-content">{{ Auth::user()->email }}</h6>
-                                                <a href="{{route('profile.show')}}">Change Password</a>
+                                                <a href="{{route('profile.show')}}">Cambiar contraseña</a>
                                             </div>
                                         </div>
 
                                         <div class="col-xxl-6">
                                             <div class="dashboard-content-title">
-                                                <h4>Newsletters <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a></h4>
+                                                <h4>Datos de facturación 
+                                                    <a href="{{ route('user-dashboard') }}#pills-facturacion">Editar</a>
+                                                </h4>
                                             </div>
+                                            
                                             <div class="dashboard-detail">
-                                                <h6 class="text-content">You are currently not subscribed to any
-                                                    newsletter</h6>
+                                                <h6 class="text-content">Dirección, ciudad, departamento.</h6>
+                                                <h6 class="text-content">Número de identificación.</h6>
                                             </div>
                                         </div>
 
@@ -366,9 +367,6 @@
                                             </div>
 
                                             <div class="product-order-detail">
-                                                <a href="product-left-thumbnail.html" class="order-image">
-                                                    <img src="../assets/images/vegetable/product/1.png" class="blur-up lazyload" alt="">
-                                                </a>
 
                                                 <div class="order-wrap">
                                                     <a href="product-left-thumbnail.html">
@@ -469,14 +467,92 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="pills-address" role="tabpanel">
+                            <div class="tab-pane fade" id="pills-facturacion" role="tabpanel">
+                                <div class="dashboard-order">
+                                    <div class="title">
+                                        <h2>Datos de Facturación</h2>
+                                        <span class="title-leaf title-leaf-gray">
+                                            <svg class="icon-width bg-gray">
+                                                <use xlink:href="{{ asset('svg/leaf.svg#leaf') }}"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+
+                                    <div class="order-contain">
+                                       
+
+                                    <div class="order-box dashboard-bg-box">
+                                        <div class="order-container mb-4">
+
+
+                                            <div class="order-detail">
+                                                <h4>Entrega <span class="success-bg">Exitosa</span></h4>
+                                                <h6 class="text-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing dipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing elit sdsdsdd.</h6>
+                                            </div>
+                                        </div>
+                                        <form action="" method="POST">
+                                            @csrf <!-- Token CSRF de Laravel -->
+                                            <div class="mb-3">
+                                                <label for="name_fac" class="form-label">Nombre en la factura</label>
+                                                <input type="text" class="form-control" id="name_fac" name="name_fac" required>
+                                            </div>
+                                        
+                                            <div class="mb-3">
+                                                <label for="address" class="form-label">Dirección</label>
+                                                <input type="text" class="form-control" id="address" name="address" required>
+                                            </div>
+                                        
+                                            <div class="mb-3">
+                                                <label for="comments" class="form-label">Observaciones</label>
+                                                <textarea class="form-control" id="comments" name="comments" rows="3" placeholder=""></textarea>
+                                            </div>
+                                        
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label for="state" class="form-label">Departamento</label>
+                                                    <input type="text" class="form-control" id="state" name="state">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="city" class="form-label">Ciudad</label>
+                                                    <input type="text" class="form-control" id="city" name="city">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-4">
+                                                    <label for="id_number" class="form-label">Número de Identificación</label>
+                                                    <input type="text" class="form-control" id="id_number" name="id_number">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="email_fac" class="form-label">Email de Facturación</label>
+                                                    <input type="email" class="form-control" id="email_fac" name="email_fac" required>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="mobile_number" class="form-label">Celular:</label>
+                                                    <input type="number" class="form-control" id="mobile_number" name="mobile_number">
+                                                </div>
+                                            </div>
+                                        
+                                            
+                                        
+                                            <button type="submit" class="mt-4 mb-4 btn btn-primary-custom btn-block">Guardar</button>
+                                        </form>
+                                        
+                                        
+
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- <div class="tab-pane fade" id="pills-facturacion" role="tabpanel">
                                 <div class="dashboard-address">
                                     <div class="title title-flex">
                                         <div>
-                                            <h2>My Address Book</h2>
+                                            <h2>Datos de facturacion</h2>
                                             <span class="title-leaf">
                                                 <svg class="icon-width bg-gray">
-                                                    <use xlink:href="../assets/svg/leaf.svg#leaf"></use>
+                                                    <use xlink:href="{{asset('svg/leaf.svg#leaf') }}"></use>
                                                 </svg>
                                             </span>
                                         </div>
@@ -729,7 +805,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             {{-- <div class="tab-pane fade" id="pills-card" role="tabpanel">
                                 <div class="dashboard-card">
