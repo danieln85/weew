@@ -35,8 +35,11 @@ class BlogController extends Controller
         
         // Obtén el ID del siguiente blog
         $nextBlog = Blog::where('id', '>', $id)->orderBy('id', 'asc')->first();
+
         
-        return view('blog-details', compact('blogs', 'prevBlog', 'nextBlog'));
+        $recent_posts = Blog::latest()->take(4)->get();
+        
+        return view('blog-details', compact('blogs', 'prevBlog', 'nextBlog', 'recent_posts'));
     }
     
     /**

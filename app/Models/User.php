@@ -30,7 +30,8 @@ class User extends Authenticatable
        'direccion',
         'postal_code',
        'address_details',
-       'id_number'
+       'id_number',
+       'role'
     ];
 
     /**
@@ -62,4 +63,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function hasRole(string $role): bool
+    {
+        return $this->role === $role;
+    }
 }

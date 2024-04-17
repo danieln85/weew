@@ -21,13 +21,15 @@ Route::post('store', [ContactController::class, 'store'])->name('store');
 Route::resource('newsletter', newsletterController::class);
 Route::post('store', [newsletterController::class, 'store'])->name('store');
 
-Route::get('blog/admin/crear-post', [BlogController::class, 'create'])->name('blog-create');
+
 Route::get('blog/detalles-post/{id?}', [BlogController::class, 'blogDetails'])->name('blog-details');
-Route::resource('blog', BlogController::class);
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 
-
+Route::middleware(['blogAuth:admin,editor'])->group(function () {
+    Route::get('blog/admin/crear-post', [BlogController::class, 'create'])->name('blog-create');
+    Route::resource('blog', BlogController::class)->except(['index', 'blogDetails']);
+});
 // Route::get('/tienda', [ShopController::class, 'index'])->name('shop');
 
 // Route::get('/detalles-producto', [ProductsController::class, 'productDetails'])->name('product-details');

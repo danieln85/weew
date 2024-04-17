@@ -548,68 +548,30 @@
             </div>
 
             <div class="slider-3 arrow-slider">
+                @foreach ($recent_posts as $recent_post)
                 <div>
                     <div class="blog-box ratio_50">
                         <div class="blog-box-image">
-                            <a href="blog-detail.html">
-                                <img src="{{ asset('images/veg-3/blog/1.png') }}" class="img-fluid bg-img" alt="">
+                            <a href="{{ route('blog-details', ['id' => $recent_post->id]) }}">
+                                <img src="{{ asset('images/blog-post/'.$recent_post->image_450x300) }}" class="img-fluid bg-img" alt="">
                             </a>
                         </div>
 
                         <div class="blog-detail">
-                            <label>Blog Weew</label>
-                            <a href="blog-detail.html">
-                                <h2>Responsible use of cannabis</h2>
+                            <label>Recent posts</label>
+                            <a href="{{ route('blog-details', ['id' => $recent_post->id]) }}">
+                                <h2>{{ $recent_post->title }}</h2>
                             </a>
                             <div class="blog-list">
-                                <span>March 9, 2021</span>
-                                <span>By Emil Kristensen</span>
+                                <span>{{ $recent_post->created_at->format('Y-m-d') }}</span>
+                                <span>By {{ $recent_post->editor }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <div>
-                    <div class="blog-box ratio_50">
-                        <div class="blog-box-image">
-                            <a href="blog-detail.html">
-                                <img src="{{ asset('images/veg-3/blog/2.png') }}" class="img-fluid bg-img" alt="">
-                            </a>
-                        </div>
 
-                        <div class="blog-detail">
-                            <label>Blog Weew</label>
-                            <a href="blog-detail.html">
-                                <h2>Responsible use of cannabis</h2>
-                            </a>
-                            <div class="blog-list">
-                                <span>March 9, 2021</span>
-                                <span>By Emil Kristensen</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="blog-box ratio_50">
-                        <div class="blog-box-image">
-                            <a href="blog-detail.html">
-                                <img src="{{ asset('images/veg-3/blog/3.png') }}" class="img-fluid bg-img" alt="">
-                            </a>
-                        </div>
-
-                        <div class="blog-detail">
-                            <label>Blog Weew</label>
-                            <a href="blog-detail.html">
-                                <h2>Responsible use of cannabis</h2>
-                            </a>
-                            <div class="blog-list">
-                                <span>March 9, 2021</span>
-                                <span>By Emil Kristensen</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

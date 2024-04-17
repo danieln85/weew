@@ -354,7 +354,7 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link {{ request()->is('blog') ? 'active' : '' }}" href="{{ route('home') }}"><strong>Blog</strong></a>
+                                            <a class="nav-link {{ request()->is('blog') ? 'active' : '' }}" href="{{ route('blog') }}"><strong>Blog</strong></a>
                                         </li>
 
                                         <li class="nav-item new-nav-item">
@@ -414,7 +414,7 @@
             </li> --}}
 
             <li>
-                <a href="{{ route('home') }}" class="search-box">
+                <a href="{{ route('blog') }}" class="search-box">
                     
                     <i class="icli fa-brands fa-blogger-b"></i>
                     <span>Blog</span>

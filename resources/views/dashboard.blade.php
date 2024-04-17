@@ -89,12 +89,33 @@
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-download-tab" data-bs-toggle="pill" data-bs-target="#pills-download" type="button" role="tab"><i data-feather="download"></i>Download</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab"><i data-feather="shield"></i>
                                     Privacidad</button>
                             </li>
+
+
+                            @if(auth()->check())
+                            @if(auth()->user()->role == 'admin')
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-crear-editar-tab" data-bs-toggle="pill" data-bs-target="#pills-crear-editar" type="button" role="tab"><i data-feather="edit"></i>Crear | Editar</button>
+                            </li>
+                                
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-download-tab" data-bs-toggle="pill" data-bs-target="#pills-download" type="button" role="tab"><i data-feather="download"></i>Download</button>
+                            </li>
+                            @elseif(auth()->user()->role == 'editor')
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-crear-editar-tab" data-bs-toggle="pill" data-bs-target="#pills-crear-editar" type="button" role="tab"><i data-feather="edit"></i>Crear | Editar</button>
+                            </li>
+                            @endif
+                        @endif
+
+
+
+
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -115,13 +136,28 @@
                         </a>
                     </div>
 
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-around">
                         <a href="{{ route('user-dashboard') }}#pills-security">
                             <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Privacidad</button>
                         </a>
-                        <a href="{{ route('user-dashboard') }}#pills-download">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Download</button>
-                        </a>
+
+                    @if(auth()->check())
+                        @if(auth()->user()->role == 'admin')
+                            <a href="{{ route('user-dashboard') }}#pills-crear-editar">
+                                <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Crear | Editar</button>
+                            </a>
+                            
+                            <a href="{{ route('user-dashboard') }}#pills-download">
+                                <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Download</button>
+                            </a>
+                        @elseif(auth()->user()->role == 'editor')
+                            <a href="{{ route('user-dashboard') }}#pills-crear-editar">
+                                <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Crear | Editar</button>
+                            </a>
+                        @endif
+                    @endif
+                    
+
                     </div>
                     
                      
@@ -987,6 +1023,98 @@
                                 </div>
                             </div>
 
+                            <div class="tab-pane fade" id="pills-crear-editar" role="tabpanel">
+                                <div class="dashboard-download">
+                                    <div class="title">
+                                        <h2>Descargas</h2>
+                                        <span class="title-leaf">
+                                            <svg class="icon-width bg-gray">
+                                                <use xlink:href="../assets/svg/leaf.svg#leaf"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+
+                                    <div class="download-detail dashboard-bg-box">
+
+
+                                        <div class="select-filter-box">
+
+                                            <ul class="nav nav-pills filter-box" id="pills-tab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="pills-data-tab" data-bs-toggle="pill" data-bs-target="#pills-data" type="button">Crear | Editar | Eliminar</button>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div class="" id="pills-data" role="tabpanel">
+                                                <div class="download-table">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>No</th>
+                                                                    
+                                                                    <th>Descripción</th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Productos</td>
+                                                                    <td>
+                                                                        <div class="dropdown download-dropdown">
+                                                                            <button class="btn btn-primary-custom btn-block" type="button" onclick="window.location.href = '{{ route('user-dashboard') }}'">Ver</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                
+
+                                                                
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>Posts blog</td>
+                                                                    <td>
+                                                                        <div class="dropdown download-dropdown">
+                                                                            <button class="btn btn-primary-custom btn-block" type="button" onclick="window.location.href = '{{ route('blog.create') }}'">Ver</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                
+
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>Usuarios</td>
+                                                                    <td>
+                                                                        <div class="dropdown download-dropdown">
+                                                                            <button class="btn btn-primary-custom btn-block" type="button">Ver</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                
+                                                                <tr>
+                                                                    <td>3</td>
+
+                                                                    <td>Ventas</td>
+                                                                    <td>
+                                                                        <div class="dropdown download-dropdown">
+                                                                            <button class="btn btn-primary-custom btn-block" type="button">Ver</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="tab-pane fade" id="pills-download" role="tabpanel">
                                 <div class="dashboard-download">
                                     <div class="title">
@@ -1027,7 +1155,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td>1</td>
-                                                                    <td>Usuarios</td>
+                                                                    <td>Usuarios registrados</td>
                                                                     <td>
                                                                         <div class="dropdown download-dropdown">
                                                                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Descargar</button>
@@ -1036,7 +1164,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>2</td>
-                                                                    <td>Productos</td>
+                                                                    <td>Productos existentes</td>
                                                                     <td>
                                                                         <div class="dropdown download-dropdown">
                                                                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Descargar</button>
@@ -1046,7 +1174,37 @@
                                                                 <tr>
                                                                     <td>3</td>
 
-                                                                    <td>Ventas</td>
+                                                                    <td>Ventas y números de compra Wompi</td>
+                                                                    <td>
+                                                                        <div class="dropdown download-dropdown">
+                                                                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Descargar</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4</td>
+
+                                                                    <td>Usuarios en Formulario de Contacto</td>
+                                                                    <td>
+                                                                        <div class="dropdown download-dropdown">
+                                                                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Descargar</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>5</td>
+
+                                                                    <td>Usuarios inscritos en el Informativo</td>
+                                                                    <td>
+                                                                        <div class="dropdown download-dropdown">
+                                                                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Descargar</button>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6</td>
+
+                                                                    <td>Posts del blog</td>
                                                                     <td>
                                                                         <div class="dropdown download-dropdown">
                                                                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Descargar</button>
@@ -1058,9 +1216,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
-                                            
-                                            
                                         </div>
                                     </div>
                                 </div>
