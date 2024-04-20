@@ -28,7 +28,7 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Contact Box Section Start -->
-    <section class="contact-box-section">
+    <section class="contact-box-section mb-4">
         <div class="container-fluid-lg">
             <div class="row g-lg-5 g-3">
                 <div class="col-lg-6">
@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="contact-image">
-                                    <img src="{{ asset('images/contact/contactanos-weew.png') }}" class="img-fluid blur-up lazyloaded" alt="">
+                                    <img src="{{ asset('images/contact/weew-monster-contactanos.png') }}" class="img-fluid blur-up lazyloaded" alt="">
                                 </div>
                             </div>
                             <div class="col-xl-12">
@@ -152,8 +152,8 @@
                     @endif
                     <form action="{{ route('contact.store') }}" method="POST">
                         @csrf
-                    <div class="title d-xxl-none d-block">
-                        <h2>Contact Us</h2>
+                    <div class="title d-block">
+                        <h2>¡Te escuchamos!</h2>
                     </div>
                     <div class="right-sidebar-box">
                         <div class="row">
@@ -208,13 +208,13 @@
     <!-- Contact Box Section End -->
 
     <!-- Map Section Start -->
-    <section class="map-section">
+    {{-- <section class="map-section">
         <div class="container-fluid p-0">
             <div class="map-box">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2994.3803116994895!2d55.29773782339708!3d25.222534631321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!3m2!1d25.2048493!2d55.2707828!4m0!5e1!3m2!1sen!2sin!4v1652217109535!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Map Section End -->
 
     <script>

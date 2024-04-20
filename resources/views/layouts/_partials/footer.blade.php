@@ -570,8 +570,60 @@
 <div class="bg-overlay"></div>
 <!-- Bg overlay End -->
 
+
+{{-- JAVASCRIPT MODALS --}}
+
+<!-- jQuery y Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Mostrar el modal de advertencia al cargar la página
+    $(document).ready(function () {
+        $('#modalAdvertencia').modal('show');
+    });
+
+    // Función para abrir el modal de advertencia para menores
+    $('#btnMenorEdad').click(function () {
+        $('#modalAdvertencia').modal('hide'); // Ocultar el modal actual
+        $('#modalMenores').modal('show'); // Mostrar el modal para menores
+    });
+
+    // Función para cerrar el modal de advertencia para menores y permitir navegar por el sitio
+    $('#btnAceptarMenores').click(function () {
+        $('#modalMenores').modal('hide');
+        // Si el usuario ha confirmado que es mayor de edad, podría continuar con la navegación aquí
+        // Establecer la cookie para indicar que el usuario confirmó su edad
+        document.cookie = "age_confirmed=true; expires=Sat, 01 Jan 2025 00:00:00 UTC; path=/";
+    });
+
+    // Función para redirigir a una página en blanco al salir del sitio
+    $('#btnSalirSitio').click(function () {
+        window.location.href = 'https://google.com.co';
+    });
+
+    // Función para cerrar el modal y permitir la navegación en el sitio
+    $('#btnMayorEdad').click(function () {
+        $('#modalAdvertencia').modal('hide');
+        // Si el usuario ha confirmado que es mayor de edad, podría continuar con la navegación aquí
+        // Establecer la cookie para indicar que el usuario confirmó su edad
+        document.cookie = "age_confirmed=true; expires=Sat, 01 Jan 2025 00:00:00 UTC; path=/";
+    });
+
+    // Evitar que se cierre el modal al hacer clic fuera de él
+    $('#modalAdvertencia, #modalMenores').on('click.bs.modal', function (e) {
+        if ($(e.target).hasClass('modal')) {
+            return false;
+        }
+    });
+</script>
+
+{{-- JAVASCRIPT MODALS END --}}
+
 <!-- latest jquery-->
 <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+
 
 <!-- jquery ui-->
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
@@ -616,6 +668,7 @@
 
 <!-- theme setting js -->
 <script src="{{ asset('js/theme-setting.js') }}"></script>
+
  
 <style>
     img.btn-whatsapp {

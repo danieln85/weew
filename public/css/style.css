@@ -96,4 +96,14 @@
     border-color: #6BB7CB;
 }
 
+.home-contain img {
+    max-width: 100%!important; 
+    
+}
+@media (min-width: 1200px) {
+    .home-contain img {
+        width: 100%;
+    }
+}
+
 /* # sourceMappingURL=style.css.map */

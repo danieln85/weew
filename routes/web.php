@@ -7,6 +7,8 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserProfileController;
+
 // use App\Http\Controllers\ProductsController;
 
 
@@ -34,6 +36,7 @@ Route::middleware(['blogAuth:admin,editor'])->group(function () {
 
 // Route::get('/detalles-producto', [ProductsController::class, 'productDetails'])->name('product-details');
 
+Route::put('/user-profile', [UserProfileController::class, 'update'])->name('user-profile.update');
 
 
 

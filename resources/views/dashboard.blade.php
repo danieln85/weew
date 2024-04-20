@@ -486,50 +486,71 @@
 
 
                                             <div class="order-detail">
-                                                <h4>Entrega <span class="success-bg">Exitosa</span></h4>
-                                                <h6 class="text-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing dipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing elit sdsdsdd.</h6>
+                                                <h4>Diligencia el formulario con la información de envío y facturación que requieras, de esta manera estará todo listo para cuando desees realizar una compra. <span class="success-bg">Completa</span></h4>
+                                                {{-- <h6 class="text-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing dipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing elit sdsdsdd.</h6> --}}
                                             </div>
                                         </div>
-                                        <form action="" method="POST">
-                                            @csrf <!-- Token CSRF de Laravel -->
+
+                                        @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <strong>Por favor diligencia correctamente el formulario.</strong><br><br>
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li></br>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        @endif
+
+
+                                        @if (session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                        @endif
+
+                                        <form action="{{route('user-profile.update') }}" method="POST">
+                                            @csrf 
+                                            @method('PUT')
                                             <div class="mb-3">
                                                 <label for="name_fac" class="form-label">Nombre en la factura</label>
-                                                <input type="text" class="form-control" id="name_fac" name="name_fac" required>
+                                                <input type="text" class="form-control" id="name_fac" name="name_fac" value="{{ Auth::user()->name_fac ?: Auth::user()->name }}" required>
+
                                             </div>
                                         
                                             <div class="mb-3">
                                                 <label for="address" class="form-label">Dirección</label>
-                                                <input type="text" class="form-control" id="address" name="address" required>
+                                                <input type="text" class="form-control" id="address" name="address" value="{{ Auth::user()->address }}" required>
                                             </div>
                                         
                                             <div class="mb-3">
                                                 <label for="comments" class="form-label">Observaciones</label>
-                                                <textarea class="form-control" id="comments" name="comments" rows="3" placeholder=""></textarea>
+                                                <textarea class="form-control" id="comments" name="comments" rows="3" placeholder="Barrio, Torre, Apartamento y cualquier otra observación para la entrega del producto">{{ Auth::user()->comments }}</textarea>
                                             </div>
                                         
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <label for="state" class="form-label">Departamento</label>
-                                                    <input type="text" class="form-control" id="state" name="state">
+                                                    <input type="text" class="form-control" id="state" name="state" value="{{ Auth::user()->state }}" >
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="city" class="form-label">Ciudad</label>
-                                                    <input type="text" class="form-control" id="city" name="city">
+                                                    <input type="text" class="form-control" id="city" name="city" value="{{ Auth::user()->city }}">
                                                 </div>
                                             </div>
 
                                             <div class="row mb-3">
                                                 <div class="col-md-4">
                                                     <label for="id_number" class="form-label">Número de Identificación</label>
-                                                    <input type="text" class="form-control" id="id_number" name="id_number">
+                                                    <input type="number" class="form-control" id="id_number" name="id_number" value="{{ Auth::user()->id_number }}" required>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label for="email_fac" class="form-label">Email de Facturación</label>
-                                                    <input type="email" class="form-control" id="email_fac" name="email_fac" required>
+                                                    <input type="email" class="form-control" id="email_fac" name="email_fac" value="{{ Auth::user()->email_fac ?: Auth::user()->email }}" required>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label for="mobile_number" class="form-label">Celular:</label>
-                                                    <input type="number" class="form-control" id="mobile_number" name="mobile_number">
+                                                    <input type="tel" class="form-control" id="mobile_number" name="mobile_number" pattern="[0-9]{10}" value="{{ Auth::user()->mobile_number }}">
                                                 </div>
                                             </div>
                                         

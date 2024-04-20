@@ -1,6 +1,6 @@
 @include('layouts._partials.header')
 @include('layouts.includes.menu-weew')
-
+  
     <!-- home section start -->
     <section class="home-section-2 home-section-small section-b-space">
         <div class="container-fluid-lg">
@@ -10,10 +10,10 @@
                         <img src="{{ asset('images/veg-3/home/1.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
                         <div class="home-detail home-width p-center-left position-relative">
                             <div>
-                                <h6 class="ls-expanded theme-color">ORGANIC</h6>
-                                <h1 class="fw-bold w-100">100% Fresh</h1>
-                                <h3 class="text-content fw-light">Accesories</h3>
-                                <p class="d-sm-block d-none">Free shipping on all your order. we deliver you enjoy</p>
+                                <h6 class="ls-expanded theme-color m-0 p-0">WEEW</h6>
+                                <h1 class="fw-bold w-100 m-0 p-0">Somos</h1>
+                                <h3 class="text-content fw-light">la comunidad más grande de consumidores responsable de cannabis.</h3>
+                                {{-- <p class="d-sm-block d-none">más grande de consumidores responsable de cannabis.</p> --}}
                                 <button onclick="location.href = '{{  route('home') }}';" class="btn mt-sm-4 btn-2 theme-bg-color text-white mend-auto btn-2-animation">Comprar</button>
                             </div>
                         </div>
@@ -27,8 +27,8 @@
                         </div>
                         <div class="home-detail text-center p-top-center w-100 text-white">
                             <div>
-                                <h4 class="fw-bold">Fresh & 100% Organic</h4>
-                                <h5 class="text-center">Best products</h5>
+                                <h4 class="fw-bold">!Nos encanta lo que hacemos!</h4>
+                                {{-- <h5 class="text-center">Best products</h5> --}}
                                 <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2" onclick="location.href = '{{  route('home') }}';">Comprar</button>
                             </div>
                         </div>
@@ -186,60 +186,6 @@
     </section> --}}
     <!-- Category Section End -->
 
-    <!-- Value Section Start -->
-    <section class="">
-        <div class="container-fluid-lg">
-            <div class="title">
-                <h2 class="mb-2">Kits Canábicos</h2>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="three-slider arrow-slider ratio_65">
-                        <div>
-                            <div class="offer-banner hover-effect">
-                                <img src="{{ asset('images/veg-3/value/1.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
-                                <div class="banner-detail">
-                                    <h5 class="theme-color">Buy more, Save more</h5>
-                                    <h6>Best product</h6>
-                                </div>
-                                <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="offer-banner hover-effect">
-                                <img src="{{ asset('images/veg-3/value/2.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
-                                <div class="banner-detail">
-                                    <h5 class="theme-color">Save More!</h5>
-                                    <h6>New accesories</h6>
-                                </div>
-                                <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="offer-banner hover-effect">
-                                <img src="{{ asset('images/veg-3/value/3.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
-                                <div class="banner-detail">
-                                    <h5 class="theme-color">Hot Deals!</h5>
-                                    <h6>Offers</h6>
-                                </div>
-                                <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Value Section End -->
 
     @include('layouts.includes.our-products')
 
@@ -253,9 +199,9 @@
                     <div class="banner-detail banner-p-sm p-center-right position-relative banner-minus-position banner-detail-deliver">
                         <div>
                             <h3 class="fw-bold banner-contain">No te preocupes por el envío</h3>
-                            <h4 class="mb-sm-3 mb-2 delivery-contain">En WEEW queremos que tengas una experiencia</br>completa, sin sopresas o sobrecargos.
+                            <h4 class="delivery-contain m-0 p-0">En WEEW queremos que tengas una experiencia completa,<h4 class="delivery-contain m-0 p-0"></h4><h4 class="delivery-contain"> sin sorpresas o sobrecargos.
                             </h4>
-                            <ul class="banner-list">
+                            <ul class="banner-list mt-4">
                                 <li>
                                     <div class="delivery-box">
                                         <div class="check-icon">
@@ -263,7 +209,7 @@
                                         </div>
 
                                         <div class="check-contain">
-                                            <h5>Te obsequiamos 60% OFF</h5>
+                                            <h5>ENVÍO GRATIS A BOGOTÁ</h5>
                                         </div>
                                     </div>
                                 </li>
@@ -275,7 +221,8 @@
                                         </div>
 
                                         <div class="check-contain">
-                                            <h5>Aplica según tu ciudad</h5>
+                                            <h5>60% OFF</h5>
+                                            <h5>FUERA DE BOGOTÁ</h5>
                                         </div>
                                     </div>
                                 </li>
@@ -541,7 +488,7 @@
     <!-- Deal Section End -->
 
     <!-- Blog Section Start -->
-    <section class="blog-section mt-3">
+    <section class="blog-section mt-3 mb-0">
         <div class="container-fluid-lg">
             <div class="title">
                 <h2 class="mt-1">Blog</h2>
@@ -576,6 +523,79 @@
         </div>
     </section>
     <!-- Blog Section End -->
+
+    <!-- weew monster Section Start -->
+
+    <section class="home-section-2 home-section-small section-b-space mt-0">
+        <div class="container-fluid-lg">
+            <div class="row g-4">
+                <div class="col-xxl-12 col-md-12">
+                    <div class="home-contain h-100">
+                        <img src="{{ asset('images/bg/weew-monster-bg2.png') }}" class="img-fluid blur-up lazyload" width="auto" alt="">
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<!-- weew monster Section End -->
+
+    <!-- Value Section Start -->
+    <section class="">
+        <div class="container-fluid-lg">
+            <div class="title">
+                <h2 class="mb-2">Kits Canábicos</h2>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="three-slider arrow-slider ratio_65">
+                        <div>
+                            <div class="offer-banner hover-effect">
+                                <img src="{{ asset('images/veg-3/value/1.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
+                                <div class="banner-detail">
+                                    <h5 class="theme-color">15% OFF</h5>
+                                    <h6>Oferta Limitada</h6>
+                                </div>
+                                <div class="offer-box">
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="offer-banner hover-effect">
+                                <img src="{{ asset('images/veg-3/value/2.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
+                                <div class="banner-detail">
+                                    <h5 class="theme-color">15% OFF</h5>
+                                    <h6>Oferta Limitada</h6>
+                                </div>
+                                <div class="offer-box">
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="offer-banner hover-effect">
+                                <img src="{{ asset('images/veg-3/value/3.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
+                                <div class="banner-detail">
+                                    <h5 class="theme-color">15% OFF</h5>
+                                    <h6>Oferta Limitada</h6>
+                                </div>
+                                <div class="offer-box">
+                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Value Section End -->
+
 
     <!-- Newsletter Section Start -->
     <section class="newsletter-section-2 section-b-space">
@@ -625,7 +645,7 @@
                                 <div class="newsletter-detail p-center-left text-white">
                                     <div>
                                         <h2>Suscribete a nuestro informativo</h2>
-                                        <h4>Recibirás cupones de descuento, noticias sobre nuevos productos, fechas de nuestros eventos, últimos blogs e información de relevancia de la comunidad Canábica.</h4>
+                                        <h4>Recibirás información para que puedas llevar un consumo responsable del cannabis. Conocerás nuestros lanzamientos, descuentos e información sobre nuestra comunidad.</h4>
                                         <form action="{{ route('newsletter.store') }}" method="POST" class="row g-2">
                                             @csrf
                                         
@@ -648,5 +668,8 @@
         </div>
     </section>
     <!-- Newsletter Section End -->
+
+
+    
 
     @include('layouts._partials.footer')

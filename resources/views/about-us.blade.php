@@ -11,7 +11,7 @@
                         <nav>
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item">
-                                    <a href="index.html">
+                                    <a href="{{ route('home') }}">
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
@@ -53,12 +53,12 @@
                     <div class="fresh-contain p-center-left">
                         <div>
                             <div class="review-title">
-                                <h4>About Us</h4>
-                                <h2>We make Organic Reacreative Cannabis</h2>
+                                <h4>Quiénes somos?</h4>
+                                <h2>Somos la comunidad más grande de consumo responsable</h2>
                             </div>
 
                             <div class="delivery-list">
-                                <p class="text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam amet quasi nulla in totam porro ullam, perspiciatis, officia ipsam a repellat hic quidem cum dignissimos sunt suscipit commodi fuga inventore! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolore explicabo eligendi unde adipisci nisi, sunt consequuntur nobis tenetur harum incidunt voluptate? Repellat, maiores nemo? Rem ipsa fuga placeat consequuntur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nihil cum sit? Vero obcaecati asperiores amet fugiat. Non nam reprehenderit ex quidem. Officia explicabo placeat architecto voluptatum, dolorum esse. Nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nostrum commodi cupiditate, nesciunt architecto accusantium quia, illum mollitia vero rerum beatae quibusdam non ipsum ipsam. Id laboriosam exercitationem magni maiores.</p>
+                                <p class="text-content">En WEEW promovemos el consumo consciente y responsable del cannabis, priorizamos la salud y el bienestar de los consumidores. Cambiamos el estigma negativo y la desinformación empoderando a los consumidores para tomar decisiones informadas.</p>
 
                                 <ul class="delivery-box">
                                     <li>
@@ -101,8 +101,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="about-us-title text-center">
-                        <h4>What We Do</h4>
-                        <h2 class="center">We are Trusted by Clients</h2>
+                            <h4>¿Qué hacemos?</h4>
+                        <h2 class="center">Los clientes confían en nosotros</h2>
                     </div>
 
                     <div class="slider-3_1 product-wrapper">
@@ -111,9 +111,9 @@
                                 <div class="client-icon">
                                     <img src="{{ ('svg/3/work.svg') }}" class="blur-up lazyload" alt="">
                                 </div>
-                                <h2>10</h2>
-                                <h4>Business Years</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt voluptates sint animi eveniet cumque ipsum rem? Rem corrupti eligendi aut, veritatis cupiditate tempora fuga maxime, non soluta possimus voluptas?</p>
+                                <h2>+2</h2>
+                                <h4>Años de Experiencia</h4>
+                                <p>Llevamos más de dos años desarollando productos enfocados en el bienestar de los consumidores.<br><br></p>
                             </div>
                         </div>
 
@@ -122,9 +122,9 @@
                                 <div class="client-icon">
                                     <img src="{{ ('svg/3/buy.svg') }}" class="blur-up lazyload" alt="">
                                 </div>
-                                <h2>80 K+</h2>
-                                <h4>Products Sales</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum inventore accusantium ab vero ipsam minima saepe labore totam, sequi non nesciunt commodi assumenda excepturi reiciendis ad architecto consectetur nisi alias!</p>
+                                <h2>1.000 +</h2>
+                                <h4>El Mejor Servicio</h4>
+                                <p>Somos un eCommerce que promueve el consumo responsable y las buenas prácticas para consumir marihuana.</p>
                             </div>
                         </div>
 
@@ -133,9 +133,9 @@
                                 <div class="client-icon">
                                     <img src="{{ ('svg/3/user.svg') }}" class="blur-up lazyload" alt="">
                                 </div>
-                                <h2>90%</h2>
-                                <h4>Happy Customers</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nemo officia dicta quis, dolores esse tenetur blanditiis veniam ab modi exercitationem nisi quam ut eveniet amet molestiae quia soluta velit!</p>
+                                <h2>100%</h2>
+                                <h4>Clientes Satisfechos</h4>
+                                <p>Nuestros productos son desarrollados por consumidores para consumidores. Vamos a elevar el nivel en tus sesiones de consumo.</p>
                             </div>
                         </div>
                     </div>
@@ -149,8 +149,8 @@
     <section class="team-section section-lg-space">
         <div class="container-fluid-lg">
             <div class="about-us-title text-center">
-                <h4 class="text-content">Our Creative Team</h4>
-                <h2 class="center">Weed Well team member</h2>
+                <h4 class="text-content">Nuestro Equipo</h4>
+                <h2 class="center">Integrantes</h2>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -162,9 +162,9 @@
                                 </div>
 
                                 <div class="team-name">
-                                    <h3>Felipe Oviedo</h3>
-                                    <h5>Marketing</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <h3>Anna</h3>
+                                    <h5>CBO</h5>
+                                    {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> --}}
                                     <ul class="team-media">
                                         <li>
                                             <a href="https://www.facebook.com/" class="fb-bg">
@@ -201,9 +201,9 @@
                                 </div>
 
                                 <div class="team-name">
-                                    <h3>Felipe Oviedo</h3>
-                                    <h5>Marketing</h5>
-                                    <p> Atque exercitationem eaque labore suscipit quis, ducimus similique nam.</p>
+                                    <h3>Danna</h3>
+                                    <h5>CCO</h5>
+                                    {{-- <p> Atque exercitationem eaque labore suscipit quis, ducimus similique nam.</p> --}}
                                     <ul class="team-media">
                                         <li>
                                             <a href="https://www.facebook.com/" class="fb-bg">
@@ -240,9 +240,9 @@
                                 </div>
 
                                 <div class="team-name">
-                                    <h3>Felipe Oviedo</h3>
-                                    <h5>Marketing</h5>
-                                    <p>Debitis dicta corrupti nostrum dolores sed rem iure et inventore nihil facilis!</p>
+                                    <h3>Juan Felipe Oviedo</h3>
+                                    <h5>CEO</h5>
+                                    {{-- <p>Debitis dicta corrupti nostrum dolores sed rem iure et inventore nihil facilis!</p> --}}
                                     <ul class="team-media">
                                         <li>
                                             <a href="https://www.facebook.com/" class="fb-bg">
@@ -272,46 +272,7 @@
                             </div>
                         </div>
 
-                        <div>
-                            <div class="team-box">
-                                <div class="team-image">
-                                    <img src="{{ ('images/inner-page/user/4.jpg') }}" class="img-fluid blur-up lazyload" alt="">
-                                </div>
-
-                                <div class="team-name">
-                                    <h3>Felipe Oviedo</h3>
-                                    <h5>Marketing</h5>
-                                    <p>Debitis dicta corrupti nostrum dolores sed rem iure et inventore nihil facilis!</p>
-                                    <ul class="team-media">
-                                        <li>
-                                            <a href="https://www.facebook.com/" class="fb-bg">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://in.pinterest.com/" class="pint-bg">
-                                                <i class="fa-brands fa-pinterest-p"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://twitter.com/" class="twitter-bg">
-                                                <i class="fa-brands fa-twitter"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="https://www.instagram.com/" class="insta-bg">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        
+                                                
                     </div>
                 </div>
             </div>

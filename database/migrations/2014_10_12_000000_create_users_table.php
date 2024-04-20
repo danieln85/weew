@@ -19,9 +19,14 @@ return new class extends Migration
             $table->string('password');
             $table->string('role')->default('user');
             $table->string('address')->nullable();
-            $table->unsignedInteger('postal_code')->nullable();
-            $table->string('address_details')->nullable();
+            $table->string('comments')->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('name_fac')->nullable();;
+            $table->string('email_fac')->nullable();;
             $table->unsignedBigInteger('id_number')->nullable();
+            $table->unsignedBigInteger('mobile_number')->nullable();
+
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

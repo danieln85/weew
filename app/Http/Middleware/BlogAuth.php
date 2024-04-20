@@ -14,14 +14,14 @@ class BlogAuth
             return redirect()->route('login');
         }
 
-        // Verificar si el usuario tiene al menos uno de los roles proporcionados
+        // Verificar si el usuario tiene al menos uno de los roles permitidos
         foreach ($roles as $role) {
             if ($request->user()->hasRole($role)) {
                 return $next($request);
             }
         }
 
-        // Si el usuario no tiene ninguno de los roles proporcionados, lanzar una excepción 403
+        // Si el usuario no tiene ninguno de los roles permitidos, lanzar una excepción 403
         abort(403, 'No tienes permiso para acceder a esta página.');
     }
 }

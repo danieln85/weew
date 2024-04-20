@@ -10,6 +10,7 @@
     <meta name="keywords" content="Weed Well">
     <meta name="author" content="Weed Well">
     <link rel="icon" href="{{ asset('images/favicon/favicon.png') }}" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>WEEW Weed Well - Consumo responsable de Canabis</title>
 
     <!-- Google font -->
@@ -36,4 +37,10 @@
 
 <body class="theme-color-2 bg-effect">
 
-  
+    @if(isset($_COOKIE['age_confirmed']) && $_COOKIE['age_confirmed'] === 'true')
+    <!-- No mostrar la advertencia si el usuario ha confirmado la edad -->
+    @else
+        
+@include('layouts.includes.modal-age')
+
+    @endif 
