@@ -16,7 +16,9 @@ return [
     'already_have_an_account' => 'Already have an account?',
     'forgot_password' => 'Forgot Password',
     'forgot_your_password_no_problem' => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
-    'email_password_reset_link' => 'Email Password Reset Link'
+    'email_password_reset_link' => 'Email Password Reset Link',
+    'reset_password' => 'Reset Password'
+    
 
     
 

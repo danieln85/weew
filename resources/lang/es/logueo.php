@@ -16,7 +16,8 @@ return [
     'already_have_an_account' => '¿Ya tienes una cuenta?',
     'forgot_password' => 'Olvidé la contraseña',
     'forgot_your_password_no_problem' => '¿Olvidaste tu contraseña? No hay problema. Simplemente escribe tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña que te permitirá elegir una nueva.',
-    'email_password_reset_link' => 'Restablecer contraseña'
+    'email_password_reset_link' => 'Restablecer contraseña',
+    'reset_password' => 'Actualizar Contraseña'
 
 
 
