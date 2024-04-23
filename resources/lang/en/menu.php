@@ -23,5 +23,9 @@ return [
     'new_cupon_code'=> 'New Coupon Code: WEEW2405',
     'something_you_love' => 'Something you love is now on sale!',
     'buy_now' => 'Buy Now!',
-    'close' => 'Close'
+    'close' => 'Close',
+    
+    //extras
+    'back' => 'Back',
+    'logout' => 'Log Out'
 ];

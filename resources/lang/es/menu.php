@@ -22,6 +22,10 @@ return [
     'new_cupon_code'=> 'Nuevo cupon de descuento: WEEW2405',
     'something_you_love' => '¡Algo que te encanta ya está a la venta!',
     'buy_now' => 'Comprar Ahora!',
-    'close' => 'Cerrar'
+    'close' => 'Cerrar',
+
+    //extras
+    'back' => 'Regresar',
+    'logout' => 'Cerrar Sesión'
     
 ];

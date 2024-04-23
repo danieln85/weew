@@ -15,7 +15,7 @@
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active"><strong>Información</strong></li>
+                                <li class="breadcrumb-item active">Información</li>
                             </ol>
                         </nav>
                     </div>
@@ -183,7 +183,7 @@
 
                                     <div class="dashboard-user-name">
                                         <h6 class="text-content">Hola, <b class="text-title">{{ Auth::user()->name }}</b></h6>
-                                        <p class="text-content">Desde este tablero de información puedes ver tus actividad más reciente, configurar los datos de facturación y tu ubicación, acceder a tu historial de compras, ver tus productos favorito, revisar las políticas de privacidad y además modificar tu correo y contraseña.</p>
+                                        <p class="text-content">Desde este tablero de información puedes ver tus actividad más reciente, configurar los datos de facturación y tu ubicación, acceder a tu historial de compras, ver tus productos favoritos, revisar las políticas de privacidad y además modificar tu correo y contraseña.</p>
                                     </div>
 
                                     <div class="total-box">
