@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2>Sign In</h2>
+                        <h2>{{ __('logueo.sign_up') }}</h2>
                         <nav>
                             <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
@@ -39,8 +39,8 @@
                 <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
                     <div class="log-in-box">
                         <div class="log-in-title">
-                            <h3>Welcome to Weew</h3>
-                            <h4>Create new Account</h4>
+                            <h3>{{ __('menu.welcome_to_weew') }}</h3>
+                            {{-- <h4>Create new Account</h4> --}}
                         </div>
 
                         <div class="input-box">
@@ -58,7 +58,7 @@
                                         @csrf
                             
                                         <div>
-                                            <x-label for="name" value="{{ __('Name') }}" />
+                                            <x-label for="name" value="{{ __('logueo.name') }}" />
                                             <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                                         </div>
                             
@@ -68,12 +68,12 @@
                                         </div>
                             
                                         <div class="mt-4">
-                                            <x-label for="password" value="{{ __('Password') }}" />
+                                            <x-label for="password" value="{{ __('logueo.password') }}" />
                                             <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
                                         </div>
                             
                                         <div class="mt-4">
-                                            <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                                            <x-label for="password_confirmation" value="{{ __('logueo.confirm_password') }}" />
                                             <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
                                         </div>
                             
@@ -96,11 +96,11 @@
                             
                                         <div class="flex items-center justify-end mt-4">
                                             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                                                {{ __('Already registered?') }}
+                                                {{ __('logueo.already_registered') }}
                                             </a>
                             
                                             <x-button class="ms-4">
-                                                {{ __('Register') }}
+                                                {{ __('logueo.register') }}
                                             </x-button>
                                         </div>
                                     </form>
@@ -139,8 +139,8 @@
                         </div>
 
                         <div class="sign-up-box">
-                            <h4>Already have an account?</h4>
-                            <a href="{{ route('login') }}">Log In</a>
+                            <h4>{{ __('logueo.already_have_an_account') }}</h4>
+                            <a href="{{ route('login') }}"><u>{{ __('logueo.login') }}</u></a>
                         </div>
                     </div>
                 </div>

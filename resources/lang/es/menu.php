@@ -17,7 +17,8 @@ return [
     'search_for_products_we_deliver_to' => 'Busca productos, los enviamos a la puerta de tu casa...',
 
     //barra superior mensajes de llamado a la acción
-    'welcome_to_weed_well'=> 'Bienvenido a WEEW! Uso responsable del cannabis.',
+    'welcome_to_weew' => 'Bienvenido a WEEW!',
+    'responsible_use_of_cannabis'=> 'Uso responsable del canabis.',
     'new_cupon_code'=> 'Nuevo cupon de descuento: WEEW2405',
     'something_you_love' => '¡Algo que te encanta ya está a la venta!',
     'buy_now' => 'Comprar Ahora!',

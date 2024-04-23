@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2 class="mb-2">Log In</h2>
+                        <h2 class="mb-2">{{__('logueo.login')}}</h2>
                         <nav>
                             <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
@@ -16,7 +16,7 @@
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active">Log In</li>
+                                <li class="breadcrumb-item active">{{__('logueo.login')}}</li>
                             </ol>
                         </nav>
                     </div>
@@ -39,8 +39,8 @@
                 <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
                     <div class="log-in-box">
                         <div class="log-in-title">
-                            <h3>Welcome to Weew</h3>
-                            <h4>Log in your Account</h4>
+                            <h3>{{ __('menu.welcome_to_weew') }}</h3>
+                            {{-- <h4>Log in your Account</h4> --}}
                         </div>
 
                         <div class="input-box">
@@ -68,26 +68,26 @@
                                         </div>
                             
                                         <div class="mt-4">
-                                            <x-label for="password" value="{{ __('Password') }}" />
+                                            <x-label for="password" value="{{ __('logueo.password') }}" />
                                             <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
                                         </div>
                             
                                         <div class="block mt-4">
                                             <label for="remember_me" class="flex items-center">
                                                 <x-checkbox id="remember_me" name="remember" />
-                                                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                                <span class="ms-2 text-sm text-gray-600">{{ __('logueo.remember_me') }}</span>
                                             </label>
                                         </div>
                             
                                         <div class="flex items-center justify-end mt-4">
                                             @if (Route::has('password.request'))
                                                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                                                    {{ __('Forgot your password?') }}
+                                                    {{ __('logueo.forgot_your_password') }}
                                                 </a>
                                             @endif
                             
                                             <x-button class="ms-4">
-                                                {{ __('Log in') }}
+                                                {{ __('logueo.login') }}
                                             </x-button>
                                         </div>
                                     </form>
@@ -125,8 +125,8 @@
                         </div>
 
                         <div class="sign-up-box">
-                            <h4>Don't have an account?</h4>
-                            <a href="{{ route('register') }}">Sign Up</a>
+                            <h4>{{ __('logueo.dont_have_an_account') }}</h4>
+                            <a href="{{ route('register') }}"><u>{{ __('logueo.sign_up') }}</u></a>
                         </div>
                     </div>
                 </div>

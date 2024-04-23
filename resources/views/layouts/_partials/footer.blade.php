@@ -675,7 +675,7 @@
     display: block !important;
     position: fixed;
     z-index: 9999999;
-    bottom: 130px;
+    bottom: 150px;
     right: 5px;
     cursor: pointer;
     border-radius:60px !important;

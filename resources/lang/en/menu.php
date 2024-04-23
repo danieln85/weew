@@ -18,7 +18,8 @@ return [
 
 
     //barra superior mensajes de llamado a la acción
-    'welcome_to_weed_well'=> 'Welcome to WEEW! responsible use of cannabis.',
+    'welcome_to_weew' => 'Welcome to WEEW!',
+    'responsible_use_of_cannabis'=> 'Responsible use of cannabis.',
     'new_cupon_code'=> 'New Coupon Code: WEEW2405',
     'something_you_love' => 'Something you love is now on sale!',
     'buy_now' => 'Buy Now!',

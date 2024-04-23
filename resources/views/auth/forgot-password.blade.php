@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2>Forgot Password</h2>
+                        <h2>{{ __('logueo.forgot_password') }}</h2>
                         <nav>
                             <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
@@ -15,7 +15,7 @@
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active">Forgot Password</li>
+                                <li class="breadcrumb-item active">{{__('logueo.forgot_password')}}</li>
                             </ol>
                         </nav>
                     </div>
@@ -39,8 +39,8 @@
                     <div class="d-flex align-items-center justify-content-center h-100">
                         <div class="log-in-box">
                             <div class="log-in-title">
-                                <h3>Welcome to Weew</h3>
-                                <h4>Forgot your password</h4>
+                                <h3>{{ __('menu.welcome_to_weew') }}</h3>
+                                <h4>{{ __('logueo.forgot_password') }}</h4>
                             </div>
 
                             <div class="input-box">
@@ -52,7 +52,7 @@
                                         </x-slot>
                                 
                                         <div class="mb-4 text-sm text-gray-600">
-                                            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                                            {{ __('logueo.forgot_your_password_no_problem') }}
                                         </div>
                                 
                                         @if (session('status'))
@@ -73,7 +73,7 @@
                                 
                                             <div class="flex items-center justify-end mt-4">
                                                 <x-button>
-                                                    {{ __('Email Password Reset Link') }}
+                                                    {{ __('logueo.email_password_reset_link') }}
                                                 </x-button>
                                             </div>
                                         </form>

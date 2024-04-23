@@ -15,7 +15,7 @@
             <div class="notification-slider">
                 <div>
                     <div class="timer-notification text-center">
-                        <h6><strong class="me-1">{{ __('menu.welcome_to_weed_well') }}</strong>
+                        <h6><strong class="me-1">{{ __('menu.welcome_to_weew') }}</strong>{{ __('menu.responsible_use_of_cannabis') }}
                         </h6>
                     </div>
                 </div>
