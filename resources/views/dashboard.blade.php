@@ -486,7 +486,7 @@
 
 
                                             <div class="order-detail">
-                                                <h4>Diligencia el formulario con la información de envío y facturación que requieras, de esta manera estará todo listo para cuando desees realizar una compra. <span class="success-bg">Completa</span></h4>
+                                                <h4>Diligencia el formulario con la información de envío y facturación. <span class="success-bg">Completa</span></h4>
                                                 {{-- <h6 class="text-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing dipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing elit sdsdsdd.</h6> --}}
                                             </div>
                                         </div>

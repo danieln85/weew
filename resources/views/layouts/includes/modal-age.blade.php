@@ -1,4 +1,8 @@
-<!-- Modal de Advertencia -->
+@if(auth()->check())
+    
+@else
+    <!-- Si no hay un usuario autenticado -->
+    <!-- Modal de Advertencia -->
 <div class="modal fade" id="modalAdvertencia" tabindex="-1" role="dialog" aria-labelledby="modalAdvertenciaLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -40,3 +44,7 @@
         </div>
     </div>
 </div>
+    
+@endif
+
+

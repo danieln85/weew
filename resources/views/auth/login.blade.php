@@ -10,7 +10,7 @@
                     <div class="breadcrumb-contain">
                         <h2 class="mb-2">Log In</h2>
                         <nav>
-                            <ol class="breadcrumb mb-0">
+                            <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
                                     <a href="{{ route('home') }}">
                                         <i class="fa-solid fa-house"></i>

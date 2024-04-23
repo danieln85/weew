@@ -12,7 +12,7 @@
                             <div>
                                 <h6 class="ls-expanded theme-color m-0 p-0">WEEW</h6>
                                 <h1 class="fw-bold w-100 m-0 p-0">Somos</h1>
-                                <h3 class="text-content fw-light">la comunidad más grande de consumidores responsable de cannabis.</h3>
+                                <h3 class="text-content fw-light">la comunidad más grande de consumidores responsables de cannabis.</h3>
                                 {{-- <p class="d-sm-block d-none">más grande de consumidores responsable de cannabis.</p> --}}
                                 <button onclick="location.href = '{{  route('home') }}';" class="btn mt-sm-4 btn-2 theme-bg-color text-white mend-auto btn-2-animation">Comprar</button>
                             </div>

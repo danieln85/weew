@@ -15,20 +15,27 @@
             <div class="notification-slider">
                 <div>
                     <div class="timer-notification text-center">
-                        <h6><strong class="me-1">Welcome to Weed Well!</strong>responsible use of cannabis.<strong class="ms-1">New Coupon Code: Fast024
-                            </strong>
+                        <h6><strong class="me-1">{{ __('menu.welcome_to_weed_well') }}</strong>
                         </h6>
                     </div>
                 </div>
 
                 <div>
                     <div class="timer-notification text-center">
-                        <h6>Something you love is now on sale!<a href="{{ route('home') }}" class="text-white">Buy Now!</a>
+                        <h6><strong class="ms-1">{{ __('menu.new_cupon_code') }}
+                        </strong>
+                        </h6>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="timer-notification text-center">
+                        <h6>{{ __('menu.something_you_love') }}<a href="{{ route('home') }}" class="text-white">{{ __('menu.buy_now') }}</a>
                         </h6>
                     </div>
                 </div>
             </div>
-            <button class="btn close-notification"><span>Close</span> <i class="fas fa-times"></i></button>
+            <button class="btn close-notification"><span>{{ __('menu.close') }}</span> <i class="fas fa-times"></i></button>
         </div>
         <div class="top-nav top-header sticky-header sticky-header-3">
             <div class="container-fluid-lg">
@@ -59,7 +66,7 @@
                             <div class="middle-box">
                                 <div class="center-box">
                                     <div class="searchbar-box order-xl-1 d-none d-xl-block">
-                                        <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Search for product, delivered to your door...">
+                                        <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="{{__('menu.search_for_products_we_deliver_to')}}">
                                         <button class="btn search-button">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </button>
@@ -127,33 +134,7 @@
 
                                 <div class="option-list">
                                     <ul> 
-                                         
-                                            
-                                        <li class="right-side onhover-dropdown">
-                                            <a class="header-icon user-box user-icon">                                                
-                                                <i class="fa-solid fa-language"></i>
-                                            </a>
-                                            <div class="category-dropdown category-dropdown3 onhover-div">
-                                                <ul class="cart-list">
-                                                    <li>
-                                                        <div class="drop-cart">
-                                                            
-
-                                                            <div class="drop-contain drop-contain2">
-                                                                <a href="{{ route('home') }}">
-                                                                    <h5 class="pb-2">Espa&ntilde;ol</h5>
-                                                                </a>
-                                                                <a href="{{ route('home') }}">
-                                                                    <h5>English</h5>
-                                                                </a>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                              
-                                                </ul>
-                                            </div>
-                                        </li>
+                                        @include('layouts.includes.lang')
 
                                         <li class="right-side d-none d-md-inline">
                                             <a href="{{ route('user-dashboard')}}#pills-wishlist" class="header-icon search-box search-icon">
@@ -342,24 +323,24 @@
                                 <div class="offcanvas-body">
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a class="nav-link ps-xl-2 ps-0 {{ request()->is('/') ? 'active' : '' }}" href="{{ route('home') }}"><strong>Home</strong></a>
+                                            <a class="nav-link ps-xl-2 ps-0 {{ request()->is('/') ? 'active' : '' }}" href="{{ route('home') }}"><strong>{{ __('menu.home') }}</strong></a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link {{ request()->is('nosotros') ? 'active' : '' }}" href="{{ route('about-us') }}"><strong>About Us</strong></a>
+                                            <a class="nav-link {{ request()->is('nosotros') ? 'active' : '' }}" href="{{ route('about-us') }}"><strong>{{ __('menu.about_us') }}</strong></a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link {{ request()->is('contactanos') ? 'active' : '' }}" href="{{ route('contact-us') }}"><strong>Contact Us</strong></a>
+                                            <a class="nav-link {{ request()->is('contactanos') ? 'active' : '' }}" href="{{ route('contact-us') }}"><strong>{{ __('menu.contact_us') }}</strong></a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link {{ request()->is('blog') ? 'active' : '' }}" href="{{ route('blog') }}"><strong>Blog</strong></a>
+                                            <a class="nav-link {{ request()->is('blog') ? 'active' : '' }}" href="{{ route('blog') }}"><strong>{{ __('menu.blog') }}</strong></a>
                                         </li>
 
                                         <li class="nav-item new-nav-item">
-                                            <label class="new-dropdown">New</label>
-                                            <a class="nav-link {{ request()->is('tienda') ? 'active' : '' }}" href="{{ route('home') }}#nuestros-productos"><strong>Shop</strong></a>
+                                            {{-- <label class="new-dropdown">{{ __('menu.new') }}</label> --}}
+                                            <a class="nav-link {{ request()->is('tienda') ? 'active' : '' }}" href="{{ route('home') }}#nuestros-productos"><strong>{{ __('menu.shop') }}</strong></a>
                                         </li>
 
                                         
@@ -402,7 +383,7 @@
             <li>
                 <a href="{{ route('home') }}">
                     <i class="icli fa-solid fa-house white-icon"></i>
-                    <span>Inicio</span>
+                    <span>{{ __('menu.home') }}</span>
                 </a>
             </li>
 
@@ -417,28 +398,28 @@
                 <a href="{{ route('blog') }}" class="search-box">
                     
                     <i class="icli fa-brands fa-blogger-b"></i>
-                    <span>Blog</span>
+                    <span>{{ __('menu.blog') }}</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{ route('home') }}" class="search-box">
                     <i class="icli fa-solid fa-magnifying-glass"></i>
-                    <span>Buscar</span>
+                    <span>{{ __('menu.search') }}</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{route('user-dashboard')}}#pills-wishlist" class="">
                     <i class="icli fa-regular fa-heart white-icon"></i>
-                    <span>Favoritos</span>
+                    <span>{{ __('menu.whishlist') }}</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{ route('home') }}">
                     <i class="icli fly-cate fa-solid fa-cart-shopping white-icon"></i>
-                    <span>Carrito</span>
+                    <span>{{ __('menu.cart') }}</span>
                 </a>
             </li>
         </ul>

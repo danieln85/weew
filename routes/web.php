@@ -8,6 +8,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\SearchController;
+
 
 // use App\Http\Controllers\ProductsController;
 
@@ -32,12 +35,13 @@ Route::middleware(['blogAuth:admin,editor'])->group(function () {
     Route::get('blog/admin/crear-post', [BlogController::class, 'create'])->name('blog-create');
     Route::resource('blog', BlogController::class)->except(['index', 'blogDetails']);
 });
-// Route::get('/tienda', [ShopController::class, 'index'])->name('shop');
 
-// Route::get('/detalles-producto', [ProductsController::class, 'productDetails'])->name('product-details');
 
 Route::put('/user-profile', [UserProfileController::class, 'update'])->name('user-profile.update');
 
+Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang');
+
+Route::get('/busqueda', [SearchController::class, 'index'])->name('search');
 
 
 Route::get('/terminos-y-condiciones', function () {

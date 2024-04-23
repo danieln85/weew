@@ -10,13 +10,13 @@
                     <div class="breadcrumb-contain">
                         <h2>Sign In</h2>
                         <nav>
-                            <ol class="breadcrumb mb-0">
+                            <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
                                     <a href="{{ route('home') }}">
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="{{ route('login') }}">Sign In</li>
+                                <li class="breadcrumb-item active">{{ __('logueo.register') }}</li>
                             </ol>
                         </nav>
                     </div>
