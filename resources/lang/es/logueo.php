@@ -2,7 +2,7 @@
 
 return [
     
-    'register' => 'Registro',
+    'register' => 'Registrarse',
     'login' => 'Ingresar',
     'password' => 'Contraseña',
     'remember_me' => 'Recuerdame',

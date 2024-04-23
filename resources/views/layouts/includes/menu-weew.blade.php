@@ -251,10 +251,10 @@
                                                         <div class="drop-cart">
                                                             <div class="drop-contain2">
                                                                 <a href="{{route('login')}}">
-                                                                    <h5 class="pb-2">Login</h5>
+                                                                    <h5 class="pb-2">{{__('logueo.login')}}</h5>
                                                                 </a>
                                                                 <a href="{{route('register')}}">
-                                                                    <h5>Register</h5>
+                                                                    <h5>{{__('logueo.register')}}</h5>
                                                                 </a>
                                                             </div>
                                                         </div>

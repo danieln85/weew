@@ -614,12 +614,12 @@
                   
                             @if ($errors->any())
         
-                            <script>
-                                window.onload = function() {
-                                    var redirectUrl = document.getElementById('redirect').getAttribute('data-url');
-                                    window.location.href = redirectUrl + '#diligencia-correctamente';
-                                }
-                            </script>
+                                <script>
+                                    window.onload = function() {
+                                        var redirectUrl = document.getElementById('redirect').getAttribute('data-url');
+                                        window.location.href = redirectUrl + '#diligencia-correctamente';
+                                    }
+                                </script>
                             
                                 <div class="alert alert-danger">
                                     <strong>Por favor escribe un email valido.</strong><br><br>
@@ -630,6 +630,7 @@
                                     </ul>
                                 </div>
                             @endif
+                            
                             @if (session('success'))
                             <script>
                                 window.onload = function() {

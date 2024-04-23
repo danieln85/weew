@@ -7,15 +7,15 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2>User Dashboard</h2>
+                        <h2>Información</h2>
                         <nav>
-                            <ol class="breadcrumb mb-0">
+                            <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
-                                    <a href="index.html">
+                                    <a href="{{route('home')}}">
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active">User Dashboard</li>
+                                <li class="breadcrumb-item active"><strong>Información</strong></li>
                             </ol>
                         </nav>
                     </div>
@@ -63,20 +63,20 @@
                         <ul class="nav nav-pills user-nav-pills" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button"><i data-feather="home"></i>
-                                    Información general</button>
+                                    Información</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button"><i data-feather="shopping-bag"></i>Mis compras</button>
+                                <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button"><i data-feather="shopping-bag"></i>Compras</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button"><i data-feather="heart"></i>
-                                  Mis Favoritos</button>
+                                  Favoritos</button>
                             </li>
                             {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab"><i data-feather="credit-card"></i> Saved Card</button>
                             </li> --}}
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#pills-facturacion" type="button" role="tab"><i data-feather="map-pin"></i>Datos de facturación</button>
+                                <button class="nav-link" id="pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#pills-facturacion" type="button" role="tab"><i data-feather="map-pin"></i>Facturación</button>
                             </li>
                             {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"><i data-feather="user"></i>
@@ -85,7 +85,7 @@
                             <li class="nav-item" role="presentation">
                                 <a href="{{ route('profile.show') }}" class="nav-link"></i>
                                   <i data-feather="user"></i>
-                                        Perfil de usuario  
+                                        Perfil
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -137,12 +137,19 @@
                     </div>
 
                     <div class="d-flex justify-content-around">
+                        <a href="{{ route('profile.show') }}">
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Perfil</button>
+                        </a>
+
+                    
                         <a href="{{ route('user-dashboard') }}#pills-security">
                             <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Privacidad</button>
                         </a>
-
+                    </div>
+                    <div class="d-flex justify-content-around">
                     @if(auth()->check())
                         @if(auth()->user()->role == 'admin')
+                       
                             <a href="{{ route('user-dashboard') }}#pills-crear-editar">
                                 <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Crear | Editar</button>
                             </a>
@@ -166,7 +173,7 @@
                             <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel">
                                 <div class="dashboard-home">
                                     <div class="title">
-                                        <h2>Información general</h2>
+                                        <h2>Información</h2>
                                         <span class="title-leaf">
                                             <svg class="icon-width bg-gray">
                                                 <use xlink:href="../assets/svg/leaf.svg#leaf"></use>
@@ -176,7 +183,7 @@
 
                                     <div class="dashboard-user-name">
                                         <h6 class="text-content">Hola, <b class="text-title">{{ Auth::user()->name }}</b></h6>
-                                        <p class="text-content">Desde la opción de información general puedes ver tus actividad más reciente, configurar los datos de facturación y tu ubicación, acceder a tu historial de compras, ver tus productos favorito, revisar las políticas de privacidad y además modificar tu correo y contraseña.</p>
+                                        <p class="text-content">Desde este tablero de información puedes ver tus actividad más reciente, configurar los datos de facturación y tu ubicación, acceder a tu historial de compras, ver tus productos favorito, revisar las políticas de privacidad y además modificar tu correo y contraseña.</p>
                                     </div>
 
                                     <div class="total-box">
@@ -478,48 +485,67 @@
                                         </span>
                                     </div>
 
+                                    <a id="pills-facturacion"></a> 
+                                            <div id="redirect" data-url="{{ route('user-dashboard') }}"></div>
+                        
+                                            <a id="pills-facturacion"></a>
+                                            <div id="redirect" data-url="{{ route('user-dashboard') }}"></div>
+
+                                            @if (session('success'))
+                                                <script>
+                                                    window.onload = function() {
+                                                        var redirectUrl = document.getElementById('redirect').getAttribute('data-url');
+                                                        window.location.href = redirectUrl + '#pills-facturacion';
+                                                    }
+                                                </script>
+                                                <div class="alert alert-success">
+                                                    {{ session('success') }}
+                                                </div>
+                                            @endif
+
+
+                                           @if ($errors->any())
+        
+                                            <script>
+                                                window.onload = function() {
+                                                    var redirectUrl = document.getElementById('redirect').getAttribute('data-url');
+                                                    window.location.href = redirectUrl + '#pills-facturacion';
+                                                }
+                                            </script>
+                            
+                                                <div class="alert alert-danger">
+                                                    <strong>Debes diligenciar correctamente todos los campos del formulario marcados con (*) para poder guardarlo.</strong><br><br>
+                                                    {{-- <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li></br>
+                                                        @endforeach
+                                                    </ul> --}}
+                                                </div>
+                                            @endif
+
                                     <div class="order-contain">
                                        
 
                                     <div class="order-box dashboard-bg-box">
                                         <div class="order-container mb-4">
 
-
                                             <div class="order-detail">
-                                                <h4>Diligencia el formulario con la información de envío y facturación. <span class="success-bg">Completa</span></h4>
+                                                <h4>Diligencia el formulario con la información de envío y facturación con la que deseas realizar tus compras. <span class="success-bg">Completa</span></h4>
                                                 {{-- <h6 class="text-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing dipisicing elit, Lorem ipsum, dolor sit amet consectetur adipisicing elit sdsdsdd.</h6> --}}
                                             </div>
                                         </div>
-
-                                        @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <strong>Por favor diligencia correctamente el formulario.</strong><br><br>
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li></br>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                        @endif
-
-
-                                        @if (session('success'))
-                                        <div class="alert alert-success">
-                                            {{ session('success') }}
-                                        </div>
-                                        @endif
 
                                         <form action="{{route('user-profile.update') }}" method="POST">
                                             @csrf 
                                             @method('PUT')
                                             <div class="mb-3">
-                                                <label for="name_fac" class="form-label">Nombre en la factura</label>
+                                                <label for="name_fac" class="form-label">* Nombre en la factura</label>
                                                 <input type="text" class="form-control" id="name_fac" name="name_fac" value="{{ Auth::user()->name_fac ?: Auth::user()->name }}" required>
 
                                             </div>
                                         
                                             <div class="mb-3">
-                                                <label for="address" class="form-label">Dirección</label>
+                                                <label for="address" class="form-label">* Dirección</label>
                                                 <input type="text" class="form-control" id="address" name="address" value="{{ Auth::user()->address }}" required>
                                             </div>
                                         
@@ -529,27 +555,27 @@
                                             </div>
                                         
                                             <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <label for="state" class="form-label">Departamento</label>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="state" class="form-label">* Departamento</label>
                                                     <input type="text" class="form-control" id="state" name="state" value="{{ Auth::user()->state }}" >
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label for="city" class="form-label">Ciudad</label>
+                                                    <label for="city" class="form-label">* Ciudad</label>
                                                     <input type="text" class="form-control" id="city" name="city" value="{{ Auth::user()->city }}">
                                                 </div>
                                             </div>
 
                                             <div class="row mb-3">
-                                                <div class="col-md-4">
-                                                    <label for="id_number" class="form-label">Número de Identificación</label>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="id_number" class="form-label">* Número de Identificación</label>
                                                     <input type="number" class="form-control" id="id_number" name="id_number" value="{{ Auth::user()->id_number }}" required>
                                                 </div>
-                                                <div class="col-md-4">
-                                                    <label for="email_fac" class="form-label">Email de Facturación</label>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="email_fac" class="form-label">* Email de Facturación</label>
                                                     <input type="email" class="form-control" id="email_fac" name="email_fac" value="{{ Auth::user()->email_fac ?: Auth::user()->email }}" required>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <label for="mobile_number" class="form-label">Celular:</label>
+                                                    <label for="mobile_number" class="form-label">* Celular:</label>
                                                     <input type="tel" class="form-control" id="mobile_number" name="mobile_number" pattern="[0-9]{10}" value="{{ Auth::user()->mobile_number }}">
                                                 </div>
                                             </div>
