@@ -13,9 +13,13 @@ return [
     'cart' => 'Cart',
     'email' => 'Email',
     'mobile' => 'Mobile',
+    'hot_deals' => 'Hot Deals',
 
     'info' => 'Dashboard',
-
+    'privacy' => 'Privacy',
+    'create_edit' => 'Create | Edit',
+    'download' => 'download',
+    
 
    'useful_link'=>'Useful Link',
    'orders'=>'Orders',

@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2>Contact Us</h2>
+                        <h2>{{ __('menu.contact_us') }}</h2>
                         <nav>
                             <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
@@ -17,7 +17,7 @@
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active">Contact Us</li>
+                                <li class="breadcrumb-item active">{{ __('menu.contact_us') }}</li>
                             </ol>
                         </nav>
                     </div>

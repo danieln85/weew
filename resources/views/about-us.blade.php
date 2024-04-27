@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2>About Us</h2>
+                        <h2>{{ __('menu.about_us') }}</h2>
                         <nav>
                             <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
@@ -15,7 +15,7 @@
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active">About Us</li>
+                                <li class="breadcrumb-item active">{{ __('menu.about_us') }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -60,6 +60,9 @@
                             <div class="delivery-list">
                                 <p class="text-content">En WEEW promovemos el consumo consciente y responsable del cannabis, priorizamos la salud y el bienestar de los consumidores. Cambiamos el estigma negativo y la desinformación empoderando a los consumidores para tomar decisiones informadas.</p>
 
+
+                                <p class="text-content">Nuestro compromiso se centra en proporcionar una experiencia educativa y segura en torno al cannabis. Nos esforzamos por fomentar una comunidad donde la transparencia y la responsabilidad sean los pilares fundamentales. A través de recursos confiables y contenido informativo, capacitamos a nuestros usuarios para que comprendan los diversos aspectos del cannabis y puedan hacer elecciones que reflejen su bienestar y estilo de vida.</p>
+
                                 <ul class="delivery-box">
                                     <li>
                                         <div class="delivery-box">
@@ -68,12 +71,12 @@
                                             </div>
 
                                             <div class="delivery-detail">
-                                                <h5 class="text">Free delivery for all orders</h5>
+                                                <h5 class="text">Envíos GRATIS o con hasta un 60 OFF</h5>
                                             </div>
                                         </div>
                                     </li>
 
-                                    <li>
+                                    {{-- <li>
                                         <div class="delivery-box">
                                             <div class="delivery-icon">
                                                 <img src="{{ ('svg/3/leaf.svg') }}" class="blur-up lazyload" alt="">
@@ -83,7 +86,7 @@
                                                 <h5 class="text">Only fresh products</h5>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> --}}
 
                                 </ul>
                             </div>
@@ -281,7 +284,7 @@
     <!-- Team Section End -->
 
     <!-- Review Section Start -->
-    <section class="review-section section-lg-space">
+    {{-- <section class="review-section section-lg-space">
         <div class="container-fluid">
             <div class="about-us-title text-center">
                 <h4 class="text-content">Latest Testimonials</h4>
@@ -623,7 +626,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Review Section End -->
 
     <!-- Blog Section Start -->

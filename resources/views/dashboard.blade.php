@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2>Información</h2>
+                        <h2>{{__('menu.info')}}</h2>
                         <nav>
                             <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
@@ -15,7 +15,7 @@
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active">Información</li>
+                                <li class="breadcrumb-item active">{{__('menu.info')}}</li>
                             </ol>
                         </nav>
                     </div>
@@ -63,7 +63,7 @@
                         <ul class="nav nav-pills user-nav-pills" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button"><i data-feather="home"></i>
-                                    Información</button>
+                                    {{__('menu.info')}}</button>
                             </li>
 
                             {{-- <li class="nav-item" role="presentation">
@@ -71,32 +71,32 @@
                             </li> --}}
                             <li class="nav-item" role="presentation">
                                 <a href="{{ route('profile.show') }}" class="nav-link"></i>
-                                  <i data-feather="user"></i>Perfil</a>
+                                  <i data-feather="user"></i>{{__('perfil.profile')}}</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#pills-facturacion" type="button" role="tab"><i data-feather="map-pin"></i>Facturación</button>
+                                <button class="nav-link" id="pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#pills-facturacion" type="button" role="tab"><i data-feather="map-pin"></i>{{__('menu.orders')}}</button>
                             </li>
                             {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"><i data-feather="user"></i>
                                     Profile</button>
                             </li> --}}
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button"><i data-feather="shopping-bag"></i>Compras</button>
+                                <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button"><i data-feather="shopping-bag"></i>{{__('menu.billing')}}</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button"><i data-feather="heart"></i>Favoritos</button></li>
+                                <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button"><i data-feather="heart"></i>{{__('menu.whishlist')}}</button></li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab"><i data-feather="shield"></i>Privacidad</button></li>
+                                <button class="nav-link" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab"><i data-feather="shield"></i>{{__('menu.privacy')}}</button></li>
 
 
                             @if(auth()->check())
                             @if(auth()->user()->role == 'admin')
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-crear-editar-tab" data-bs-toggle="pill" data-bs-target="#pills-crear-editar" type="button" role="tab"><i data-feather="edit"></i>Crear | Editar</button>
+                                <button class="nav-link" id="pills-crear-editar-tab" data-bs-toggle="pill" data-bs-target="#pills-crear-editar" type="button" role="tab"><i data-feather="edit"></i>{{__('menu.create_edit')}}</button>
                             </li>
                                 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-download-tab" data-bs-toggle="pill" data-bs-target="#pills-download" type="button" role="tab"><i data-feather="download"></i>Download</button>
+                                <button class="nav-link" id="pills-download-tab" data-bs-toggle="pill" data-bs-target="#pills-download" type="button" role="tab"><i data-feather="download"></i>{{__('menu.download')}}</button>
                             </li>
                             @elseif(auth()->user()->role == 'editor')
                             <li class="nav-item" role="presentation">
@@ -112,28 +112,28 @@
                 <div class="col-xxl-9 col-lg-8">
                     <div class="d-flex justify-content-around">
                         <a href="{{ route('user-dashboard') }}#pills-dashboard">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Información</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">{{__('menu.info')}}</button>
                         </a>
                         <a href="{{ route('profile.show') }}">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Perfilito</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">{{__('perfil.profile')}}</button>
                         </a>
                         <a href="{{ route('user-dashboard') }}#pills-facturacion">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Facturación</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">{{__('menu.billing')}}</button>
                         </a>
                         
                     </div>
 
                     <div class="d-flex justify-content-around">
                         <a href="{{ route('user-dashboard') }}#pills-order">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Compras</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">{{__('menu.orders')}}</button>
                         </a>
 
                         <a href="{{ route('user-dashboard') }}#pills-wishlist">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Favoritos</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">{{__('menu.whishlist')}}</button>
                         </a>
                     
                         <a href="{{ route('user-dashboard') }}#pills-security">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Privacidad</button>
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">{{__('menu.privacy')}}</button>
                         </a>
                     </div>
                     <div class="d-flex justify-content-around">
@@ -141,11 +141,11 @@
                         @if(auth()->user()->role == 'admin')
                        
                             <a href="{{ route('user-dashboard') }}#pills-crear-editar">
-                                <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Crear | Editar</button>
+                                <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">{{__('menu.create_edit')}}</button>
                             </a>
                             
                             <a href="{{ route('user-dashboard') }}#pills-download">
-                                <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Download</button>
+                                <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">{{__('menu.download')}}</button>
                             </a>
                         @elseif(auth()->user()->role == 'editor')
                             <a href="{{ route('user-dashboard') }}#pills-crear-editar">
@@ -163,7 +163,7 @@
                             <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel">
                                 <div class="dashboard-home">
                                     <div class="title">
-                                        <h2>Información</h2>
+                                        <h2>{{__('menu.info')}}</h2>
                                         <span class="title-leaf">
                                             <svg class="icon-width bg-gray">
                                                 <use xlink:href="../assets/svg/leaf.svg#leaf"></use>
@@ -173,7 +173,7 @@
 
                                     <div class="dashboard-user-name">
                                         <h6 class="text-content">Hola, <b class="text-title">{{ Auth::user()->name }}</b></h6>
-                                        <p class="text-content">Desde este tablero de información puedes ver tus actividad más reciente, configurar los datos de facturación y tu ubicación, acceder a tu historial de compras, ver tus productos favoritos, revisar las políticas de privacidad y además modificar tu correo y contraseña.</p>
+                                        <p class="text-content">Desde este tablero de información puedes ver tu actividad más reciente y consultar el estado de tus pedidos.</p>
                                     </div>
 
                                     <div class="total-box">
@@ -212,64 +212,123 @@
                                             </div>
                                         </div>
                                     </div>
+                                        <!-- Order Detail Section Start -->
+    <section class="order-detail">
+        <div class="container-fluid-lg">
+            <div class="row g-sm-4 g-3">
 
-                                    {{-- <div class="dashboard-title">
-                                        <h3>Account Information</h3>
-                                    </div> --}}
-
-                                    <div class="row g-4">
-                                        <div class="col-xxl-6">
-                                            <div class="dashboard-content-title">
-                                                <h4>Perfil de usuario<a href="{{ route('profile.show') }}">Editar</a>
-                                                </h4>
-                                            </div>
-                                            <div class="dashboard-detail">
-                                                <h6 class="text-content">{{ Auth::user()->name }}</h6>
-                                                <h6 class="text-content">{{ Auth::user()->email }}</h6>
-                                                <a href="{{route('profile.show')}}">Cambiar contraseña</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xxl-6">
-                                            <div class="dashboard-content-title">
-                                                <h4>Datos de facturación 
-                                                    <a href="{{ route('user-dashboard') }}#pills-facturacion">Editar</a>
-                                                </h4>
-                                            </div>
-                                            
-                                            <div class="dashboard-detail">
-                                                <h6 class="text-content">Dirección, ciudad, departamento.</h6>
-                                                <h6 class="text-content">Número de identificación.</h6>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="dashboard-content-title">
-                                                <h4>Address Book <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a></h4>
-                                            </div>
-
-                                            <div class="row g-4">
-                                                <div class="col-xxl-6">
-                                                    <div class="dashboard-detail">
-                                                        <h6 class="text-content">Default Billing Address</h6>
-                                                        <h6 class="text-content">You have not set a default billing
-                                                            address.</h6>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit Address</a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xxl-6">
-                                                    <div class="dashboard-detail">
-                                                        <h6 class="text-content">Default Shipping Address</h6>
-                                                        <h6 class="text-content">You have not set a default shipping
-                                                            address.</h6>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit Address</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                <div class="col-xxl-12 col-xl-12 col-lg-12">
+                    <div class="row g-sm-4 g-3">
+                        <div class="col-xl-4 col-sm-6">
+                            <div class="order-details-contain">
+                                <div class="order-tracking-icon">
+                                    <i data-feather="package" class="text-content"></i>
                                 </div>
+
+                                <div class="order-details-name">
+                                    <h5 class="text-content">Tracking Code</h5>
+                                    <h2 class="theme-color">MH4285UY</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <div class="order-details-contain">
+                                <div class="order-tracking-icon">
+                                    <i data-feather="truck" class="text-content"></i>
+                                </div>
+
+                                <div class="order-details-name">
+                                    <h5 class="text-content">Service</h5>
+                                    <img src="../assets/images/inner-page/brand-name.svg" class="img-fluid blur-up lazyload" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <div class="order-details-contain">
+                                <div class="order-tracking-icon">
+                                    <i class="text-content" data-feather="info"></i>
+                                </div>
+
+                                <div class="order-details-name">
+                                    <h5 class="text-content">Package Info</h5>
+                                    <h4>Letter</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <div class="order-details-contain">
+                                <div class="order-tracking-icon">
+                                    <i class="text-content" data-feather="crosshair"></i>
+                                </div>
+
+                                <div class="order-details-name">
+                                    <h5 class="text-content">From</h5>
+                                    <h4>STR. Smardan 9, Bucuresti, romania.</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <div class="order-details-contain">
+                                <div class="order-tracking-icon">
+                                    <i class="text-content" data-feather="map-pin"></i>
+                                </div>
+
+                                <div class="order-details-name">
+                                    <h5 class="text-content">Destination</h5>
+                                    <h4>Flokagata 24, 105 Reykjavik, Iceland</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <div class="order-details-contain">
+                                <div class="order-tracking-icon">
+                                    <i class="text-content" data-feather="calendar"></i>
+                                </div>
+
+                                <div class="order-details-name">
+                                    <h5 class="text-content">Estimated Time</h5>
+                                    <h4>7 Frb, 05:05pm</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 overflow-hidden">
+                            <ol class="progtrckr">
+                                <li class="progtrckr-done">
+                                    <h5>Order Processing</h5>
+                                    <h6>05:43 AM</h6>
+                                </li>
+                                <li class="progtrckr-done">
+                                    <h5>Pre-Production</h5>
+                                    <h6>01:21 PM</h6>
+                                </li>
+                                <li class="progtrckr-done">
+                                    <h5>In Production</h5>
+                                    <h6>Processing</h6>
+                                </li>
+                                <li class="progtrckr-todo">
+                                    <h5>Shipped</h5>
+                                    <h6>Pending</h6>
+                                </li>
+                                <li class="progtrckr-todo">
+                                    <h5>Delivered</h5>
+                                    <h6>Pending</h6>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Order Detail Section End -->
+                                </div>
+                                
                             </div>
 
                             <div class="tab-pane fade" id="pills-wishlist" role="tabpanel">

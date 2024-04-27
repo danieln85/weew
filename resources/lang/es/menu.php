@@ -14,9 +14,14 @@ return [
     'cart' => 'Carrito',
     'email' => 'Email',
     'mobile' => 'Celular',
+    'hot_deals' => 'Ofertas',
 
 
     'info' => 'Información',
+    'privacy' => 'Privacidad',
+    'create_edit' => 'Crear | Editar',
+    'download' => 'Descargas',
+    
 
    
     'useful_link'=>'Enlaces Útiles',

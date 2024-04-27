@@ -213,26 +213,26 @@
                                                                 <h6 class="mt-1"><img href=""> <strong> {{ Auth::user()->name }}</strong></h6><br>
 
                                                                 <a href="{{route('user-dashboard')}}#pills-dashboard">
-                                                                    <h5 class="pb-2">Información</h5>
+                                                                    <h5 class="pb-2">{{__('menu.info')}}</h5>
                                                                 </a>
                                                                 <a href="{{route('profile.show')}}">
-                                                                    <h5 class="pb-2">Perfil</h5>
+                                                                    <h5 class="pb-2">{{__('perfil.profile')}}</h5>
                                                                 </a>
                                                                 <a href="{{route('user-dashboard')}}#pills-order">
-                                                                    <h5 class="pb-2">Compras</h5>
+                                                                    <h5 class="pb-2">{{__('menu.orders')}}</h5>
                                                                 </a>
                                                                 <a href="{{route('user-dashboard')}}#pills-facturacion">
-                                                                    <h5 class="pb-2">Facturación</h5>
+                                                                    <h5 class="pb-2">{{__('menu.billing')}}</h5>
                                                                 </a>
                                                                 <a href="{{route('user-dashboard')}}#pills-wishlist">
-                                                                    <h5 class="pb-2">Favoritos</h5>
+                                                                    <h5 class="pb-2">{{__('menu.whishlist')}}</h5>
                                                                 </a>
 
                                                                 
                                                                 <form method="POST" action="{{ route('logout') }}">
                                                                     @csrf
                                                                     <button type="submit" class="btn-reset">
-                                                                        <h5><i class="fa-solid fa-door-open"></i> Salir</h5>
+                                                                        <h5><i class="fa-solid fa-door-open"></i> {{__('menu.logout')}}</h5>
                                                                     </button>
                                                                 </form>
 
@@ -359,7 +359,7 @@
                                 <div class="fire">
                                     <img src="{{ asset('images/icon/hot-sale.png') }}" class="img-fluid" alt="">
                                 </div>
-                                <span>Hot Deals</span>
+                                <span>{{__('menu.hot_deals')}}</span>
                             </a>
                             @endif
 
