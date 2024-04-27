@@ -40,7 +40,7 @@
                                     </div>
 
                                     <a href="{{  route('home') }}">
-                                        <img src="{{ asset('images/veg-3/cate1/2.png') }}" class="img-fluid" alt="">
+                                        <img src="{{ asset('images/products/2.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
 
@@ -63,9 +63,9 @@
                                         </li>
                                     </ul>
                                     <a href="{{  route('home') }}">
-                                        <h5 class="name"><strong>Cannabis Pipe</strong></h5>
+                                        <h5 class="name"><strong>WEEW KIT Negro</strong></h5>
                                     </a>
-                                    <h5 class="price theme-color">$70.000<del>$98.000</del></h5>
+                                    <h5 class="price theme-color">$126.650<del>$149.000</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
                                             <div class="counter">
@@ -96,7 +96,7 @@
                                     </div>
 
                                     <a href="{{  route('home') }}">
-                                        <img src="{{ asset('images/veg-3/cate1/2.png') }}" class="img-fluid" alt="">
+                                        <img src="{{ asset('images/products/1.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
 
@@ -119,9 +119,9 @@
                                         </li>
                                     </ul>
                                     <a href="{{  route('home') }}">
-                                        <h5 class="name"><strong>Cannabis Pipe</strong></h5>
+                                        <h5 class="name"><strong>WEEW KIT Morado</strong></h5>
                                     </a>
-                                    <h5 class="price theme-color">$70.000<del>$98.000</del></h5>
+                                    <h5 class="price theme-color">$135.150<del>$159.000</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
                                             <div class="counter">
@@ -153,7 +153,7 @@
                                     </div>
 
                                     <a href="{{  route('home') }}">
-                                        <img src="{{ asset('images/veg-3/cate1/3.png') }}" class="img-fluid" alt="">
+                                        <img src="{{ asset('images/products/3.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
 
@@ -176,9 +176,9 @@
                                         </li>
                                     </ul>
                                     <a href="{{  route('home') }}">
-                                        <h5 class="name"><strong>Cannabis Pipe</strong></h5>
+                                        <h5 class="name"><strong>WEEW COMBO (Negro y Azul)</strong></h5>
                                     </a>
-                                    <h5 class="price theme-color">$70.000<del>$98.000</del></h5>
+                                    <h5 class="price theme-color">$255.000<del>$300.000</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
                                             <div class="counter">

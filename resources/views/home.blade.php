@@ -23,13 +23,13 @@
                 <div class="col-xxl-3 col-md-4 ratio_medium d-md-block d-none">
                     <div class="home-contain home-small h-100">
                         <div class="h-100">
-                            <img src="{{ asset('images/veg-3/home/2.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
+                            <img src="{{ asset('images/home/weew-kit-cannabico-2.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
                         </div>
                         <div class="home-detail text-center p-top-center w-100 text-white">
                             <div>
-                                <h4 class="fw-bold">!Nos encanta lo que hacemos!</h4>
+                                <h4 class="fw-bold shaded-text">!Nos encanta lo que hacemos!</h4>
                                 {{-- <h5 class="text-center">Best products</h5> --}}
-                                <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2" onclick="location.href = '{{  route('home') }}';">Comprar</button>
+                                <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2 green-button" onclick="location.href = '{{  route('home') }}';">Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -54,11 +54,11 @@
                         <div class="col-xxl-12 col-sm-6">
                             <div class="home-contain">
                                 <a href="{{  route('home') }}">
-                                    <img src="{{ asset('images/veg-3/home/4.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
+                                    <img src="{{ asset('images/home/weew-kit-cannabico-4.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
                                 </a>
                                 <div class="home-detail text-white w-50 p-center-left home-p-sm">
                                     <div>
-                                        <h4 class="fw-bold">Safe products saves lives</h4>
+                                        <h4 class="fw-bold shaded-text">Safe products saves lives</h4>
                                         <h5>Discount Offer</h5>
                                     </div>
                                 </div>
