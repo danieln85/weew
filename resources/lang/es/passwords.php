@@ -14,7 +14,7 @@ return [
     */
 
     'reset' => '¡Su contraseña ha sido restablecida!',
-    'sent' => '¡Acabamos de enviarte un correo electrónico con un enlace para que restablezcas tu contraseña. No olvides revisar tu bandeja de correo no deseado o spam!',
+    'sent' => '¡Acabamos de enviarte un correo electrónico con un enlace para que restablezcas tu contraseña. No olvides revisar en tu correo no deseado o spam!',
     'token' => 'Este token de restablecimiento de contraseña es inválido.',
     'user' => 'No se ha encontrado un usuario con esa dirección de correo.',
     'throttled' => 'Por favor espere antes de volver a intentarlo.',

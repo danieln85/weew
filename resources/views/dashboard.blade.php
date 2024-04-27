@@ -65,16 +65,14 @@
                                 <button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button"><i data-feather="home"></i>
                                     Información</button>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button"><i data-feather="shopping-bag"></i>Compras</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button"><i data-feather="heart"></i>
-                                  Favoritos</button>
-                            </li>
+
                             {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab"><i data-feather="credit-card"></i> Saved Card</button>
                             </li> --}}
+                            <li class="nav-item" role="presentation">
+                                <a href="{{ route('profile.show') }}" class="nav-link"></i>
+                                  <i data-feather="user"></i>Perfil</a>
+                            </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#pills-facturacion" type="button" role="tab"><i data-feather="map-pin"></i>Facturación</button>
                             </li>
@@ -83,15 +81,12 @@
                                     Profile</button>
                             </li> --}}
                             <li class="nav-item" role="presentation">
-                                <a href="{{ route('profile.show') }}" class="nav-link"></i>
-                                  <i data-feather="user"></i>
-                                        Perfil
-                                </a>
+                                <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button"><i data-feather="shopping-bag"></i>Compras</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab"><i data-feather="shield"></i>
-                                    Privacidad</button>
-                            </li>
+                                <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button"><i data-feather="heart"></i>Favoritos</button></li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab"><i data-feather="shield"></i>Privacidad</button></li>
 
 
                             @if(auth()->check())
@@ -110,12 +105,6 @@
                             @endif
                         @endif
 
-
-
-
-
-
-
                         </ul>
                     </div>
                 </div>
@@ -125,22 +114,23 @@
                         <a href="{{ route('user-dashboard') }}#pills-dashboard">
                             <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Información</button>
                         </a>
-                        <a href="{{ route('user-dashboard') }}#pills-order">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Compras</button>
+                        <a href="{{ route('profile.show') }}">
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Perfilito</button>
                         </a>
                         <a href="{{ route('user-dashboard') }}#pills-facturacion">
                             <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Facturación</button>
                         </a>
-                        <a href="{{ route('user-dashboard') }}#pills-wishlist">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Favoritos</button>
-                        </a>
+                        
                     </div>
 
                     <div class="d-flex justify-content-around">
-                        <a href="{{ route('profile.show') }}">
-                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Perfil</button>
+                        <a href="{{ route('user-dashboard') }}#pills-order">
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Compras</button>
                         </a>
 
+                        <a href="{{ route('user-dashboard') }}#pills-wishlist">
+                            <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Favoritos</button>
+                        </a>
                     
                         <a href="{{ route('user-dashboard') }}#pills-security">
                             <button class="btn btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Privacidad</button>
