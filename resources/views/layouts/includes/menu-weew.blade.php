@@ -136,14 +136,14 @@
                                     <ul> 
                                         @include('layouts.includes.lang')
 
-                                        <li class="right-side d-none d-md-inline">
+                                        {{-- <li class="right-side d-none d-md-inline">
                                             <a href="{{ route('user-dashboard')}}#pills-wishlist" class="header-icon search-box search-icon">
                                                 <small class="badge-number">2</small>
                                                 <i class="fa-regular fa-heart"></i>
                                             </a>
-                                        </li>
+                                        </li> --}}
 
-                                        <li class="right-side onhover-dropdown d-none d-md-inline">
+                                        {{-- <li class="right-side onhover-dropdown d-none d-md-inline">
                                             <a class="header-icon search-box search-icon">
                                                 <small class="badge-number">2</small>
                                                 <i class="fa-solid fa-cart-shopping "></i>
@@ -161,9 +161,6 @@
                                                                     <h5>Cannabis Pipe</h5>
                                                                 </a>
                                                                 <h6><span>2 x</span> $80.000</h6>
-                                                                {{-- <button class="close-button">
-                                                                    <i class="fa-solid fa-xmark"></i>
-                                                                </button> --}}
                                                             </div>
                                                         </div>
                                                     </li>
@@ -197,7 +194,7 @@
                                                     text-white">Checkout</a>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li> --}}
 
                                         <li class="right-side onhover-dropdown">
                                             <a class="header-icon user-box user-icon">                                                
@@ -224,7 +221,7 @@
                                                                 <a href="{{route('user-dashboard')}}#pills-order">
                                                                     <h5 class="pb-2">Compras</h5>
                                                                 </a>
-                                                                <a href="{{route('user-dashboard')}}#pills-address">
+                                                                <a href="{{route('user-dashboard')}}#pills-facturacion">
                                                                     <h5 class="pb-2">Facturación</h5>
                                                                 </a>
                                                                 <a href="{{route('user-dashboard')}}#pills-wishlist">

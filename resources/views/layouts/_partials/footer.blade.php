@@ -7,8 +7,7 @@
                     <a href="{{ route('home') }}" class="foot-logo">
                         <img src="{{ asset('images/logo/weew-logo.png') }}" class="img-fluid" alt="">
                     </a>
-                    <p class="information-text">it is a long established fact that a reader will be distracted
-                        by the readable content.</p>
+                    <p class="information-text"><strong>¡WEEW! Somos la comunidad más grande de consumidores responsables de cannabis.</strong></p>
                     <ul class="social-icon">
                         <li>
                             <a href="www.facebook.com">
@@ -60,43 +59,47 @@
                     <ul class="footer-list footer-contact mb-sm-0 mb-3">
                         <li>
                             <a href="{{ route('about-us') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>About Us</a>
+                                <i class="fas fa-angle-right"></i>{{ __('menu.about_us') }}</a>
                         </li>
                         <li>
                             <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Terms & Coditions</a>
+                                <i class="fas fa-angle-right"></i>{{__('menu.terms_&_conditions')}}</a>
                         </li>
                         <li>
                             <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Privacy policies</a>
+                                <i class="fas fa-angle-right"></i>{{__('menu.privacy_policies')}}</a>
                         </li>
                         <li>
+                            <a href="{{route('user-dashboard')}}#pills-dashboard" class="footer-contain-2">
+                                <i class="fas fa-angle-right"></i>{{__('menu.info')}}</a>
+                        </li>
+                        {{-- <li>
                             <a href="{{ route('home') }}" class="footer-contain-2">
                                 <i class="fas fa-angle-right"></i>FAQs</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
 
                 <div class="col-xxl-2 col-xl-4 col-sm-6">
                     <div class="footer-title">
-                        <h4>Useful Link</h4>
+                        <h4>{{__('menu.useful_link')}}</h4>
                     </div>
                     <ul class="footer-list footer-contact mb-sm-0 mb-3">
                         <li>
-                            <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Your Order</a>
+                            <a href="{{route('user-dashboard')}}#pills-order" class="footer-contain-2">
+                                <i class="fas fa-angle-right"></i>{{__('menu.orders')}}</a>
+                        </li>
+                        <li>
+                            <a href="{{route('user-dashboard')}}#pills-facturacion" class="footer-contain-2">
+                                <i class="fas fa-angle-right"></i>{{__('menu.billing')}}</a>
                         </li>
                         <li>
                             <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Your Account</a>
+                                <i class="fas fa-angle-right"></i>{{__('menu.track_orders')}}</a>
                         </li>
                         <li>
-                            <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Track Orders</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Your Wishlist</a>
+                            <a href="{{route('user-dashboard')}}#pills-wishlist" class="footer-contain-2">
+                                <i class="fas fa-angle-right"></i>{{__('menu.whishlist')}}</a>
                         </li>
 
                     </ul>
@@ -104,38 +107,38 @@
 
                 <div class="col-xxl-2 col-xl-4 col-sm-6">
                     <div class="footer-title">
-                        <h4>Categories</h4>
+                        <h4>{{__('menu.menu_nav')}}</h4>
                     </div>
                     <ul class="footer-list footer-contact mb-sm-0 mb-3">
                         <li>
                             <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Home</a>
+                                <i class="fas fa-angle-right"></i>{{__('menu.home')}}</a>
                         </li>
                         <li>
-                            <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Contact Us</a>
+                            <a href="{{ route('contact-us') }}" class="footer-contain-2">
+                                <i class="fas fa-angle-right"></i>{{__('menu.contact_us')}}</a>
                         </li>
                         <li>
-                            <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Blog</a>
+                            <a href="{{ route('blog') }}" class="footer-contain-2">
+                                <i class="fas fa-angle-right"></i>{{__('menu.blog')}}</a>
                         </li>
                         <li>
-                            <a href="{{ route('home') }}" class="footer-contain-2">
-                                <i class="fas fa-angle-right"></i>Shop</a>
+                            <a href="{{ route('home') }}#nuestros-productos" class="footer-contain-2">
+                                <i class="fas fa-angle-right"></i>{{__('menu.shop')}}</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="col-xxl-3 col-xl-4 col-sm-6">
                     <div class="footer-title">
-                        <h4>Store infomation</h4>
+                        <h4>{{__('menu.how_to_find_us')}}</h4>
                     </div>
                     <ul class="footer-address footer-contact">
                         <li>
                             <a href="javascript:void(0)">
                                 <div class="inform-box flex-start-box">
                                     <i data-feather="map-pin"></i>
-                                    <p>Weed Well, Bucaramanga - Colombia</p>
+                                    <p>WEEW | Bogotá - Colombia</p>
                                 </div>
                             </a>
                         </li>
@@ -144,7 +147,7 @@
                             <a href="javascript:void(0)">
                                 <div class="inform-box">
                                     <i data-feather="phone"></i>
-                                    <p>Call us: +57 3144213772</p>
+                                    <p>{{__('menu.mobile')}} +57 316 458 5454</p>
                                 </div>
                             </a>
                         </li>
@@ -153,19 +156,19 @@
                             <a href="javascript:void(0)">
                                 <div class="inform-box">
                                     <i data-feather="mail"></i>
-                                    <p>Email Us: support@weedwell.com</p>
+                                    <p>{{__('menu.email')}}: info@weew.com.co</p>
                                 </div>
                             </a>
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <a href="javascript:void(0)">
                                 <div class="inform-box">
                                     <i data-feather="printer"></i>
                                     <p>Tel: 607 123456</p>
                                 </div>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>
@@ -507,18 +510,19 @@
     </button>
     <h6>
         <i class="fa-solid fa-bag-shopping"></i>
-        <span>5 Items</span>
+        {{-- <span>5 Items</span> --}}
     </h6>
     <ul class="items-image">
         <li>
-            <img src="{{ asset('images/veg-3/cate1/1.png') }}" alt="">
+            <img src="{{ asset('images/products/1.png') }}" alt="">
         </li>
         <li>
-            <img src="{{ asset('images/veg-3/cate1/2.png') }}" alt="">
+            <img src="{{ asset('images/products/2.png') }}" alt="">
         </li>
-        <li>+3</li>
+        {{-- <li>+3</li> --}}
     </ul>
-    <button onclick="location.href = 'cart.html';" class="btn item-button btn-sm fw-bold">$ 140.000</button>
+    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank"><button class="btn item-button btn-sm fw-bold">Comprar</button></a>
+    {{-- <button onclick="location.href = 'cart.html';" class="btn item-button btn-sm fw-bold">$ 140.000</button> --}}
 </div>
 <!-- Items section End -->
 

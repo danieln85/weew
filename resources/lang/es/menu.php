@@ -12,6 +12,18 @@ return [
     'search' => 'Buscar',
     'whishlist' => 'Favoritos',
     'cart' => 'Carrito',
+    'email' => 'Email',
+    'mobile' => 'Celular',
+
+
+    'info' => 'Información',
+
+   
+    'useful_link'=>'Enlaces Útiles',
+    'orders'=>'Compras',
+    'billing' => 'Facturación',
+    'track_orders' => 'Seguir Orden',
+
 
     //barra de busqueda e iconos con info desplegable
     'search_for_products_we_deliver_to' => 'Busca productos, los enviamos a la puerta de tu casa...',
@@ -26,6 +38,13 @@ return [
 
     //extras
     'back' => 'Regresar',
-    'logout' => 'Cerrar Sesión'
+    'logout' => 'Cerrar Sesión',
+
+
+    //FOOTER
+    'terms_&_conditions' => 'Términos y condiciones',
+    'privacy_policies' => 'Políticas de privacidad',
+    'how_to_find_us' => '¿Cómo encontrarnos?',
+    'menu_nav' => 'Navegación'
     
 ];

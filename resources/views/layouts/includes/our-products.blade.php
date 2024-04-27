@@ -32,14 +32,18 @@
 
                         <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay="0.05s">
                             <div class="product-box-4">
+                                <div class="label-flex">
+                                    <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> 15% OFF por Lanzamiento</label>
+                                </div>
                                 <div class="product-image">
-                                    <div class="label-flex">
+
+                                    {{-- <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist notifi-wishlist">
                                             <i class="fa-regular fa-heart"></i>
                                         </button>
-                                    </div>
+                                    </div> --}}
 
-                                    <a href="{{  route('home') }}">
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
                                         <img src="{{ asset('images/products/2.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -62,10 +66,10 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                     </ul>
-                                    <a href="{{  route('home') }}">
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
                                         <h5 class="name"><strong>WEEW KIT Negro</strong></h5>
                                     </a>
-                                    <h5 class="price theme-color">$126.650<del>$149.000</del></h5>
+                                    <h5 class="price theme-color"><strong>$126.650</strong><del>$149.000</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
                                             <div class="counter">
@@ -88,14 +92,17 @@
                         </div>
                         <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay="0.05s">
                             <div class="product-box-4">
+                                <div class="label-flex">
+                                    <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> 15% OFF por Lanzamiento</label>
+                                </div>
                                 <div class="product-image">
-                                    <div class="label-flex">
+                                    {{-- <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist notifi-wishlist">
                                             <i class="fa-regular fa-heart"></i>
                                         </button>
-                                    </div>
+                                    </div> --}}
 
-                                    <a href="{{  route('home') }}">
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
                                         <img src="{{ asset('images/products/1.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -118,10 +125,10 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                     </ul>
-                                    <a href="{{  route('home') }}">
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
                                         <h5 class="name"><strong>WEEW KIT Morado</strong></h5>
                                     </a>
-                                    <h5 class="price theme-color">$135.150<del>$159.000</del></h5>
+                                    <h5 class="price theme-color"><strong>$135.150</strong><del>$159.000</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
                                             <div class="counter">
@@ -145,15 +152,18 @@
                         
                         <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp">
                             <div class="product-box-4">
+                                <div class="label-flex">
+                                    <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> 15% OFF por Lanzamiento</label>
+                                </div>
                                 <div class="product-image">
-                                    <div class="label-flex">
+                                    {{-- <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist notifi-wishlist">
                                             <i class="fa-regular fa-heart"></i>
                                         </button>
-                                    </div>
+                                    </div> --}}
 
-                                    <a href="{{  route('home') }}">
-                                        <img src="{{ asset('images/products/3.png') }}" class="img-fluid" alt="">
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
+                                        <img src="{{ asset('images/products/4.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
 
@@ -175,10 +185,10 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                     </ul>
-                                    <a href="{{  route('home') }}">
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
                                         <h5 class="name"><strong>WEEW COMBO (Negro y Azul)</strong></h5>
                                     </a>
-                                    <h5 class="price theme-color">$255.000<del>$300.000</del></h5>
+                                    <h5 class="price theme-color"><strong>$255.000</strong><del>$300.000</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
                                             <div class="counter">

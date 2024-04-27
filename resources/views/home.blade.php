@@ -14,7 +14,7 @@
                                 <h1 class="fw-bold w-100 m-0 p-0">Somos</h1>
                                 <h3 class="text-content fw-light">la comunidad más grande de consumidores responsables de cannabis.</h3>
                                 {{-- <p class="d-sm-block d-none">más grande de consumidores responsable de cannabis.</p> --}}
-                                <button onclick="location.href = '{{  route('home') }}';" class="btn mt-sm-4 btn-2 theme-bg-color text-white mend-auto btn-2-animation">Comprar</button>
+                                <button onclick="location.href = '{{  route('contact-us') }}';" class="btn mt-sm-4 btn-2 theme-bg-color text-white mend-auto btn-2-animation">Contáctanos</button>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,8 @@
                             <div>
                                 <h4 class="fw-bold shaded-text">!Nos encanta lo que hacemos!</h4>
                                 {{-- <h5 class="text-center">Best products</h5> --}}
-                                <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2 green-button" onclick="location.href = '{{  route('home') }}';">Comprar</button>
+                                <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank"><button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2 green-button">Comprar</button></a>
+                                {{-- <button class="btn bg-white theme-color mt-3 home-button mx-auto btn-2 green-button" onclick="location.href = '{{  route('home') }}';">Comprar</button> --}}
                             </div>
                         </div>
                     </div>
@@ -227,7 +228,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <button class="btn theme-bg-color text-white mt-sm-4 mt-3 fw-bold" onclick="location.href = '{{  route('home') }}';">Contáctanos</button>
+                            <button class="btn theme-bg-color text-white mt-sm-4 mt-3 fw-bold green-button" onclick="location.href = '{{  route('contact-us') }}';">Contáctanos</button>
                         </div>
                     </div>
                 </div>
@@ -552,39 +553,40 @@
                     <div class="three-slider arrow-slider ratio_65">
                         <div>
                             <div class="offer-banner hover-effect">
-                                <img src="{{ asset('images/veg-3/value/1.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
+                                <img src="{{ asset('images/home/weew-kit-cannabico-11.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
                                 <div class="banner-detail">
                                     <h5 class="theme-color">15% OFF</h5>
                                     <h6>Oferta Limitada</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
-                                </div>
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank" class="btn-category btn theme-bg-color text-white green-button">Comprar</a>
+                                    {{-- <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button> --}}</div>
                             </div>
                         </div>
 
                         <div>
                             <div class="offer-banner hover-effect">
-                                <img src="{{ asset('images/veg-3/value/2.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
+                                <img src="{{ asset('images/home/weew-kit-cannabico-22.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
                                 <div class="banner-detail">
                                     <h5 class="theme-color">15% OFF</h5>
                                     <h6>Oferta Limitada</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
-                                </div>
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank" class="btn-category btn theme-bg-color text-white green-button">Comprar</a>
+                                    {{-- <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button> --}}  </div>
                             </div>
                         </div>
 
                         <div>
                             <div class="offer-banner hover-effect">
-                                <img src="{{ asset('images/veg-3/value/3.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
+                                <img src="{{ asset('images/home/weew-kit-cannabico-33.png') }}" class="img-fluid bg-img blur-up lazyload" alt="">
                                 <div class="banner-detail">
                                     <h5 class="theme-color">15% OFF</h5>
                                     <h6>Oferta Limitada</h6>
                                 </div>
                                 <div class="offer-box">
-                                    <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button>
+                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank" class="btn-category btn theme-bg-color text-white green-button">Comprar</a>
+                                    {{-- <button onclick="location.href = '{{  route('home') }}';" class="btn-category btn theme-bg-color text-white">Comprar</button> --}}
                                 </div>
                             </div>
                         </div>
@@ -649,12 +651,10 @@
                                         <h4>Recibirás información para que puedas llevar un consumo responsable del cannabis. Conocerás nuestros lanzamientos, descuentos e información sobre nuestra comunidad.</h4>
                                         <form action="{{ route('newsletter.store') }}" method="POST" class="row g-2">
                                             @csrf
-                                        
                                             <div class="col-sm-10 col-12">
                                                 <div class="newsletter-form">
                                                     <input type="email" class="form-control text-white on-focus" id="email" name="email" placeholder="Escribe tu email" value="{{ old('email')}}" required >
-                                                    <button type="submit" class="btn bg-white theme-color btn-md fw-500
-                                                        submit-button">Suscribirme</button>
+                                                    <button type="submit" class="btn bg-white theme-color btn-md fw-500 submit-button green-button">Suscribirme</button>
                                                 </div>
                                             </div>
                                         </form>

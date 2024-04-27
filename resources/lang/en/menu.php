@@ -11,8 +11,18 @@ return [
     'search' => 'Search',
     'whishlist' => 'Whishlist',
     'cart' => 'Cart',
+    'email' => 'Email',
+    'mobile' => 'Mobile',
+
+    'info' => 'Dashboard',
 
 
+   'useful_link'=>'Useful Link',
+   'orders'=>'Orders',
+   'billing' => 'Billing Info',
+   'track_orders' => 'Track Order',
+
+   
     //barra de busqueda e iconos con info desplegables
     'search_for_products_we_deliver_to' => 'Search for products, we deliver to your door...',
 
@@ -27,5 +37,13 @@ return [
     
     //extras
     'back' => 'Back',
-    'logout' => 'Log Out'
+    'logout' => 'Log Out',
+
+
+    //FOOTER
+    'terms_&_conditions' => 'Terms & Conditions',
+    'privacy_policies' => 'Privacy policies',
+    'how_to_find_us' => 'How to find us?',
+    'menu_nav' => 'Navegation'
+
 ];
