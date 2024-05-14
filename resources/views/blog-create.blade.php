@@ -40,7 +40,7 @@
                     <input type="text" id="editor" name="editor" class="form-control">
                 </div>
 
-                <button type="submit" class="btn btn-primary-custom btn-block">Guardar</button>
+                <button type="submit" class="btn btn-primary-custom">Guardar</button>
             </form>
         </div>
     </div>

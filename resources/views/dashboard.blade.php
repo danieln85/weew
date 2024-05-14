@@ -74,14 +74,14 @@
                                   <i data-feather="user"></i>{{__('perfil.profile')}}</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#pills-facturacion" type="button" role="tab"><i data-feather="map-pin"></i>{{__('menu.orders')}}</button>
+                                <button class="nav-link" id="pills-facturacion-tab" data-bs-toggle="pill" data-bs-target="#pills-facturacion" type="button" role="tab"><i data-feather="map-pin"></i>{{__('menu.billing')}}</button>
                             </li>
                             {{-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"><i data-feather="user"></i>
                                     Profile</button>
                             </li> --}}
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button"><i data-feather="shopping-bag"></i>{{__('menu.billing')}}</button>
+                                <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button"><i data-feather="shopping-bag"></i>{{__('menu.orders')}}</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button"><i data-feather="heart"></i>{{__('menu.whishlist')}}</button></li>

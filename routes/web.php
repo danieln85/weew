@@ -42,6 +42,9 @@ Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang
 Route::get('/busqueda', [SearchController::class, 'index'])->name('search');
 
 Route::get('/tienda', [ProductController::class, 'index'])->name('shop');
+Route::get('tienda/admin/crear-producto', [ProductController::class, 'create'])->name('product-create');
+Route::post('store', [ProductController::class, 'store'])->name('product.store');
+Route::resource('product', ProductController::class);
 
 
 Route::get('/terminos-y-condiciones', function () {
