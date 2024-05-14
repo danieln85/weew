@@ -337,7 +337,7 @@
 
                                         <li class="nav-item new-nav-item">
                                             {{-- <label class="new-dropdown">{{ __('menu.new') }}</label> --}}
-                                            <a class="nav-link {{ request()->is('tienda') ? 'active' : '' }}" href="{{ route('home') }}#nuestros-productos"><strong>{{ __('menu.shop') }}</strong></a>
+                                            <a class="nav-link {{ request()->is('tienda') ? 'active' : '' }}" href="{{ route('shop') }}#nuestros-productos"><strong>{{ __('menu.shop') }}</strong></a>
                                         </li>
 
                                         

@@ -10,9 +10,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SearchController;
-
-
-// use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -42,6 +40,8 @@ Route::put('/user-profile', [UserProfileController::class, 'update'])->name('use
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang');
 
 Route::get('/busqueda', [SearchController::class, 'index'])->name('search');
+
+Route::get('/tienda', [ProductController::class, 'index'])->name('shop');
 
 
 Route::get('/terminos-y-condiciones', function () {
