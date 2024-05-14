@@ -8,6 +8,7 @@ use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\BlogRequest;
 
 class BlogController extends Controller
 {
@@ -54,7 +55,7 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(BlogRequest $request): RedirectResponse
     {
         $fileName = time().'.'.$request->image_450x300->extension();
 
