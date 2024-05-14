@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2>Blog</h2>
+                        <h2>{{ __('menu.blog') }}</h2>
                         <nav>
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item">
@@ -15,7 +15,7 @@
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active">Blog Grid</li>
+                                <li class="breadcrumb-item active">Publicaciones</li>
                             </ol>
                         </nav>
                     </div>

@@ -6,7 +6,7 @@ return [
     'home' => 'Inicio',
     'about_us' => 'Nosotros',
     'contact_us' => 'Contáctanos',
-    'blog' => 'Blog',
+    'blog' => 'Consumo Responsable',
     'shop' => 'Tienda',
     'new' => 'Nuevo',
     'search' => 'Buscar',

@@ -332,7 +332,7 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link {{ request()->is('blog') ? 'active' : '' }}" href="{{ route('blog') }}"><strong>{{ __('menu.blog') }}</strong></a>
+                                            <a class="nav-link {{ request()->is('consumo-responsable') ? 'active' : '' }}" href="{{ route('blog') }}"><strong>{{ __('menu.blog') }}</strong></a>
                                         </li>
 
                                         <li class="nav-item new-nav-item">

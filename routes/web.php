@@ -26,7 +26,7 @@ Route::post('store', [newsletterController::class, 'store'])->name('store');
 
 
 Route::get('blog/detalles-post/{id?}', [BlogController::class, 'blogDetails'])->name('blog-details');
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/consumo-responsable', [BlogController::class, 'index'])->name('blog');
 
 
 Route::middleware(['blogAuth:admin,editor'])->group(function () {
