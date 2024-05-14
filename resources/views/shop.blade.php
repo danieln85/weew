@@ -3,120 +3,29 @@
   
     
 
-    <!-- Category Section Start -->
-    {{-- <section class="category-section-2 mt-2 mb-2">
-        <div class="container-fluid-lg">
-            <div class="title">
-                <h2 class="mb-2 text-unchanged">¿Qué trae el Kit WEEW?</h2>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="category-slider arrow-slider">
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn">
-                                <a href="{{  route('home') }}" class="circle-1">
-                                    <img src="{{ asset('images/veg-3/category/1.png') }}" class="img-fluid blur-up lazyload" alt="">
+<!-- Breadcrumb Section Start -->
+<section class="breadcrumb-section pt-0">
+    <div class="container-fluid-lg">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-contain">
+                    <h2>Tienda</h2>
+                    <nav>
+                        <ol class="d-flex mb-0">
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('home') }}">
+                                    <i class="fa-solid fa-house"></i>
                                 </a>
-                                <div class="category-name">
-                                    <h6>Kit Cannabis</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn" data-wow-delay="0.05s">
-                                <a href="{{  route('home') }}" class="circle-2">
-                                    <img src="{{ asset('images/veg-3/category/2.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-                                <div class="category-name">
-                                    <h6>Clothes</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn" data-wow-delay="0.1s">
-                                <a href="{{  route('home') }}" class="circle-3">
-                                    <img src="{{ asset('images/veg-3/category/3.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-                                <div class="category-name">
-                                    <h6>Medicinal</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn" data-wow-delay="0.15s">
-                                <a href="{{  route('home') }}" class="circle-4">
-                                    <img src="{{ asset('images/veg-3/category/4.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-                                <div class="category-name">
-                                    <h6>Cannabis Paper</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn" data-wow-delay="0.2s">
-                                <a href="{{  route('home') }}" class="circle-4">
-                                    <img src="{{ asset('images/veg-3/category/5.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-                                <div class="category-name">
-                                    <h6>Pipes</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn" data-wow-delay="0.25s">
-                                <a href="{{  route('home') }}" class="circle-1">
-                                    <img src="{{ asset('images/veg-3/category/6.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-                                <div class="category-name">
-                                    <h6>Cannabis Case</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn" data-wow-delay="0.3s">
-                                <a href="{{  route('home') }}" class="circle-2">
-                                    <img src="{{ asset('images/veg-3/category/7.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-                                <div class="category-name">
-                                    <h6>Cannabis Info</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn" data-wow-delay="0.35s">
-                                <a href="{{  route('home') }}" class="circle-3">
-                                    <img src="{{ asset('images/veg-3/category/8.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-                                <div class="category-name">
-                                    <h6>Candies</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="shop-category-box border-0 wow fadeIn" data-wow-delay="0.15s">
-                                <a href="{{  route('home') }}" class="circle-4">
-                                    <img src="{{ asset('images/veg-3/category/4.png') }}" class="img-fluid blur-up lazyload" alt="">
-                                </a>
-                                <div class="category-name">
-                                    <h6>Cannabis Paper</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                            </li>
+                            <li class="breadcrumb-item active">Productos</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
-    </section> --}}
-    <!-- Category Section End -->
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
 
 
     @include('layouts.includes.our-products')
