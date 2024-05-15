@@ -34,12 +34,12 @@
 
                 <div class="mb-3">
                     <label for="title" class="form-label">Título:</label>
-                    <input type="text" id="title" name="title" class="form-control">
+                    <input type="text" id="title" name="title" class="form-control" value="{{ old('title') }}">
                 </div>
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Descripción:</label>
-                    <textarea id="description" name="description" class="form-control" rows="6"></textarea>
+                    <textarea id="description" name="description" class="form-control" rows="6">{{ old('description') }}</textarea>
                 </div>
 
                 <div class="mb-3">
@@ -49,7 +49,7 @@
 
                 <div class="mb-3">
                     <label for="editor" class="form-label">Editor:</label>
-                    <input type="text" id="editor" name="editor" class="form-control">
+                    <input type="text" id="editor" name="editor" class="form-control" value="{{ old('editor') }}">
                 </div>
 
                 <button type="submit" class="btn btn-primary-custom">Guardar</button>
