@@ -4,12 +4,14 @@
 <div class="container mt-4 mb-5">
 
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        
+            <div class="container mb-4"><a href="{{route('product-create')}}"><i class="fa-solid fa-arrow-left"></i> Regresar</a></div>
             @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
-        @endif
+            @endif
+      <div class="col-md-8">
         <div class="container">
             <div class="row">
                 <div class="col text-center mt-2 mb-4">
@@ -77,11 +79,12 @@
         
                 <div class="mb-3">
                     <label for="imagen" class="form-label">Imagen:</label>
-                    <input type="file" id="imagen" name="imagen" class="form-control">
+                    <input type="file" id="imagen" name="imagen" class="form-control" style="height: 45px;"> <!-- Ajusta este valor según necesites -->
                 </div>
+                
         
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                <div class="d-flex justify-content-center mb-5">
+                    <button type="submit" class="btn btn-primary-custom">Actualizar</button>
                 </div>
             </form>
         </div>

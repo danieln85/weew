@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center mt-2 mb-4">
-                    <h1>Crear nuevo Producto</h1>
+                    <h1>Crear Producto</h1>
                 </div>
             </div>
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data" class="mt-4">
@@ -77,7 +77,7 @@
         
                 <div class="mb-3">
                     <label for="imagen" class="form-label">Imagen:</label>
-                    <input type="file" id="imagen" name="imagen" class="form-control">
+                    <input type="file" id="imagen" name="imagen" class="form-control" style="height: 45px;">
                 </div>
         
                 <div class="d-flex justify-content-center">
@@ -96,7 +96,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center mt-2 mb-4">
-                        <h1>Poductos creados</h1>
+                        <h1>Productos</h1>
                     </div>
                 </div>
             </div>

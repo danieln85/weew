@@ -9,7 +9,7 @@
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
-    @endif
+        @endif
         <div class="col-md-8">
             <form action="{{ route('blog.update', $blog) }}" method="POST" enctype="multipart/form-data" class="mt-4">
                 @csrf
@@ -27,7 +27,7 @@
 
                 <div class="mb-4">
                     <label for="image" class="form-label">Imagen:</label>
-                    <input type="file" id="image" name="image_450x300" class="form-control">
+                    <input type="file" id="image" name="image_450x300" class="form-control" style="height: 45px;">
                 </div>
 
                 <div class="mb-4">

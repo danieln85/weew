@@ -1,7 +1,7 @@
 @include('layouts._partials.header')
 @include('layouts.includes.menu-weew')
 
-<div class="container mt-4 mb-5">
+<div class="container mt-5 mb-5">
 
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,8 +12,8 @@
         @endif
         <div class="container">
             <div class="row">
-                <div class="col text-center mt-2 mb-4">
-                    <h1>Crear nuevo Post</h1>
+                <div class="col text-center mt-3 mb-4">
+                    <h1>Crear Publicación</h1>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
 
                 <div class="mb-3">
                     <label for="image" class="form-label">Imagen:</label>
-                    <input type="file" id="image" name="image_450x300" class="form-control">
+                    <input type="file" id="image" name="image_450x300" class="form-control" style="height: 45px;">
                 </div>
 
                 <div class="mb-3">
@@ -65,7 +65,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col text-center mt-2 mb-4">
-                        <h1>Posts creados</h1>
+                        <h1>Publicaciones</h1>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                             </td> --}}
                             <td>
                                 <div class="d-grid">
-                                    <a href="{{ route('blog.edit', $blog) }}" class="btn btn-primary-custom btn-sm btn-block">Editar</a>
+                                    <a href="{{ route('blog.edit', $blog) }}" class="btn btn-primary-custom btn-primary-custom2 btn-sm">Editar</a>
                                 </div>
                             </td>
                             <td>
@@ -100,7 +100,7 @@
                                     <form action="{{ route('blog.destroy', $blog) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-primary-custom btn-sm btn-block w-100">Eliminar</button>
+                                        <button type="submit" class="btn btn-primary-custom btn-primary-custom2 btn-sm w-100">Eliminar</button>
                                     </form>
                                 </div>
                             </td>
@@ -119,10 +119,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 
 

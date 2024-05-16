@@ -23,7 +23,7 @@ class BlogRequest extends FormRequest
     {
         return [
                 'title' => 'required|string|max:255',
-                'description' => 'required|string|max:1000',
+                'description' => 'required|string|max:2500',
                 'editor' => 'required|string|max:255',
                 'image_450x300' => 'required|image|mimes:jpg,jpeg,png|max:2048',  // 2MB Max
         ];

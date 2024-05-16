@@ -1198,7 +1198,7 @@
                             <div class="tab-pane fade" id="pills-crear-editar" role="tabpanel">
                                 <div class="dashboard-download">
                                     <div class="title">
-                                        <h2>Descargas</h2>
+                                        <h2>Crear | Editar | Eliminar</h2>
                                         <span class="title-leaf">
                                             <svg class="icon-width bg-gray">
                                                 <use xlink:href="../assets/svg/leaf.svg#leaf"></use>
@@ -1239,7 +1239,7 @@
                                                                     <td>Productos</td>
                                                                     <td>
                                                                         <div class="dropdown download-dropdown">
-                                                                            <button class="btn btn-primary-custom btn-block" type="button" onclick="window.location.href = '{{ route('user-dashboard') }}'">Ver</button>
+                                                                            <button class="btn btn-primary-custom btn-block" type="button" onclick="window.location.href = '{{ route('product-create') }}'">Ir</button>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -1248,10 +1248,10 @@
                                                                 
                                                                 <tr>
                                                                     <td>2</td>
-                                                                    <td>Posts blog</td>
+                                                                    <td>Publicaciones</td>
                                                                     <td>
                                                                         <div class="dropdown download-dropdown">
-                                                                            <button class="btn btn-primary-custom btn-block" type="button" onclick="window.location.href = '{{ route('blog.create') }}'">Ver</button>
+                                                                            <button class="btn btn-primary-custom btn-block" type="button" onclick="window.location.href = '{{ route('blog.create') }}'">Ir</button>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -1262,7 +1262,7 @@
                                                                     <td>Usuarios</td>
                                                                     <td>
                                                                         <div class="dropdown download-dropdown">
-                                                                            <button class="btn btn-primary-custom btn-block" type="button">Ver</button>
+                                                                            <button class="btn btn-primary-custom btn-block" type="button">Ir</button>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -1273,7 +1273,7 @@
                                                                     <td>Ventas</td>
                                                                     <td>
                                                                         <div class="dropdown download-dropdown">
-                                                                            <button class="btn btn-primary-custom btn-block" type="button">Ver</button>
+                                                                            <button class="btn btn-primary-custom btn-block" type="button">Ir</button>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -1305,7 +1305,7 @@
 
                                             <ul class="nav nav-pills filter-box" id="pills-tab" role="tablist">
                                                 <li class="nav-item" role="presentation">
-                                                    <button class="nav-link active" id="pills-data-tab" data-bs-toggle="pill" data-bs-target="#pills-data" type="button">Descargar información</button>
+                                                    <button class="nav-link active" id="pills-data-tab" data-bs-toggle="pill" data-bs-target="#pills-data" type="button">Descargas</button>
                                                 </li>
                                                 
                                             </ul>
