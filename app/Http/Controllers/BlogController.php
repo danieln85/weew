@@ -91,7 +91,7 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Blog $blog): RedirectResponse
+    public function update(BlogRequest $request, Blog $blog): RedirectResponse
     {
         // Verificar si se proporcionó una nueva imagen
         if ($request->hasFile('image_450x300')) {

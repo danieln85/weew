@@ -26,7 +26,7 @@
                 @endforeach
             </ul>
         </div>
-    @endif
+        @endif
 
 
             <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data" class="mt-4">

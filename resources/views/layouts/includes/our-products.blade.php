@@ -30,10 +30,15 @@
                 <div class="tab-pane fade show active" id="all" role="tabpanel">
                     <div class="row g-8">
 
+
+                        @foreach($products_all as $product)
                         <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay="0.05s">
                             <div class="product-box-4">
                                 <div class="label-flex">
-                                    <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> 15% OFF por Lanzamiento</label>
+                                    @if (!is_null($product->descuento) && is_numeric($product->descuento))
+                                        <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> {{ $product->descuento }}% OFF por Lanzamiento</label>
+                                    @endif
+                                    
                                 </div>
                                 <div class="product-image">
 
@@ -43,8 +48,8 @@
                                         </button>
                                     </div> --}}
 
-                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
-                                        <img src="{{ asset('images/products/2.png') }}" class="img-fluid" alt="">
+                                    <a href="{{ route('product-details', ['id' => $product->id]) }}">
+                                        <img src="{{ asset('images/products/'.$product->imagen) }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
 
@@ -66,10 +71,18 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                     </ul>
-                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
-                                        <h5 class="name"><strong>WEEW KIT Negro</strong></h5>
+                                    <a href="{{ asset('images/products/'.$product->imagen) }}">
+                                        <h5 class="name"><strong>{{ $product->nombre }}</strong></h5>
                                     </a>
-                                    <h5 class="price theme-color"><strong>$126.650</strong><del>$149.000</del></h5>
+                                    <h5 class="price theme-color">
+                                        @if($product->descuento)
+                                            <strong>{{ number_format($product->precio - (($product->precio * $product->descuento) / 100), 0, '.', '.') }}</strong>
+                                            <del>{{ number_format($product->precio, 0, '.', '.') }}</del>
+                                        @else
+                                            <strong>{{ number_format($product->precio, 0, '.', '.') }}</strong>
+                                        @endif
+                                    </h5>
+                                    
                                     <div class="price-qty">
                                         <div class="counter-number">
                                             <div class="counter">
@@ -90,125 +103,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay="0.05s">
-                            <div class="product-box-4">
-                                <div class="label-flex">
-                                    <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> 15% OFF por Lanzamiento</label>
-                                </div>
-                                <div class="product-image">
-                                    {{-- <div class="label-flex">
-                                        <button class="btn p-0 wishlist btn-wishlist notifi-wishlist">
-                                            <i class="fa-regular fa-heart"></i>
-                                        </button>
-                                    </div> --}}
-
-                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
-                                        <img src="{{ asset('images/products/1.png') }}" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-
-                                <div class="product-detail">
-                                    <ul class="rating">
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                    </ul>
-                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
-                                        <h5 class="name"><strong>WEEW KIT Morado</strong></h5>
-                                    </a>
-                                    <h5 class="price theme-color"><strong>$135.150</strong><del>$159.000</del></h5>
-                                    <div class="price-qty">
-                                        <div class="counter-number">
-                                            <div class="counter">
-                                                <div class="qty-left-minus" data-type="minus" data-field="">
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </div>
-                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                <div class="qty-right-plus" data-type="plus" data-field="">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button class="buy-button buy-button-2 btn btn-cart">
-                                            <i class="fa-solid fa-cart-plus white-icon"></i>
-                                        </button>
-                                    </div>
+                        @endforeach                     
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    {{ $products_all->links() }}
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp">
-                            <div class="product-box-4">
-                                <div class="label-flex">
-                                    <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> 15% OFF por Lanzamiento</label>
-                                </div>
-                                <div class="product-image">
-                                    {{-- <div class="label-flex">
-                                        <button class="btn p-0 wishlist btn-wishlist notifi-wishlist">
-                                            <i class="fa-regular fa-heart"></i>
-                                        </button>
-                                    </div> --}}
-
-                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
-                                        <img src="{{ asset('images/products/4.png') }}" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-
-                                <div class="product-detail">
-                                    <ul class="rating">
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                    </ul>
-                                    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank">
-                                        <h5 class="name"><strong>WEEW COMBO (Negro y Azul)</strong></h5>
-                                    </a>
-                                    <h5 class="price theme-color"><strong>$255.000</strong><del>$300.000</del></h5>
-                                    <div class="price-qty">
-                                        <div class="counter-number">
-                                            <div class="counter">
-                                                <div class="qty-left-minus" data-type="minus" data-field="">
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </div>
-                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                <div class="qty-right-plus" data-type="plus" data-field="">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button class="buy-button buy-button-2 btn btn-cart">
-                                            <i class="fa-solid fa-cart-plus white-icon"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 

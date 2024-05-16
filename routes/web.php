@@ -25,13 +25,19 @@ Route::resource('newsletter', newsletterController::class);
 Route::post('store', [newsletterController::class, 'store'])->name('store');
 
 
-Route::get('blog/detalles-post/{id?}', [BlogController::class, 'blogDetails'])->name('blog-details');
+Route::get('consumo-responsable/detalles-post/{id?}', [BlogController::class, 'blogDetails'])->name('blog-details');
 Route::get('/consumo-responsable', [BlogController::class, 'index'])->name('blog');
 
+Route::get('/tienda', [ProductController::class, 'index'])->name('shop');
+Route::get('productos/detalles-producto/{id?}', [ProductController::class, 'productDetails'])->name('product-details');
 
 Route::middleware(['blogAuth:admin,editor'])->group(function () {
     Route::get('blog/admin/crear-post', [BlogController::class, 'create'])->name('blog-create');
     Route::resource('blog', BlogController::class)->except(['index', 'blogDetails']);
+
+    Route::get('tienda/admin/crear-producto', [ProductController::class, 'create'])->name('product-create');    
+    Route::post('store', [ProductController::class, 'store'])->name('product.store');
+    Route::resource('product', ProductController::class)->except(['index', 'productDetails']);
 });
 
 
@@ -41,10 +47,8 @@ Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang
 
 Route::get('/busqueda', [SearchController::class, 'index'])->name('search');
 
-Route::get('/tienda', [ProductController::class, 'index'])->name('shop');
-Route::get('tienda/admin/crear-producto', [ProductController::class, 'create'])->name('product-create');
-Route::post('store', [ProductController::class, 'store'])->name('product.store');
-Route::resource('product', ProductController::class);
+
+
 
 
 Route::get('/terminos-y-condiciones', function () {

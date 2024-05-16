@@ -18,29 +18,40 @@
                     <h1>Actualizar Producto</h1>
                 </div>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Por favor diligencia correctamente el formulario.</strong><br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li></br>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <form action="{{ route('product.update', $product) }}" method="POST" enctype="multipart/form-data" class="mt-4">
                 @csrf
+                @method('PUT')
         
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="referencia" class="form-label">Referencia:</label>
-                        <input type="text" id="referencia" name="referencia" class="form-control">
+                        <input type="text" id="referencia" name="referencia" class="form-control" value="{{ $product->referencia }}">
                     </div>
                     <div class="col-md-8 mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" class="form-control">
+                        <input type="text" id="nombre" name="nombre" class="form-control" value="{{ $product->nombre }}">
                     </div>
                 </div>
         
                 <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripción:</label>
-                    <textarea id="descripcion" name="descripcion" class="form-control" rows="6"></textarea>
+                    <textarea id="descripcion" name="descripcion" class="form-control" rows="6">{{ $product->descripcion }}</textarea>
                 </div>
         
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="precio" class="form-label">Precio:</label>
-                        <input type="number" id="precio" name="precio" class="form-control">
+                        <input type="number" id="precio" name="precio" class="form-control" value="{{ $product->precio }}">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="categoria" class="form-label">Categoria:</label>
@@ -50,29 +61,30 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="stock" class="form-label">Stock:</label>
-                        <input type="number" id="stock" name="stock" class="form-control">
+                        <input type="number" id="stock" name="stock" class="form-control" value="{{ $product->stock }}">
                     </div>
                 </div>
         
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="descuento" class="form-label">Descuento:</label>
-                        <input type="number" id="descuento" name="descuento" class="form-control">
+                        <input type="number" id="descuento" name="descuento" class="form-control" value="{{ $product->descuento }}">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="estado" class="form-label">Estado:</label>
                         <select id="estado" name="estado" class="form-select">
-                            <option value="activo">Activo</option>
-                            <option value="inactivo">Inactivo</option>
-                            <option value="agotado">Agotado</option>
+                            <option value="activo" {{ $product->estado == 'activo' ? 'selected' : '' }}>Activo</option>
+                            <option value="inactivo" {{ $product->estado == 'inactivo' ? 'selected' : '' }}>Inactivo</option>
+                            <option value="agotado" {{ $product->estado == 'agotado' ? 'selected' : '' }}>Agotado</option>
                         </select>
                     </div>
+                    
                     <div class="col-md-4 mb-3">
                         <label for="reputacion" class="form-label">Reputación:</label>
                         <select id="reputacion" name="reputacion" class="form-select">
-                            <option value="normal">Normal</option>
-                            <option value="destacado">Destacado</option>
-                            <option value="oferta">Oferta</option>
+                            <option value="normal" {{ $product->reputacion == 'normal' ? 'selected' : '' }}>Normal</option>
+                            <option value="destacado" {{ $product->reputacion == 'destacado' ? 'selected' : '' }}>Destacado</option>
+                            <option value="oferta" {{ $product->reputacion == 'oferta' ? 'selected' : '' }}>Oferta</option>
                         </select>
                     </div>
                 </div>
@@ -81,7 +93,10 @@
                     <label for="imagen" class="form-label">Imagen:</label>
                     <input type="file" id="imagen" name="imagen" class="form-control" style="height: 45px;"> <!-- Ajusta este valor según necesites -->
                 </div>
-                
+                <div class="mb-4">
+                    <label class="form-label">Imagen Actual:</label>
+                    <img src="{{ asset('images/products/'.$product->imagen) }}" alt="Imagen Actual" width="100px" class="img-fluid">
+                </div>
         
                 <div class="d-flex justify-content-center mb-5">
                     <button type="submit" class="btn btn-primary-custom">Actualizar</button>

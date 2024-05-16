@@ -11,6 +11,16 @@
         </div>
         @endif
         <div class="col-md-8">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Por favor diligencia correctamente el formulario.</strong><br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li></br>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <form action="{{ route('blog.update', $blog) }}" method="POST" enctype="multipart/form-data" class="mt-4">
                 @csrf
                 @method('PUT')

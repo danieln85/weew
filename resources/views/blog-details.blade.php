@@ -7,16 +7,16 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-contain">
-                        <h2>Blog Details Page</h2>
+                        <h2>Detalles del post</h2>
                         <nav>
-                            <ol class="breadcrumb mb-0">
+                            <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
                                     <a href="index.html">
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">Blog</li>
-                                <li class="breadcrumb-item active">Blog Details</li>
+                                <li class="breadcrumb-item active">Detalles del post</li>
                             </ol>
                         </nav>
                     </div>
@@ -91,7 +91,7 @@
 
                         <div class="blog-details-quote mt-4">
                             <h3>El consumo responsable del cannabis implica entender sus efectos, respetar los límites personales y sociales, y tomar decisiones informadas que promuevan la salud y el bienestar.</h3>
-                            <h5>por Chat GPT</h5>
+                            <h5>por WEEW</h5>
                         </div>
 
                         {{-- <p>Agile currying favour pulling teeth collaboration through advanced technology. Everyone
