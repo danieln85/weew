@@ -228,10 +228,37 @@
                                                                     <h5 class="pb-2">{{__('menu.whishlist')}}</h5>
                                                                 </a>
 
+
+
+
+
+
+                                                                @if(auth()->check())
+                                                                @if(auth()->user()->role == 'admin')
+
+                                                                <a href="{{route('user-dashboard')}}#pills-crear-editar">
+                                                                    <h5 class="pb-2">{{__('menu.create_edit')}}</h5>
+                                                                </a>
+                                                                <a href="{{route('user-dashboard')}}#pills-download">
+                                                                    <h5 class="pb-2">{{__('menu.download')}}</h5>
+                                                                </a>
+
+                                                                
+                                                                    
+                                            
+                                                                @elseif(auth()->user()->role == 'editor')
+                                                                <a href="{{route('user-dashboard')}}#pills-download">
+                                                                    <h5 class="pb-2">{{__('menu.download')}}</h5>
+                                                                </a>
+                                                                @endif
+                                                            @endif
+
+
+
                                                                 
                                                                 <form method="POST" action="{{ route('logout') }}">
                                                                     @csrf
-                                                                    <button type="submit" class="btn-reset">
+                                                                    <button type="submit" class="btn-reset mt-2">
                                                                         <h5><i class="fa-solid fa-door-open"></i> {{__('menu.logout')}}</h5>
                                                                     </button>
                                                                 </form>
@@ -394,13 +421,14 @@
             <li>
                 <a href="{{ route('blog') }}" class="search-box">
                     
-                    <i class="icli fa-brands fa-blogger-b"></i>
-                    <span>{{ __('menu.blog') }}</span>
+
+                    <i class="icli fa-solid fa-smoking"></i>
+                    <span>CR</span>
                 </a>
             </li>
 
             <li>
-                <a href="{{ route('home') }}" class="search-box">
+                <a href="{{ route('search') }}" class="search-box">
                     <i class="icli fa-solid fa-magnifying-glass"></i>
                     <span>{{ __('menu.search') }}</span>
                 </a>
