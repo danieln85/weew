@@ -75,7 +75,7 @@
                                         <h5 class="name"><strong>{{ $product->nombre }}</strong></h5>
                                     </a>
                                     <h5 class="price theme-color">
-                                        @if($product->descuento)
+                                        @if (!is_null($product->descuento) && is_numeric($product->descuento))
                                             <strong>{{ number_format($product->precio - (($product->precio * $product->descuento) / 100), 0, '.', '.') }}</strong>
                                             <del>{{ number_format($product->precio, 0, '.', '.') }}</del>
                                         @else

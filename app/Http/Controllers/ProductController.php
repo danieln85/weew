@@ -63,9 +63,9 @@ class ProductController extends Controller
     
     public function productDetails($id = 1)
     {
-        $products = Product::find($id);
+        $product = Product::find($id);
         
-        if (!$products) {
+        if (!$product) {
             return redirect()->route('home');
         }
         
@@ -77,7 +77,7 @@ class ProductController extends Controller
 
         
         
-        return view('product-details', compact('products', 'prevProduct', 'nextProduct'));
+        return view('product-details', compact('product', 'prevProduct', 'nextProduct'));
     }
 
 
