@@ -39,13 +39,13 @@
                                         <div class="product-main-2 no-arrow">
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="{{ asset('images/products/'.$product->imagen) }}" id="img-1" data-zoom-image="{{ asset('images/product/category/1.jpg') }}" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen) }}" id="img-1" data-zoom-image="{{ asset('images/products/'.$product->imagen) }}" class="img-fluid image_zoom_cls-0 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" data-zoom-image="../assets/images/product/category/2.jpg" class="img-fluid image_zoom_cls-1 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen) }}" data-zoom-image="{{ asset('images/products/'.$product->imagen2) }}" class="img-fluid image_zoom_cls-1 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
 

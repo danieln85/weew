@@ -30,7 +30,13 @@ class ProductRequest extends FormRequest
             'stock' => 'required|numeric|min:0',
             'descuento' => 'nullable|numeric|min:0|max:99',
             'estado' => 'required|in:activo,inactivo,agotado',
-            'reputacion' => 'required|in:normal,destacado,oferta'
+            'reputacion' => 'required|in:normal,destacado,oferta',
+            'imagen2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imagen3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imagen4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imagen5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imagen6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            
         ];
     
         // Si estamos creando un nuevo producto, hacemos que la imagen sea obligatoria

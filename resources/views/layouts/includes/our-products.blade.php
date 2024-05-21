@@ -71,7 +71,7 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                     </ul>
-                                    <a href="{{ asset('images/products/'.$product->imagen) }}">
+                                    <a href="{{ route('product-details', ['id' => $product->id]) }}">
                                         <h5 class="name"><strong>{{ $product->nombre }}</strong></h5>
                                     </a>
                                     <h5 class="price theme-color">

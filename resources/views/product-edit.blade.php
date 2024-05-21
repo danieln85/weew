@@ -90,12 +90,57 @@
                 </div>
         
                 <div class="mb-3">
-                    <label for="imagen" class="form-label">Imagen:</label>
+                    <label for="imagen" class="form-label"><strong>Imagen Principal:</strong></label>
                     <input type="file" id="imagen" name="imagen" class="form-control" style="height: 45px;"> <!-- Ajusta este valor según necesites -->
                 </div>
                 <div class="mb-4">
-                    <label class="form-label">Imagen Actual:</label>
+                    <label class="form-label">Imagen Principal Actual:</label>
                     <img src="{{ asset('images/products/'.$product->imagen) }}" alt="Imagen Actual" width="100px" class="img-fluid">
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagen2" class="form-label"><strong>Imagen 2:</strong></label>
+                    <input type="file" id="imagen2" name="imagen2" class="form-control" style="height: 45px;"> <!-- Ajusta este valor según necesites -->
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Imagen 2 Actual:</label>
+                    <img src="{{ asset('images/products/'.$product->imagen2) }}" alt="Imagen Actual" width="100px" class="img-fluid">
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagen3" class="form-label"><strong>Imagen 3:</strong></label>
+                    <input type="file" id="imagen3" name="imagen3" class="form-control" style="height: 45px;"> <!-- Ajusta este valor según necesites -->
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Imagen 3 Actual:</label>
+                    <img src="{{ asset('images/products/'.$product->imagen3) }}" alt="Imagen Actual" width="100px" class="img-fluid">
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagen4" class="form-label"><strong>Imagen 4:</strong></label>
+                    <input type="file" id="imagen4" name="imagen4" class="form-control" style="height: 45px;"> <!-- Ajusta este valor según necesites -->
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Imagen 4 Actual:</label>
+                    <img src="{{ asset('images/products/'.$product->imagen4) }}" alt="Imagen Actual" width="100px" class="img-fluid">
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagen5" class="form-label"><strong>Imagen 5:</strong></label>
+                    <input type="file" id="imagen5" name="imagen5" class="form-control" style="height: 45px;"> <!-- Ajusta este valor según necesites -->
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Imagen 5 Actual:</label>
+                    <img src="{{ asset('images/products/'.$product->imagen5) }}" alt="Imagen Actual" width="100px" class="img-fluid">
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagen6" class="form-label"><strong>Imagen 6:</strong></label>
+                    <input type="file" id="imagen6" name="imagen6" class="form-control" style="height: 45px;"> <!-- Ajusta este valor según necesites -->
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Imagen 6 Actual:</label>
+                    <img src="{{ asset('images/products/'.$product->imagen6) }}" alt="Imagen Actual" width="100px" class="img-fluid">
                 </div>
         
                 <div class="d-flex justify-content-center mb-5">

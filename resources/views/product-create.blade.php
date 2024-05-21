@@ -86,8 +86,28 @@
                 </div>
             
                 <div class="mb-3">
-                    <label for="imagen" class="form-label">Imagen:</label>
+                    <label for="imagen" class="form-label">Imagen principal:</label>
                     <input type="file" id="imagen" name="imagen" class="form-control" style="height: 45px;">
+                </div>
+                <div class="mb-3">
+                    <label for="imagen2" class="form-label">Imagen 2:</label>
+                    <input type="file" id="imagen2" name="imagen2" class="form-control" style="height: 45px;">
+                </div>
+                <div class="mb-3">
+                    <label for="imagen3" class="form-label">Imagen 3:</label>
+                    <input type="file" id="imagen3" name="imagen3" class="form-control" style="height: 45px;">
+                </div>
+                <div class="mb-3">
+                    <label for="imagen4" class="form-label">Imagen 4:</label>
+                    <input type="file" id="imagen4" name="imagen4" class="form-control" style="height: 45px;">
+                </div>
+                <div class="mb-3">
+                    <label for="imagen5" class="form-label">Imagen 5:</label>
+                    <input type="file" id="imagen5" name="imagen5" class="form-control" style="height: 45px;">
+                </div>
+                <div class="mb-3">
+                    <label for="imagen6" class="form-label">Imagen 6:</label>
+                    <input type="file" id="imagen6" name="imagen6" class="form-control" style="height: 45px;">
                 </div>
             
                 <div class="d-flex justify-content-center">
