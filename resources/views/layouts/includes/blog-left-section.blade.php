@@ -10,7 +10,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne">
-                        Recent Post
+                        Publicaciones Recientes
                     </button>
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
@@ -19,12 +19,12 @@
                         <div class="recent-post-box">
                             @foreach ($recent_posts as $recent_post)
                             <div class="recent-box">
-                                <a href="blog-detail.html" class="recent-image">
+                                <a href="{{ route('blog-details', ['id' => $recent_post->id]) }}" class="recent-image">
                                     <img src="{{ asset('images/blog-post/'.$recent_post->image_450x300) }}" class="img-fluid blur-up lazyload" alt="">
                                 </a>
 
                                 <div class="recent-detail">
-                                    <a href="blog-detail.html">
+                                    <a href="{{ route('blog-details', ['id' => $recent_post->id]) }}">
                                         <h5 class="recent-name">{{ $recent_post->title }}</h5>
                                     </a>
                                     <h6>{{ $recent_post->created_at->format('Y-m-d') }} <i data-feather="thumbs-up"></i></h6>

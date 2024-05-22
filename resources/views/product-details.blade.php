@@ -45,31 +45,31 @@
 
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="{{ asset('images/products/'.$product->imagen) }}" data-zoom-image="{{ asset('images/products/'.$product->imagen2) }}" class="img-fluid image_zoom_cls-1 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen2) }}" data-zoom-image="{{ asset('images/products/'.$product->imagen2) }}" class="img-fluid image_zoom_cls-1 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" data-zoom-image="../assets/images/product/category/3.jpg" class="img-fluid image_zoom_cls-2 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen3) }}" data-zoom-image="{{ asset('images/products/'.$product->imagen3) }}" class="img-fluid image_zoom_cls-2 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" data-zoom-image="../assets/images/product/category/4.jpg" class="img-fluid image_zoom_cls-3 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen4) }}" data-zoom-image="{{ asset('images/products/'.$product->imagen4) }}" class="img-fluid image_zoom_cls-3 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" data-zoom-image="../assets/images/product/category/5.jpg" class="img-fluid image_zoom_cls-4 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen5) }}" data-zoom-image="{{ asset('images/products/'.$product->imagen5) }}" class="img-fluid image_zoom_cls-4 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <div class="slider-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" data-zoom-image="../assets/images/product/category/6.jpg" class="img-fluid image_zoom_cls-5 blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen6) }}" data-zoom-image="{{ asset('images/products/'.$product->imagen6) }}" class="img-fluid image_zoom_cls-5 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -83,40 +83,54 @@
                                                 </div>
                                             </div>
 
+                                            @if(!empty($product->imagen2))
                                             <div>
                                                 <div class="sidebar-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" class="img-fluid blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen2) }}" class="img-fluid blur-up lazyload" alt="">
                                                 </div>
                                             </div>
+                                            @endif
 
+                                            @if(!empty($product->imagen3))
                                             <div>
                                                 <div class="sidebar-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" class="img-fluid blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen3) }}" class="img-fluid blur-up lazyload" alt="">
                                                 </div>
                                             </div>
+                                            @endif
 
-                                            <div>
-                                                <div class="sidebar-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" class="img-fluid blur-up lazyload" alt="">
-                                                </div>
-                                            </div>
 
+                                            @if(!empty($product->imagen4))
                                             <div>
                                                 <div class="sidebar-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" class="img-fluid blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen4) }}" class="img-fluid blur-up lazyload" alt="">
                                                 </div>
                                             </div>
+                                            @endif
 
+
+                                            @if(!empty($product->imagen5))
                                             <div>
                                                 <div class="sidebar-image">
-                                                    <img src="{{ asset('images/products/1.jpg') }}" class="img-fluid blur-up lazyload" alt="">
+                                                    <img src="{{ asset('images/products/'.$product->imagen5) }}" class="img-fluid blur-up lazyload" alt="">
                                                 </div>
                                             </div>
+                                            @endif
+
+
+                                            @if(!empty($product->imagen6))
+                                            <div>
+                                                <div class="sidebar-image">
+                                                    <img src="{{ asset('images/products/'.$product->imagen6) }}" class="img-fluid blur-up lazyload" alt="">
+                                                </div>
+                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
 
                         <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="right-box-contain">
@@ -189,7 +203,7 @@
                                     </div>
 
                                     <div class="pickup-detail">
-                                        <h4 class="text-content">{{ $product->descripcion }}.</h4>
+                                        <h4 class="text-content">{{ Str::limit($product->descripcion, 250) }} <a href="#descripcion-producto">Leer todo<a></h4>
                                     </div>
 
                                     {{-- <div class="product-info">
@@ -261,7 +275,7 @@
 
                                 <div class="progress-sec">
                                     <div class="left-progressbar">
-                                        <h6>¡Por favor, apúrate! Solo quedan {{ $product->descuento }} en stock</h6>
+                                        <h6>¡Apresurate! Solo quedan {{ $product->stock }} en stock</h6>
                                         <div role="progressbar" class="progress warning-progress">
                                             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 50%;"></div>
                                         </div>
@@ -322,6 +336,8 @@
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">Description</button>
                                     </li>
+                                    <div id="descripcion-producto">
+                                    
 
                                     {{-- <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">Additional info</button>
@@ -336,7 +352,7 @@
                                         <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab">Review</button>
                                     </li> --}}
                                 </ul>
-
+                                
                                 <div class="tab-content custom-tab" id="myTabContent">
                                     <div class="tab-pane fade show active" id="description" role="tabpanel">
                                         <div class="product-description">
@@ -425,6 +441,42 @@
                                     </li>
 
                                     
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <!-- Blog recent post -->
+                        <div class="pt-25">
+                            <div class="category-menu">
+                                <h3>Publicaciones recientes</h3>
+
+                                <ul class="product-list product-right-sidebar border-0 p-0">
+
+                                    @foreach ($recent_posts as $recent_post)
+                                    <li>
+                                        <div class="offer-product">
+                                            <a href="{{ route('blog-details', ['id' => $recent_post->id]) }}" class="offer-image">
+                                                <img src="{{ asset('images/blog-post/'.$recent_post->image_450x300) }}" class="img-fluid blur-up lazyload" alt="">
+                                            </a>
+
+                                            <div class="offer-detail">
+                                                <div>
+                                                    <a href="{{ route('blog-details', ['id' => $recent_post->id]) }}">
+                                                        <h6 class="name">{{ $recent_post->title }}</h6>
+                                                    </a>
+                                                    <span>{{ $recent_post->created_at->format('Y-m-d') }}</span>
+                                                    <h6 class="price theme-color">Por {{ $recent_post->editor }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @endforeach
+
+                                                                        
                                 </ul>
                             </div>
                         </div>

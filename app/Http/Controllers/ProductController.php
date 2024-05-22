@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 
@@ -13,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('shop');
+        $recent_posts = Blog::latest()->take(3)->get();
+        return view('shop', compact('recent_posts'));
     }
 
     /**
@@ -101,6 +103,8 @@ class ProductController extends Controller
     
     public function productDetails($id = 1)
     {
+        $recent_posts = Blog::latest()->take(3)->get();
+        
         $product = Product::find($id);
         
         if (!$product) {
@@ -115,7 +119,7 @@ class ProductController extends Controller
 
         
         
-        return view('product-details', compact('product', 'prevProduct', 'nextProduct'));
+        return view('product-details', compact('product', 'prevProduct', 'nextProduct', 'recent_posts'));
     }
 
 
