@@ -26,7 +26,12 @@ class AppServiceProvider extends ServiceProvider
         // Comparte los productos con todas las vistas
         view()->composer('*', function ($view) {
             $products_all = Product::paginate(3);
-            $view->with('products_all', $products_all);
+            $products_all->withPath('/tienda');
+        
+            // Obtiene los productos destacados
+            $destacados = Product::where('reputacion', 'destacado')->take(3)->get();
+        
+            $view->with('products_all', $products_all)->with('destacados', $destacados);
         });
     }
 }

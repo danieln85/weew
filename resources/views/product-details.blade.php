@@ -145,7 +145,7 @@
                                         <span class="offer theme-color">({{ $product->descuento }}% OFF)</span>
                                     </h3>
                                     @else
-                                    <del class="text-content">${{ number_format($product->precio, 0, '.', '.') }}</del></h3>
+                                    <h3 class="theme-color price">${{ number_format($product->precio, 0, '.', '.') }}</h3>
                                     @endif
                                     <div class="product-rating custom-rate">
                                         <ul class="rating">
@@ -334,7 +334,7 @@
                             <div class="product-section-box">
                                 <ul class="nav nav-tabs custom-nav" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">Description</button>
+                                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">Descripción</button>
                                     </li>
                                     <div id="descripcion-producto">
                                     
@@ -383,62 +383,32 @@
                         <!-- Trending Product -->
                         <div class="pt-25">
                             <div class="category-menu">
-                                <h3>Trending Products</h3>
+                                <h3>Productos en Tendencia</h3>
 
                                 <ul class="product-list product-right-sidebar border-0 p-0">
+
+                                    
+                                    @foreach($destacados as $destacado)
                                     <li>
                                         <div class="offer-product">
-                                            <a href="product-left-thumbnail.html" class="offer-image">
-                                                <img src="../assets/images/vegetable/product/23.png" class="img-fluid blur-up lazyload" alt="">
+                                            <a href="{{ route('product-details', ['id' => $destacado->id]) }}" class="offer-image">
+                                                <img src="{{ asset('images/products/'.$destacado->imagen) }}" class="img-fluid blur-up lazyload" alt="">
                                             </a>
 
                                             <div class="offer-detail">
                                                 <div>
-                                                    <a href="product-left-thumbnail.html">
-                                                        <h6 class="name">Meatigo Premium Goat Curry</h6>
+                                                    <a href="{{ route('product-details', ['id' => $destacado->id]) }}">
+                                                        <h6 class="name">{{ $destacado->nombre }}</h6>
                                                     </a>
-                                                    <span>450 G</span>
-                                                    <h6 class="price theme-color">$ 70.00</h6>
+                                                    @if(isset($destacado->descuento) && is_numeric($destacado->descuento) && $destacado->descuento != 0 && $destacado->descuento !== '')
+                                                    <span><del>${{ number_format($destacado->precio, 0, '.', '.') }}</del>&nbsp;{{ $destacado->descuento }}% Off</span>
+                                                    @endif
+                                                    <h6 class="price theme-color">${{ number_format($destacado->precio - (($destacado->precio * $destacado->descuento) / 100), 0, '.', '.') }}</h6>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
-
-                                    <li>
-                                        <div class="offer-product">
-                                            <a href="product-left-thumbnail.html" class="offer-image">
-                                                <img src="../assets/images/vegetable/product/24.png" class="blur-up lazyload" alt="">
-                                            </a>
-
-                                            <div class="offer-detail">
-                                                <div>
-                                                    <a href="product-left-thumbnail.html">
-                                                        <h6 class="name">Dates Medjoul Premium Imported</h6>
-                                                    </a>
-                                                    <span>450 G</span>
-                                                    <h6 class="price theme-color">$ 40.00</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="offer-product">
-                                            <a href="product-left-thumbnail.html" class="offer-image">
-                                                <img src="../assets/images/vegetable/product/25.png" class="blur-up lazyload" alt="">
-                                            </a>
-
-                                            <div class="offer-detail">
-                                                <div>
-                                                    <a href="product-left-thumbnail.html">
-                                                        <h6 class="name">Good Life Walnut Kernels</h6>
-                                                    </a>
-                                                    <span>200 G</span>
-                                                    <h6 class="price theme-color">$ 52.00</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
 
                                     
                                 </ul>
