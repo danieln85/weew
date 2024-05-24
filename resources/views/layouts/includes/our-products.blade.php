@@ -1,6 +1,11 @@
 <!-- Product Section Start -->
     <section class="product-section mt-3" id="nuestros-productos">
         <div class="container-fluid-lg">
+            @if (session('success2'))
+            <div class="alert alert-success">
+                {{ session('success2') }}
+            </div>
+        @endif
             <div class="title title-flex-2">
                 <h2>Productos</h2>
                 <ul class="nav nav-tabs tab-style-color-2 tab-style-color" id="myTab">
@@ -104,7 +109,7 @@
                                             
                                             // Enviar el formulario después de 1 segundo
                                             form.submit();
-                                        }, 1000);
+                                        }, 2000);
                                     });
                                 });
                             });
