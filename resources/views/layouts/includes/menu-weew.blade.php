@@ -136,14 +136,14 @@
                                     <ul> 
                                         @include('layouts.includes.lang')
 
-                                        {{-- <li class="right-side d-none d-md-inline">
+                                        <li class="right-side d-none d-md-inline">
                                             <a href="{{ route('user-dashboard')}}#pills-wishlist" class="header-icon search-box search-icon">
                                                 <small class="badge-number">2</small>
                                                 <i class="fa-regular fa-heart"></i>
                                             </a>
-                                        </li> --}}
+                                        </li>
 
-                                        {{-- <li class="right-side onhover-dropdown d-none d-md-inline">
+                                        <li class="right-side onhover-dropdown d-none d-md-inline">
                                             <a class="header-icon search-box search-icon">
                                                 <small class="badge-number">2</small>
                                                 <i class="fa-solid fa-cart-shopping "></i>
@@ -194,7 +194,7 @@
                                                     text-white">Checkout</a>
                                                 </div>
                                             </div>
-                                        </li> --}}
+                                        </li>
 
                                         <li class="right-side onhover-dropdown">
                                             <a class="header-icon user-box user-icon">                                                

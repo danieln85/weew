@@ -11,6 +11,7 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -38,6 +39,15 @@ Route::middleware(['blogAuth:admin,editor'])->group(function () {
     Route::get('tienda/admin/crear-producto', [ProductController::class, 'create'])->name('product-create');    
     Route::post('store', [ProductController::class, 'store'])->name('product.store');
     Route::resource('product', ProductController::class)->except(['index', 'productDetails']);
+});
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('cart/add/{productId}', [CartController::class, 'add'])->name('cart.add');
+    Route::post('cart/update/{cartItemId}', [CartController::class, 'update'])->name('cart.update');
+    Route::post('cart/remove/{cartItemId}', [CartController::class, 'remove'])->name('cart.remove');
 });
 
 
