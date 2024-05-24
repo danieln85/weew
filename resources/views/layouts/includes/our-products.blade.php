@@ -7,11 +7,6 @@
                     <li class="nav-item">
                         <button class="nav-link btn active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">Todos</button>
                     </li>
-                    @if (session('success2'))
-                        <div class="alert alert-success">
-                            {{ session('success2') }}
-                        </div>
-                    @endif
                     {{-- <li class="nav-item">
                         <button class="nav-link btn" id="cooking-tab" data-bs-toggle="tab" data-bs-target="#cooking" type="button"> Pipes</button>
                     </li>

@@ -509,18 +509,18 @@
         <i class="fas fa-times"></i>
     </button>
     <h6>
-        <i class="fa-solid fa-bag-shopping"></i>
+        <i class="fa-solid fa-bag-shopping mb-2"></i>
         {{-- <span>5 Items</span> --}}
     </h6>
-    <ul class="items-image">
+    {{-- <ul class="items-image">
         <li>
             <img src="{{ asset('images/products/1.png') }}" alt="">
         </li>
         <li>
             <img src="{{ asset('images/products/2.png') }}" alt="">
         </li>
-        {{-- <li>+3</li> --}}
-    </ul>
+        <li>+3</li>
+    </ul> --}}
     <a href="{{route('cart.index')}}"><button class="btn item-button btn-sm fw-bold">Carrito</button></a>
 
     {{-- <button onclick="location.href = 'cart.html';" class="btn item-button btn-sm fw-bold">$ 140.000</button> --}}

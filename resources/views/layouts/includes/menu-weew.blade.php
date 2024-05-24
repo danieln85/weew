@@ -189,9 +189,9 @@
                                                 </div>
 
                                                 <div class="button-group">
-                                                    <a href="{{ route('home') }}" class="btn btn-sm cart-button">View Cart</a>
+                                                    <a href="{{ route('cart.index') }}" class="btn btn-sm cart-button"><strong>Carrito</strong></a>
                                                     <a href="{{ route('home') }}" class="btn btn-sm cart-button theme-bg-color
-                                                    text-white">Checkout</a>
+                                                    text-white"><strong>Checkout</strong></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -396,6 +396,11 @@
                     </div>
                 </div>
             </div>
+            @if (session('success2'))
+            <div class="alert alert-success">
+                {{ session('success2') }}
+            </div>
+        @endif
         </div>
     </header>
     <!-- Header End -->
