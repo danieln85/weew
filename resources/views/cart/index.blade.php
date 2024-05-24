@@ -11,11 +11,11 @@
                         <nav>
                             <ol class="d-flex mb-0">
                                 <li class="breadcrumb-item">
-                                    <a href="index.html">
+                                    <a href="{{ route('home') }}">
                                         <i class="fa-solid fa-house"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active">Cart</li>
+                                <li class="breadcrumb-item active">Carrito</li>
                             </ol>
                         </nav>
                     </div>
