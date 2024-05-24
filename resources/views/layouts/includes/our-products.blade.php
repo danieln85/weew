@@ -7,7 +7,11 @@
                     <li class="nav-item">
                         <button class="nav-link btn active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">Todos</button>
                     </li>
-
+                    @if (session('success2'))
+                        <div class="alert alert-success">
+                            {{ session('success2') }}
+                        </div>
+                    @endif
                     {{-- <li class="nav-item">
                         <button class="nav-link btn" id="cooking-tab" data-bs-toggle="tab" data-bs-target="#cooking" type="button"> Pipes</button>
                     </li>
@@ -32,75 +36,85 @@
 
 
                         @foreach($products_all as $product)
-<div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay="0.05s" id="product-{{ $product->id }}">
-    <div class="product-box-4">
-        <div class="label-flex">
-            @if (!is_null($product->descuento) && is_numeric($product->descuento))
-                <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> {{ $product->descuento }}% OFF por Lanzamiento</label>
-            @endif
-        </div>
-        <div class="product-image">
-            <a href="{{ route('product-details', ['id' => $product->id]) }}">
-                <img src="{{ asset('images/products/'.$product->imagen) }}" class="img-fluid" alt="">
-            </a>
-        </div>
-        <div class="product-detail">
-            <ul class="rating">
-                <li>
-                    <i data-feather="star" class="fill"></i>
-                </li>
-                <li>
-                    <i data-feather="star" class="fill"></i>
-                </li>
-                <li>
-                    <i data-feather="star" class="fill"></i>
-                </li>
-                <li>
-                    <i data-feather="star" class="fill"></i>
-                </li>
-                <li>
-                    <i data-feather="star" class="fill"></i>
-                </li>
-            </ul>
-            <a href="{{ route('product-details', ['id' => $product->id]) }}">
-                <h5 class="name"><strong>{{ $product->nombre }}</strong></h5>
-            </a>
-            <h5 class="price theme-color">
-                @if (!is_null($product->descuento) && is_numeric($product->descuento))
-                    <strong>{{ number_format($product->precio - (($product->precio * $product->descuento) / 100), 0, '.', '.') }}</strong>
-                    <del>{{ number_format($product->precio, 0, '.', '.') }}</del>
-                @else
-                    <strong>{{ number_format($product->precio, 0, '.', '.') }}</strong>
-                @endif
-            </h5>
-            <div class="price-qty">
-                <form action="{{ route('cart.add', ['productId' => $product->id]) }}" method="POST" class="add-to-cart-form">
-                    @csrf
-                    <input type="hidden" name="return_url" class="return_url">
-                    <button type="submit" class="buy-button buy-button-2 btn btn-cart">
-                        <i class="fa-solid fa-cart-plus white-icon"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-@endforeach
+                        <div class="col-xxl-4 col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-delay="0.05s" id="product-{{ $product->id }}">
+                            <div class="product-box-4">
+                                <div class="label-flex">
+                                    @if (!is_null($product->descuento) && is_numeric($product->descuento))
+                                        <label class="label-flex2"><i class="fa-solid fa-bolt-lightning"></i> {{ $product->descuento }}% OFF por Lanzamiento</label>
+                                    @endif
+                                </div>
+                                <div class="product-image">
+                                    <a href="{{ route('product-details', ['id' => $product->id]) }}">
+                                        <img src="{{ asset('images/products/'.$product->imagen) }}" class="img-fluid" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <a href="{{ route('product-details', ['id' => $product->id]) }}">
+                                        <h5 class="name"><strong>{{ $product->nombre }}</strong></h5>
+                                    </a>
+                                    <h5 class="price theme-color">
+                                        @if (!is_null($product->descuento) && is_numeric($product->descuento))
+                                            <strong>{{ number_format($product->precio - (($product->precio * $product->descuento) / 100), 0, '.', '.') }}</strong>
+                                            <del>{{ number_format($product->precio, 0, '.', '.') }}</del>
+                                        @else
+                                            <strong>{{ number_format($product->precio, 0, '.', '.') }}</strong>
+                                        @endif
+                                    </h5>
+                                    <div class="price-qty">
+                                        <form action="{{ route('cart.add', ['productId' => $product->id]) }}" method="POST" class="add-to-cart-form">
+                                            @csrf
+                                            <input type="hidden" name="return_url" class="return_url">
+                                            <button type="button" class="buy-button buy-button-2 btn btn-cart add-to-cart-button" data-product-id="{{ $product->id }}">
+                                                <i class="fa-solid fa-cart-plus white-icon"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const buttons = document.querySelectorAll('.add-to-cart-button');
+                                
+                                buttons.forEach(button => {
+                                    button.addEventListener('click', function() {
+                                        const form = button.closest('form');
+                                        const productId = button.dataset.productId;
+                                        const returnUrlInput = form.querySelector('.return_url');
+                                        returnUrlInput.value = window.location.href.split('#')[0] + '#product-' + productId;
+                                        
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const forms = document.querySelectorAll('.add-to-cart-form');
-        
-        forms.forEach(form => {
-            form.addEventListener('submit', function(event) {
-                const returnUrlInput = form.querySelector('.return_url');
-                const productId = form.closest('.col-xxl-4').id;
-                returnUrlInput.value = window.location.href.split('#')[0] + '#' + productId;
-            });
-        });
-    });
-</script>
-
+                        
+                                        setTimeout(() => {
+                                            
+                                            
+                                            // Enviar el formulario después de 1 segundo
+                                            form.submit();
+                                        }, 1000);
+                                    });
+                                });
+                            });
+                        </script>
+                        
 
 
 

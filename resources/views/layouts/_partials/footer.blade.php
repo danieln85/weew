@@ -521,7 +521,8 @@
         </li>
         {{-- <li>+3</li> --}}
     </ul>
-    <a href="https://api.whatsapp.com/send?phone=(+57)3164585454&text=Buen%20día,%20deseo%20contactar%20a%20un%20Asesor" target="_blank"><button class="btn item-button btn-sm fw-bold">Comprar</button></a>
+    <a href="{{route('cart.index')}}"><button class="btn item-button btn-sm fw-bold">Carrito</button></a>
+
     {{-- <button onclick="location.href = 'cart.html';" class="btn item-button btn-sm fw-bold">$ 140.000</button> --}}
 </div>
 <!-- Items section End -->
