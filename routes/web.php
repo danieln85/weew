@@ -44,7 +44,7 @@ Route::middleware(['blogAuth:admin,editor'])->group(function () {
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('cart', [CartController::class, 'index'])->name('cart.index');
+    Route::get('carrito', [CartController::class, 'index'])->name('cart.index');
     Route::post('cart/add/{productId}', [CartController::class, 'add'])->name('cart.add');
     Route::post('cart/update/{cartItemId}', [CartController::class, 'update'])->name('cart.update');
     Route::post('cart/remove/{cartItemId}', [CartController::class, 'remove'])->name('cart.remove');

@@ -1,11 +1,19 @@
 <!-- Product Section Start -->
     <section class="product-section mt-3" id="nuestros-productos">
         <div class="container-fluid-lg">
+{{-- aviso sesion --}}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-3">
             @if (session('success2'))
-            <div class="alert alert-success">
-                {{ session('success2') }}
-            </div>
-        @endif
+                <div class="alert alert-success">
+                    {{ session('success2') }}
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
+{{-- aviso sesion ends--}}
             <div class="title title-flex-2">
                 <h2>Productos</h2>
                 <ul class="nav nav-tabs tab-style-color-2 tab-style-color" id="myTab">
@@ -2256,6 +2264,22 @@
                     </div>
                 </div>
             </div>
+
+{{-- aviso sesion --}}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-3">
+                        @if (session('success2'))
+                            <div class="alert alert-success">
+                                {{ session('success2') }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+{{-- aviso sesion ends--}}
+
+
         </div>
     </section>
 <!-- Product Section End -->

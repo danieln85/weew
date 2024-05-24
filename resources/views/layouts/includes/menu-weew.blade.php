@@ -396,11 +396,19 @@
                     </div>
                 </div>
             </div>
+{{-- aviso sesion --}}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-3">
             @if (session('success2'))
-            <div class="alert alert-success">
-                {{ session('success2') }}
-            </div>
-        @endif
+                <div class="alert alert-success">
+                    {{ session('success2') }}
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
+{{-- aviso sesion ends--}}
         </div>
     </header>
     <!-- Header End -->
