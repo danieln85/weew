@@ -151,7 +151,7 @@
             <div class="col-xxl-3">
                 <div class="summery-box p-sticky">
                     <div class="summery-header">
-                        <h3>Cart Total</h3>
+                        <h3>Total Carrito</h3>
                     </div>
 
                     <div class="summery-contain">
@@ -163,14 +163,19 @@
                             </div>
                         </div> --}}
                         <ul>
+                            @if (!empty($totalAhorrado) && $totalAhorrado > 0)
+                            <li>
+                                <h4 class="theme-color">Ahorraste</h4>
+                                <h4 class="price theme-color">(-) ${{ number_format($totalAhorrado, 0, '.', '.') }}</h4>
+                            </li>
+                            @else
+
+                            @endif
+
+
                             <li>
                                 <h4>Subtotal</h4>
                                 <h4 class="price">${{ number_format($subtotal, 0, '.', '.') }}</h4>
-                            </li>
-
-                            <li>
-                                <h4>Ahorraste</h4>
-                                <h4 class="price">(-) ${{ number_format($totalAhorrado, 0, '.', '.') }}</h4>
                             </li>
 
                             <li class="align-items-start">
@@ -190,7 +195,7 @@
                     <div class="button-group cart-button">
                         <ul>
                             <li>
-                                <button onclick="location.href = '{{ route('checkout.index') }}';" class="btn btn-animation proceed-btn fw-bold">Ir a pagar</button>
+                                <button onclick="location.href = '{{ route('summary') }}';" class="btn btn-animation proceed-btn fw-bold">Ir a pagar</button>
                             </li>
 
                             <li>

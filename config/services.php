@@ -13,6 +13,12 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    // Otras configuraciones de servicios
+    'wompi' => [
+        'public_key' => env('WOMPI_PUBLIC_KEY'),
+        'private_key' => env('WOMPI_PRIVATE_KEY'),
+        'mode' => env('WOMPI_MODE', 'test'), // test o production
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

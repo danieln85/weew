@@ -29,6 +29,12 @@ class UserProfileController extends Controller
             'email_fac' => $validatedData['email_fac'],
         ]);
 
+        // Verificar si la solicitud proviene de la vista summary
+        if ($request->has('from_checkout') && $request->from_checkout == 'true') {
+            // Redirigir a la vista checkout
+            return redirect()->route('checkout')->with('success', 'Datos guardados correctamente!');
+        }
+
         // Redirigir a la ruta 'user-dashboard' con el ancla '#pills-facturacion'
         return redirect()->route('user-dashboard')->with('success', 'Datos guardados correctamente!');
     }

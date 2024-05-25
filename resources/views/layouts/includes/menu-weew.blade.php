@@ -190,7 +190,7 @@
 
                                                 <div class="button-group">
                                                     <a href="{{ route('cart.index') }}" class="btn btn-sm cart-button"><strong>Carrito</strong></a>
-                                                    <a href="{{ route('checkout.index') }}" class="btn btn-sm cart-button theme-bg-color
+                                                    <a href="{{ route('summary') }}" class="btn btn-sm cart-button theme-bg-color
                                                     text-white"><strong>Ir a pagar</strong></a>
                                                 </div>
                                             </div>

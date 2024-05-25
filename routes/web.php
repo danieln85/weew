@@ -12,6 +12,9 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\WompiController;
+
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -57,8 +60,13 @@ Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang
 
 Route::get('/busqueda', [SearchController::class, 'index'])->name('search');
 
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('/datos-de-envio', [CheckoutController::class, 'summary'])->name('summary');
 
-Route::get('/checkout', [SearchController::class, 'index'])->name('checkout.index');
+
+Route::get('/wompi/callback', [WompiController::class, 'handleCallback'])->name('wompi.callback');
+Route::post('/wompi/process', [WompiController::class, 'processPayment'])->name('wompi.process');
+Route::post('/wompi/events', [WompiController::class, 'handleEvents'])->name('wompi.events');
 
 
 Route::get('/terminos-y-condiciones', function () {
