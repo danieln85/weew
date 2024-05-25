@@ -71,9 +71,10 @@ class CheckoutController extends Controller
     }
 
     private function generateIntegritySignature($amountInCents, $currency, $reference)
-    {
-        $secret = env('WOMPI_PRIVATE_KEY'); // Obtiene la llave privada desde el archivo .env
-        $stringToSign = "$amountInCents$currency$reference";
-        return hash_hmac('sha256', $stringToSign, $secret);
-    }
+{
+    $secret = 'test_integrity_6UM6RMuex6BBU7BxJ52PXXIOPllOxeoL'; // Asegúrate de tener este valor correcto y en un lugar seguro, como en el archivo .env
+    $stringToSign = "{$reference}{$amountInCents}{$currency}{$secret}";
+    return hash('sha256', $stringToSign);
+}
+
 }

@@ -538,9 +538,9 @@
                             data-shipping-address:phone-number="{{ $user->mobile_number }}"
                             data-shipping-address:region="{{ $user->state }}"
                             data-shipping-address:name="{{ $user->name_fac ?: $user->name }}"
-
                         ></script>
                     </form>
+                    
                     
                     </div>
                 </div>
