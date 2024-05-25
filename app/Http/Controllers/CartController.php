@@ -12,10 +12,12 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     public function index()
-    {
-        $cart = $this->getUserCart();
-        return view('cart.index', compact('cart'));
-    }
+{
+    $cart = $this->getUserCart();
+    $cart->load('items.product'); // Cargar las relaciones de items y product
+    return view('cart.index', compact('cart'));
+}
+
 
 
     public function add(Request $request, $productId)
@@ -56,14 +58,22 @@ class CartController extends Controller
 
 
 
-    public function update(Request $request, $cartItemId)
-    {
-        $cartItem = CartItem::findOrFail($cartItemId);
-        $cartItem->quantity = $request->quantity;
-        $cartItem->save();
+public function update(Request $request, $cartItemId)
+{
+    $cartItem = CartItem::findOrFail($cartItemId);
+    $quantity = $request->input('quantity');
 
-        return redirect()->route('cart.index')->with('success2', 'Cantidad actualizada!');
+    // Asegurarse de que la cantidad no supere el stock del producto
+    if ($quantity > $cartItem->product->stock) {
+        return redirect()->route('cart.index')->with('error', 'No hay suficiente stock disponible!');
     }
+
+    $cartItem->quantity = $quantity;
+    $cartItem->save();
+
+    return redirect()->route('cart.index')->with('success2', 'Cantidad actualizada!');
+}
+
 
     public function remove($cartItemId)
     {

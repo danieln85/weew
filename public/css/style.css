@@ -139,4 +139,21 @@
     white-space: nowrap;
     }
 
+    .btn-update {
+    background-color: transparent!important;
+    font-size: 15px;
+    border: none;
+    text-align: end!important;
+    align-items: end!important;
+}
+
+.btn-update:hover,
+.btn-update:focus {
+    color:#07A9DF;
+}
+
+.btn-update:active {
+    filter: brightness(80%)!important;
+}
+
 /* # sourceMappingURL=style.css.map */

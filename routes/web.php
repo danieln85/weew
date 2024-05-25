@@ -46,8 +46,8 @@ Route::middleware(['blogAuth:admin,editor'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('carrito', [CartController::class, 'index'])->name('cart.index');
     Route::post('cart/add/{productId}', [CartController::class, 'add'])->name('cart.add');
-    Route::post('cart/update/{cartItemId}', [CartController::class, 'update'])->name('cart.update');
-    Route::post('cart/remove/{cartItemId}', [CartController::class, 'remove'])->name('cart.remove');
+    Route::put('cart/update/{cartItemId}', [CartController::class, 'update'])->name('cart.update');
+    Route::delete('cart/remove/{cartItemId}', [CartController::class, 'remove'])->name('cart.remove');
 });
 
 
@@ -58,7 +58,7 @@ Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang
 Route::get('/busqueda', [SearchController::class, 'index'])->name('search');
 
 
-
+Route::get('/checkout', [SearchController::class, 'index'])->name('checkout.index');
 
 
 Route::get('/terminos-y-condiciones', function () {

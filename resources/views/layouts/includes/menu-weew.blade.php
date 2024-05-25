@@ -144,7 +144,7 @@
                                         </li>
 
                                         <li class="right-side onhover-dropdown d-none d-md-inline">
-                                            <a class="header-icon search-box search-icon">
+                                            <a href="{{ route('cart.index')}}" class="header-icon search-box search-icon">
                                                 <small class="badge-number">2</small>
                                                 <i class="fa-solid fa-cart-shopping "></i>
                                             </a>
@@ -184,14 +184,14 @@
 
 
                                                 <div class="price-box">
-                                                    <h5>Price :</h5>
+                                                    <h5>Total:</h5>
                                                     <h4 class="theme-color fw-bold">$320.000</h4>
                                                 </div>
 
                                                 <div class="button-group">
                                                     <a href="{{ route('cart.index') }}" class="btn btn-sm cart-button"><strong>Carrito</strong></a>
-                                                    <a href="{{ route('home') }}" class="btn btn-sm cart-button theme-bg-color
-                                                    text-white"><strong>Checkout</strong></a>
+                                                    <a href="{{ route('checkout.index') }}" class="btn btn-sm cart-button theme-bg-color
+                                                    text-white"><strong>Ir a pagar</strong></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -396,19 +396,7 @@
                     </div>
                 </div>
             </div>
-{{-- aviso sesion --}}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-3">
-            @if (session('success2'))
-                <div class="alert alert-success">
-                    {{ session('success2') }}
-                </div>
-            @endif
-        </div>
-    </div>
-</div>
-{{-- aviso sesion ends--}}
+
         </div>
     </header>
     <!-- Header End -->
@@ -455,7 +443,7 @@
             </li>
 
             <li>
-                <a href="{{ route('home') }}">
+                <a href="{{ route('cart.index') }}">
                     <i class="icli fly-cate fa-solid fa-cart-shopping white-icon"></i>
                     <span>{{ __('menu.cart') }}</span>
                 </a>
