@@ -117,7 +117,7 @@
                                             
                                             // Enviar el formulario después de 1 segundo
                                             form.submit();
-                                        }, 2000);
+                                        }, 1000);
                                     });
                                 });
                             });
