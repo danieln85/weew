@@ -25,38 +25,55 @@
 </section>
 <!-- Breadcrumb Section End -->
 
+
 <!-- Cart Section Start -->
 {{-- aviso sesion --}}
-<div class="container ">
-    <div class="row justify-content-center mt-5">
-        <div class="col-12 col-md-3">
-            @if (session('success2'))
-                <div class="alert alert-success">
-                    {{ session('success2') }}
-                </div>
-            @endif
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-3">
+                @if (session('success2'))
+                    <div class="alert alert-success">
+                        {{ session('success2') }}
+                    </div>
+                @endif
+            </div>
         </div>
     </div>
-</div>
-{{-- aviso sesion ends--}}
+    {{-- aviso sesion ends--}}
+    
     <div class="container-fluid-lg">
         <div class="row g-sm-5 g-3">
-
             @if($cart->items->isEmpty())
                 <h2>¡Tu carrito está vacío!</h2>
             @else
-
             <div class="col-xxl-9">
                 <div class="cart-table">
                     <div class="table-responsive-xl">
-
-                        
                         <table class="table">
                             <tbody>
+                                @php
+                                    $subtotal = 0;
+                                    $totalAhorrado = 0;   
+                                    $costoEnvio = 0;
+                                    
+                                @endphp
+
                                 @foreach($cart->items as $item)
                                 @php
-                                    $precioConDescuento = $item->product->precio - (($item->product->precio * $item->product->descuento) / 100);
+                                    $precioOriginal = $item->product->precio;
+                                    $precioConDescuento = $precioOriginal - (($precioOriginal * $item->product->descuento) / 100);
                                     $precioFinal = (!empty($item->product->descuento) && is_numeric($item->product->descuento) && $item->product->descuento > 0) ? $precioConDescuento : $item->price;
+
+                                    $subtotal += $precioFinal * $item->quantity;
+                                    $totalAhorrado += ($precioOriginal - $precioFinal) * $item->quantity;
+                                    $userCity = auth()->user()->city;
+                                    if ($userCity != 'Bogota') {
+                                        $costoEnvio = 20000;
+                                        
+                                    }else{
+                                        $costoEnvio = 0;
+                                    }
                                 @endphp
                                 <tr class="product-box-contain">
                                     <td class="product-detail">
@@ -71,17 +88,17 @@
                                                     </li>
                                                     @if (!empty($item->product->descuento) && is_numeric($item->product->descuento) && $item->product->descuento > 0)
                                                     <li>
-                                                        <h5 class="text-content d-inline-block">Precio:</h5>
-                                                        <span>${{ number_format($precioConDescuento, 0, '.', '.') }}</span>
+                                                        <h5 class="text-content d-inline-block">Precio: <span>${{ number_format($precioConDescuento, 0, '.', '.') }}</span></h5>
+                                                        
                                                     </li>
                                                     <li>
-                                                        <h5 class="price d-inline-block">{{ $item->product->descuento }}%</h5>
-                                                        <span><del>${{ number_format($item->price, 0, '.', '.') }}</del></span>
+                                                        <span class="price d-inline-block">{{ $item->product->descuento }}% OFF</h5>
+                                                        <del>${{ number_format($item->price, 0, '.', '.') }}</del></span>
                                                     </li>
                                                     @else
                                                     <li>
-                                                        <h5 class="text-content d-inline-block">Precio:</h5>
-                                                        <span>${{ number_format($item->price, 0, '.', '.') }}</span>
+                                                        <h5 class="text-content d-inline-block">Precio: <span>${{ number_format($item->price, 0, '.', '.') }}</span></h5>
+                                                        
                                                     </li>
                                                     @endif
                                                 </ul>
@@ -90,7 +107,6 @@
                                     </td>
                         
                                     <td class="quantity">
-                                        
                                         <div class="quantity-price">
                                             <div class="cart_qty">
                                                 <form action="{{ route('cart.update', $item->id) }}" method="POST">
@@ -105,10 +121,7 @@
                                                             <i class="fa fa-plus"></i>
                                                         </button>
                                                     </div>
-                                                    <button type="submit" class="btn btn-update" style="
-                                                    padding-left: 65px;"><strong>Actualizar</strong></button>
-
-                                                    
+                                                    <button type="submit" class="btn btn-update"><strong>Actualizar</strong></button>
                                                 </form>
                                             </div>
                                         </div>
@@ -121,24 +134,16 @@
                         
                                     <td class="save-remove">
                                         <h4 class="table-title text-content mb-3 mt-4">Acción</h4>
-                                        <form action="{{ route('cart.remove', $item->id) }}" method="POST" style="display: inline; padding-left: 0px!important">
+                                        <form action="{{ route('cart.remove', $item->id) }}" method="POST" style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-update mt-0 pt-0" style="
-                                            padding-left: 0px;"><strong>Remover</strong></button>
+                                            <button type="submit" class="btn btn-update"><strong>Remover</strong></button>
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        
-
-                        
-                        
-
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -150,27 +155,27 @@
                     </div>
 
                     <div class="summery-contain">
-                        <div class="coupon-cart">
+                        {{-- <div class="coupon-cart">
                             <h6 class="text-content mb-2">Coupon Apply</h6>
                             <div class="mb-3 coupon-box input-group">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Coupon Code Here...">
+                                <input type="text" class="form-control" placeholder="Enter Coupon Code Here...">
                                 <button class="btn-apply">Apply</button>
                             </div>
-                        </div>
+                        </div> --}}
                         <ul>
                             <li>
                                 <h4>Subtotal</h4>
-                                <h4 class="price">${{ number_format($cart->items->sum('price'), 0, '.', '.') }}</h4>
+                                <h4 class="price">${{ number_format($subtotal, 0, '.', '.') }}</h4>
                             </li>
 
                             <li>
-                                <h4>Descuento</h4>
-                                <h4 class="price">(-) 0.00</h4>
+                                <h4>Ahorraste</h4>
+                                <h4 class="price">(-) ${{ number_format($totalAhorrado, 0, '.', '.') }}</h4>
                             </li>
 
                             <li class="align-items-start">
                                 <h4>Envío</h4>
-                                <h4 class="price text-end">$6.90</h4>
+                                <h4 class="price text-end">${{ number_format($costoEnvio, 0, '.', '.') }}</h4>
                             </li>
                         </ul>
                     </div>
@@ -178,7 +183,7 @@
                     <ul class="summery-total">
                         <li class="list-total border-top-0">
                             <h4>Total (COP)</h4>
-                            <h4 class="price theme-color">${{ number_format($cart->items->sum('quantity') * $cart->items->first()->price, 0, '.', '.') }}</h4>
+                            <h4 class="price theme-color">${{ number_format($subtotal + $costoEnvio, 0, '.', '.') }}</h4>
                         </li>
                     </ul>
 
@@ -197,10 +202,12 @@
                 </div>
             </div>
             @endif
-
         </div>
     </div>
 </section>
+
+    
+    
 <!-- Cart Section End -->
 
 @include('layouts._partials.footer')
