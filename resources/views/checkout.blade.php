@@ -523,7 +523,8 @@
                             data-currency="COP"
                             data-amount-in-cents="{{ $amountInCents }}"
                             data-reference="{{ $reference }}"
-                            data-signature:integrity="{{ $integrity }}"
+                            data-signature:integrity="test_integrity_6UM6RMuex6BBU7BxJ52PXXIOPllOxeoL
+                            "
                             data-redirect-url="https://www.weew.com.co/gracias"
                             data-customer-data:email="{{ $user->email_fac ?: $user->email }}"
                             data-customer-data:full-name="{{ $user->name_fac ?: $user->name }}"
