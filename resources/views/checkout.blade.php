@@ -508,10 +508,7 @@
                         </div> --}}
                 
                         
-                       
-
-
-                        @php
+                    @php
                         $user = auth()->user();
                     @endphp
                     
@@ -519,7 +516,7 @@
                         <script
                             src="https://checkout.wompi.co/widget.js"
                             data-render="button"
-                            data-public-key="pub_test_BO7gva7pH8AR5j0hFYyVUVTxXZ0vFifH"
+                            data-public-key="{{ env('WOMPI_PUBLIC_KEY') }}"
                             data-currency="COP"
                             data-amount-in-cents="{{ $amountInCents }}"
                             data-reference="{{ $reference }}"
