@@ -130,7 +130,7 @@ class CheckoutController extends Controller
     } else {
         $newReference = 2; // Si no hay órdenes anteriores, comenzar en 2
     }
-    return 'REF' . str_pad($newReference, 4, '0', STR_PAD_LEFT); // Formatear el nuevo número con ceros a la izquierda
+    return 'REF' . str_pad(3, 4, '0', STR_PAD_LEFT); // Formatear el nuevo número con ceros a la izquierda
 }
 
 }
