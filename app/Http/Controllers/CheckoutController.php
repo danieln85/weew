@@ -122,15 +122,14 @@ class CheckoutController extends Controller
     }
 
     private function generateReference()
-{
-    $lastOrder = Order::orderBy('id', 'desc')->first();
-    if ($lastOrder) {
-        $lastReference = (int) substr($lastOrder->reference, 3); // Obtener el último número de la referencia
-        $newReference = $lastReference + 1; // Incrementar el último número en 1
-    } else {
-        $newReference = 2; // Si no hay órdenes anteriores, comenzar en 2
+    {
+        $lastOrder = Order::orderBy('id', 'desc')->first();
+        if ($lastOrder) {
+            $lastReference = (int) substr($lastOrder->reference, 3); // Obtener el último número de la referencia
+            $newReference = $lastReference + 1; // Incrementar el último número en 1
+        } else {
+            $newReference = 2; // Si no hay órdenes anteriores, comenzar en 2
+        }
+        return 'REF' . str_pad(4, 4, '0', STR_PAD_LEFT); // Formatear el nuevo número con ceros a la izquierda
     }
-    return 'REF' . str_pad(3, 4, '0', STR_PAD_LEFT); // Formatear el nuevo número con ceros a la izquierda
-}
-
 }
