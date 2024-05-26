@@ -13,11 +13,11 @@ class CheckoutController extends Controller
     public function index()
     {
         $cart = $this->getUserCart();
-        $cart->load('items.product'); // Cargar las relaciones de items y product
+        $cart->load('items.product');
         $cartSummary = $this->calculateCartSummary($cart);
 
-        $amountInCents = $cartSummary['total'] * 100; // Convertir a centavos
-        $reference = $this->generateReference(); // Genera una referencia única para cada transacción
+        $amountInCents = $cartSummary['total'] * 100;
+        $reference = $this->generateReference();
         $integrity = $this->generateIntegritySignature($amountInCents, 'COP', $reference);
 
         return view('checkout', array_merge([
@@ -31,7 +31,7 @@ class CheckoutController extends Controller
     public function summary()
     {
         $cart = $this->getUserCart();
-        $cart->load('items.product'); // Cargar las relaciones de items y product
+        $cart->load('items.product');
         $cartSummary = $this->calculateCartSummary($cart);
 
         return view('summary', array_merge(['cart' => $cart], $cartSummary));
@@ -62,7 +62,8 @@ class CheckoutController extends Controller
         $cart->items()->delete();
         $cart->delete();
 
-        return redirect()->route('order.confirmation', ['order' => $order->id]);
+        // Redirige a la URL de confirmación con el ID de la orden
+        return redirect()->route('confirmation', ['order' => $order->id]);
     }
 
     private function getUserCart()
@@ -114,7 +115,7 @@ class CheckoutController extends Controller
             $lastReference = (int) str_replace('REF', '', $lastOrder->reference);
             $newReference = $lastReference + 1;
         } else {
-            $newReference = 1;
+            $newReference = 2;
         }
         return 'REF' . str_pad($newReference, 4, '0', STR_PAD_LEFT);
     }

@@ -10,7 +10,7 @@ class OrderController extends Controller
     public function confirmation($orderId)
     {
         $order = Order::with('items.product')->findOrFail($orderId);
-        return view('confirmation', compact('order'));
+
+        return view('confirmation', ['order' => $order]);
     }
 }
-

@@ -14,6 +14,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WompiController;
+use App\Http\Controllers\OrderController;
 
 
 
@@ -60,7 +61,6 @@ Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang
 
 Route::get('/busqueda', [SearchController::class, 'index'])->name('search');
 
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('/datos-de-envio', [CheckoutController::class, 'summary'])->name('summary');
 
 
@@ -68,13 +68,16 @@ Route::get('/wompi/callback', [WompiController::class, 'handleCallback'])->name(
 Route::post('/wompi/process', [WompiController::class, 'processPayment'])->name('wompi.process');
 Route::post('/wompi/events', [WompiController::class, 'handleEvents'])->name('wompi.events');
 
-Route::get('/gracias', [CheckoutController::class, 'confirmation'])->name('order.confirmation');
+
 
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('/checkout/process', [CheckoutController::class, 'processPayment'])->name('checkout.process');
 Route::get('/datos-de-envio', [CheckoutController::class, 'summary'])->name('summary');
-Route::get('/gracias/{order}', [OrderController::class, 'confirmation'])->name('order.confirmation');
+
+Route::get('/gracias/{order}', [OrderController::class, 'confirmation'])->name('confirmation');
+
+
 
 
 Route::get('/terminos-y-condiciones', function () {

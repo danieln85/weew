@@ -521,7 +521,7 @@
                             data-amount-in-cents="{{ $amountInCents }}"
                             data-reference="{{ $reference }}"
                             data-signature:integrity="{{ $integrity }}"
-                            data-redirect-url="https://www.weew.com.co/gracias"
+                            data-redirect-url="{{ route('confirmation', ['order' => 'ORDER_ID']) }}"
                             data-customer-data:email="{{ Auth::user()->email_fac ?: Auth::user()->email }}"
                             data-customer-data:full-name="{{ Auth::user()->name_fac ?: Auth::user()->name }}"
                             data-customer-data:phone-number="{{ Auth::user()->mobile_number }}"
