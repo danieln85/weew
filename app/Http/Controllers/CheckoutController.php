@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +17,7 @@ class CheckoutController extends Controller
         $cartSummary = $this->calculateCartSummary($cart);
 
         $amountInCents = $cartSummary['total'] * 100; // Convertir a centavos
-        $reference = '0001'; // Genera una referencia única para cada transacción
+        $reference = $this->generateReference(); // Genera una referencia única para cada transacción
         $integrity = $this->generateIntegritySignature($amountInCents, 'COP', $reference);
 
         return view('checkout', array_merge([
@@ -33,6 +35,34 @@ class CheckoutController extends Controller
         $cartSummary = $this->calculateCartSummary($cart);
 
         return view('summary', array_merge(['cart' => $cart], $cartSummary));
+    }
+
+    public function processPayment(Request $request)
+    {
+        // Aquí deberías procesar la transacción con Wompi...
+        // Suponemos que la transacción fue exitosa
+
+        $cart = $this->getUserCart();
+        $order = new Order();
+        $order->user_id = Auth::id();
+        $order->reference = $request->input('reference');
+        $order->total_amount = $request->input('amount_in_cents');
+        $order->status = 'paid';
+        $order->save();
+
+        foreach ($cart->items as $item) {
+            $orderItem = new OrderItem();
+            $orderItem->order_id = $order->id;
+            $orderItem->product_id = $item->product_id;
+            $orderItem->quantity = $item->quantity;
+            $orderItem->price = $item->price;
+            $orderItem->save();
+        }
+
+        $cart->items()->delete();
+        $cart->delete();
+
+        return redirect()->route('order.confirmation', ['order' => $order->id]);
     }
 
     private function getUserCart()
@@ -71,10 +101,21 @@ class CheckoutController extends Controller
     }
 
     private function generateIntegritySignature($amountInCents, $currency, $reference)
-{
-    $secret = 'test_integrity_6UM6RMuex6BBU7BxJ52PXXIOPllOxeoL'; // Asegúrate de tener este valor correcto y en un lugar seguro, como en el archivo .env
-    $stringToSign = "{$reference}{$amountInCents}{$currency}{$secret}";
-    return hash('sha256', $stringToSign);
-}
+    {
+        $secret = 'test_integrity_6UM6RMuex6BBU7BxJ52PXXIOPllOxeoL'; // Asegúrate de tener este valor correcto y en un lugar seguro, como en el archivo .env
+        $stringToSign = "{$reference}{$amountInCents}{$currency}{$secret}";
+        return hash('sha256', $stringToSign);
+    }
 
+    private function generateReference()
+    {
+        $lastOrder = Order::orderBy('id', 'desc')->first();
+        if ($lastOrder) {
+            $lastReference = (int) str_replace('REF', '', $lastOrder->reference);
+            $newReference = $lastReference + 1;
+        } else {
+            $newReference = 1;
+        }
+        return 'REF' . str_pad($newReference, 4, '0', STR_PAD_LEFT);
+    }
 }

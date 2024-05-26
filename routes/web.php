@@ -68,6 +68,14 @@ Route::get('/wompi/callback', [WompiController::class, 'handleCallback'])->name(
 Route::post('/wompi/process', [WompiController::class, 'processPayment'])->name('wompi.process');
 Route::post('/wompi/events', [WompiController::class, 'handleEvents'])->name('wompi.events');
 
+Route::get('/gracias', [CheckoutController::class, 'confirmation'])->name('order.confirmation');
+
+
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('/checkout/process', [CheckoutController::class, 'processPayment'])->name('checkout.process');
+Route::get('/datos-de-envio', [CheckoutController::class, 'summary'])->name('summary');
+Route::get('/gracias/{order}', [OrderController::class, 'confirmation'])->name('order.confirmation');
+
 
 Route::get('/terminos-y-condiciones', function () {
     return view('terms');
