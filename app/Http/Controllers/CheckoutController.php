@@ -39,31 +39,44 @@ class CheckoutController extends Controller
 
     public function processPayment(Request $request)
     {
-        // Aquí deberías procesar la transacción con Wompi...
-        // Suponemos que la transacción fue exitosa
-
         $cart = $this->getUserCart();
+
+        // Verificar si el usuario está autenticado antes de continuar
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Debes iniciar sesión para realizar un pedido.');
+        }
+
+        // Crear la orden
         $order = new Order();
         $order->user_id = Auth::id();
         $order->reference = $request->input('reference');
         $order->total_amount = $request->input('amount_in_cents');
         $order->status = 'paid';
-        $order->save();
 
-        foreach ($cart->items as $item) {
-            $orderItem = new OrderItem();
-            $orderItem->order_id = $order->id;
-            $orderItem->product_id = $item->product_id;
-            $orderItem->quantity = $item->quantity;
-            $orderItem->price = $item->price;
-            $orderItem->save();
+        // Intentar guardar la orden
+        try {
+            $order->save();
+
+            // Guardar los elementos de la orden
+            foreach ($cart->items as $item) {
+                $orderItem = new OrderItem();
+                $orderItem->order_id = $order->id;
+                $orderItem->product_id = $item->product_id;
+                $orderItem->quantity = $item->quantity;
+                $orderItem->price = $item->price;
+                $orderItem->save();
+            }
+
+            // Vaciar el carrito después de que la orden se haya creado exitosamente
+            $cart->items()->delete();
+            $cart->delete();
+
+            // Redirigir a la URL de confirmación con el ID de la orden
+            return redirect()->route('confirmation', ['order' => $order->id]);
+        } catch (\Exception $e) {
+            // Manejar errores de base de datos u otros errores
+            return redirect()->back()->with('error', 'Ha ocurrido un error al procesar el pago. Por favor, inténtalo de nuevo más tarde.');
         }
-
-        $cart->items()->delete();
-        $cart->delete();
-
-        // Redirige a la URL de confirmación con el ID de la orden
-        return redirect()->route('confirmation', ['order' => $order->id]);
     }
 
     private function getUserCart()
