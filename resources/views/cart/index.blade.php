@@ -46,6 +46,7 @@
         <div class="row g-sm-5 g-3">
             @if($cart->items->isEmpty())
                 <h2>¡Tu carrito está vacío!</h2>
+                <h3 class="mb-5"><a href="{{ route('shop') }}">Te invitamos a conocer los productos de nuestra tienda</a>.</h3>
             @else
             <div class="col-xxl-9">
                 <div class="cart-table">

@@ -12,6 +12,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('reference')->unique();
+            $table->string('wompi_id')->unique();
             $table->integer('total_amount');
             $table->string('status')->default('pending');
             $table->timestamps();

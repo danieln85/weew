@@ -20,6 +20,8 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/gracias', [OrderController::class, 'confirmation'])->name('confirmation');
+
 Route::get('/nosotros', [AboutUsController::class, 'index'])->name('about-us');
 
 Route::resource('contact', ContactController::class);
@@ -42,7 +44,7 @@ Route::middleware(['blogAuth:admin,editor'])->group(function () {
 
     Route::get('tienda/admin/crear-producto', [ProductController::class, 'create'])->name('product-create');    
     Route::post('store', [ProductController::class, 'store'])->name('product.store');
-    Route::resource('product', ProductController::class)->except(['index', 'productDetails']);
+    
 });
 
 
@@ -64,19 +66,8 @@ Route::get('/busqueda', [SearchController::class, 'index'])->name('search');
 Route::get('/datos-de-envio', [CheckoutController::class, 'summary'])->name('summary');
 
 
-Route::get('/wompi/callback', [WompiController::class, 'handleCallback'])->name('wompi.callback');
-Route::post('/wompi/process', [WompiController::class, 'processPayment'])->name('wompi.process');
-Route::post('/wompi/events', [WompiController::class, 'handleEvents'])->name('wompi.events');
-
-
-
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
-Route::post('/checkout/process', [CheckoutController::class, 'processPayment'])->name('checkout.process');
-Route::get('/datos-de-envio', [CheckoutController::class, 'summary'])->name('summary');
-
-Route::get('/gracias/{order}', [OrderController::class, 'confirmation'])->name('confirmation');
-
 
 
 

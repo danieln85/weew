@@ -12,6 +12,7 @@ class Order extends Model
     protected $fillable = [
         'user_id',
         'reference',
+        'wompi_id', // Nuevo campo para el ID de Wompi
         'total_amount',
         'status',
     ];

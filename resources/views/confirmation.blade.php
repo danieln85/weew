@@ -46,10 +46,54 @@
                             </div>
 
                             <div class="order-contain">
-                                <h3 class="theme-color">Order Success</h3>
-                                <h5 class="text-content">Payment Is Successfully And Your Order Is On The Way</h5>
-                                <h6>Transaction ID: 1708031724431131</h6>
+                                <h2 class="theme-color mb-4">Compra Exitosa</h2>
+                                <h4 class="text-content mb-4">¡El pago se realizó correctamente y tu pedido está próximo a salir!</h4>
+                                
                             </div>
+
+                            
+                            <h1>Número de compra</h1>
+                            <h3 class="mb-4"><strong># {{ $order->reference }}</strong></h3>
+                            
+                           
+                        
+                            
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+                                        <div class="card">
+                                            <div class="card-header">Confirmación de la compra</div>
+                            
+                                            <div class="card-body">
+                                                @if (session('error'))
+                                                    <div class="alert alert-danger">
+                                                        {{ session('error') }}
+                                                    </div>
+                                                @endif
+                            
+                                                <h2>Gracias por tu compra!</h2>
+                                                <p>Tu orden ha sido procesada exitosamente.</p>
+                            
+                                                
+                                                <h2 class="mb-3">Productos comprados</h2>
+                            <ul>
+                                @foreach($order->items as $item)
+                                    <li>
+                                        {{ $item->product->nombre }} - {{ $item->quantity }} x ${{ $item->price }}
+                                    </li><br>
+                                @endforeach
+                            </ul>
+
+                            <h4 class="mt-3 mb-3">Total: {{ number_format($order->total_amount), 0, '.', '.' }}</h4>
+
+                            <h2 class="mb-3"><a href="{{ route('user-dashboard') }}#pills-order">Ver mis compras</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -59,7 +103,7 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Cart Section Start -->
-    <section class="cart-section section-b-space">
+    {{-- <section class="cart-section section-b-space">
         <div class="container-fluid-lg">
             <div class="row g-sm-4 g-3">
                 <div class="col-xxl-9 col-lg-8">
@@ -261,7 +305,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Cart Section End -->
 
     @include('layouts._partials.footer')
