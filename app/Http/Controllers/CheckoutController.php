@@ -21,7 +21,7 @@ class CheckoutController extends Controller
         if ($cart->items->isEmpty()) {
             return redirect()->route('cart.index')->with('error', 'El carrito está vacío.');
         }
-
+        
         $cart->load('items.product');
         $cartSummary = $this->calculateCartSummary($cart);
 
@@ -93,32 +93,34 @@ class CheckoutController extends Controller
 
     private function generateIntegritySignature($amountInCents, $currency, $reference)
     {
-        $secret = env('WOMPI_INTEGRITY_SECRET'); // Asegúrate de tener este valor correcto y en un lugar seguro, como en el archivo .env
+        $secret = env('WOMPI_INTEGRITY_SECRET');// Asegúrate de tener este valor correcto y en un lugar seguro, como en el archivo .env
         $stringToSign = "{$reference}{$amountInCents}{$currency}{$secret}";
         return hash('sha256', $stringToSign);
     }
 
     private function generateReference()
-    {
-        // Obtener el año actual
-        $currentYear = date('Y');
+{
+    // Obtener el año actual
+    $currentYear = date('Y');
 
-        do {
-            // Obtener la última orden del año actual
-            $lastOrder = Order::where('reference', 'like', $currentYear . '%')->orderBy('reference', 'desc')->first();
+    // Obtener la última orden del año actual
+    $lastOrder = Order::where('reference', 'like', $currentYear . '%')->orderBy('reference', 'desc')->first();
+    dd('Last Order:', $lastOrder); // Verificar la última orden encontrada
 
-            if ($lastOrder) {
-                // Extraer el número incremental de la última referencia
-                $lastNumber = (int) substr($lastOrder->reference, 4); // Obtener los últimos dos dígitos de la referencia
-                $newNumber = $lastNumber + 1; // Incrementar el número en 1
-            } else {
-                $newNumber = 0; // Si no hay órdenes anteriores en el año, comenzar en 00
-            }
-
-            // Formatear la nueva referencia
-            $reference = $currentYear . str_pad($newNumber, 2, '0', STR_PAD_LEFT);
-        } while (Order::where('reference', $reference)->exists()); // Repetir hasta que la referencia sea única
-
-        return $reference;
+    if ($lastOrder) {
+        // Extraer el número incremental de la última referencia
+        $lastNumber = (int) substr($lastOrder->reference, 4); // Obtener los últimos dos dígitos de la referencia
+        dd('Last Number:', $lastNumber); // Verificar el número incremental
+        $newNumber = $lastNumber + 1; // Incrementar el número en 1
+    } else {
+        $newNumber = 0; // Si no hay órdenes anteriores en el año, comenzar en 00
     }
+
+    // Formatear la nueva referencia
+    $newReference = $currentYear . str_pad($newNumber, 2, '0', STR_PAD_LEFT);
+    dd('New Reference:', $newReference); // Verificar la nueva referencia generada
+
+    return $newReference;
+}
+
 }
