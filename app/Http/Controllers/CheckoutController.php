@@ -99,28 +99,22 @@ class CheckoutController extends Controller
     }
 
     private function generateReference()
-{
-    // Obtener el año actual
-    $currentYear = date('Y');
+    {
+        // Obtener el año actual
+        $currentYear = date('Y');
 
-    // Obtener la última orden del año actual
-    $lastOrder = Order::where('reference', 'like', $currentYear . '%')->orderBy('reference', 'desc')->first();
-    dd('Last Order:', $lastOrder); // Verificar la última orden encontrada
+        // Obtener la última orden del año actual
+        $lastOrder = Order::where('reference', 'like', $currentYear . '%')->orderBy('reference', 'desc')->first();
 
-    if ($lastOrder) {
-        // Extraer el número incremental de la última referencia
-        $lastNumber = (int) substr($lastOrder->reference, 4); // Obtener los últimos dos dígitos de la referencia
-        dd('Last Number:', $lastNumber); // Verificar el número incremental
-        $newNumber = $lastNumber + 1; // Incrementar el número en 1
-    } else {
-        $newNumber = 0; // Si no hay órdenes anteriores en el año, comenzar en 00
+        if ($lastOrder) {
+            // Extraer el número incremental de la última referencia
+            $lastNumber = (int) substr($lastOrder->reference, 4); // Obtener los últimos dos dígitos de la referencia
+            $newNumber = $lastNumber + 1; // Incrementar el número en 1
+        } else {
+            $newNumber = 0; // Si no hay órdenes anteriores en el año, comenzar en 00
+        }
+
+        // Formatear la nueva referencia
+        return $currentYear . str_pad($newNumber, 2, '0', STR_PAD_LEFT);
     }
-
-    // Formatear la nueva referencia
-    $newReference = $currentYear . str_pad($newNumber, 2, '0', STR_PAD_LEFT);
-    dd('New Reference:', $newReference); // Verificar la nueva referencia generada
-
-    return $newReference;
-}
-
 }
