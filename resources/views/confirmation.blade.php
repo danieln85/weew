@@ -79,12 +79,12 @@
                             <ul>
                                 @foreach($order->items as $item)
                                     <li>
-                                        {{ $item->product->nombre }} - {{ $item->quantity }} x ${{ $item->price }}
+                                        {{ $item->product->nombre }} - {{ $item->quantity }} x ${{ number_format($item->price, 0, ',', '.') }}
                                     </li><br>
                                 @endforeach
                             </ul>
 
-                            <h4 class="mt-3 mb-3">Total: {{ number_format($order->total_amount), 0, '.', '.' }}</h4>
+                            <h4 class="mt-3 mb-3">Total: {{ number_format($order->total_amount, 0, '.', '.') }}</h4>
 
                             <h2 class="mb-3"><a href="{{ route('user-dashboard') }}#pills-order">Ver mis compras</a></h2>
                                             </div>
