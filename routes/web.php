@@ -35,15 +35,25 @@ Route::post('store', [newsletterController::class, 'store'])->name('store');
 Route::get('consumo-responsable/detalles-post/{id?}', [BlogController::class, 'blogDetails'])->name('blog-details');
 Route::get('/consumo-responsable', [BlogController::class, 'index'])->name('blog');
 
+
 Route::get('/tienda', [ProductController::class, 'index'])->name('shop');
 Route::get('productos/detalles-producto/{id?}', [ProductController::class, 'productDetails'])->name('product-details');
+
+
 
 Route::middleware(['blogAuth:admin,editor'])->group(function () {
     Route::get('blog/admin/crear-post', [BlogController::class, 'create'])->name('blog-create');
     Route::resource('blog', BlogController::class)->except(['index', 'blogDetails']);
 
-    Route::get('tienda/admin/crear-producto', [ProductController::class, 'create'])->name('product-create');    
+ 
     Route::post('store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('tienda/admin/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
+    Route::get('tienda/admin/crear-producto', [ProductController::class, 'create'])->name('product-create');
+    Route::get('tienda/admin/crear-producto', [ProductController::class, 'create'])->name('product-create'); 
+    Route::put('/products/{product}', [ProductController::class, 'update'])->name('product.update');
+
+Route::delete('eliminar/producto/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+
     
 });
 
